@@ -86,14 +86,75 @@ def prepare_data(raw_data: Dict[str, pd.DataFrame]) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Cleaned and merged dataset ready for features
     """
-    # TODO: Implement data cleaning and merging
-    # - Merge races with results
-    # - Handle missing values
-    # - Remove incomplete races
-    # - Validate data types
+    logger.info("Preparing data: merging and cleaning...")
     
-    logger.info("Data preparation placeholder - to be implemented")
-    pass
+    # Extract dataframes
+    races = raw_data['races']
+    results = raw_data['results']
+    drivers = raw_data['drivers']
+    constructors = raw_data['constructors']
+    circuits = raw_data.get('circuits')
+    status = raw_data.get('status')
+    qualifying = raw_data.get('qualifying')
+    
+    # Step 1: Merge results with race info
+    merged = results.merge(
+        races[['raceId', 'year', 'round', 'circuitId', 'date', 'name']],
+        on='raceId',
+        how='left'
+    ).rename(columns={'name': 'race_name'})
+    
+    # Step 2: Add driver info
+    merged = merged.merge(
+        drivers[['driverId', 'surname', 'forename', 'nationality']],
+        on='driverId',
+        how='left'
+    )
+    
+    # Step 3: Add constructor info
+    merged = merged.merge(
+        constructors[['constructorId', 'name', 'nationality']],
+        on='constructorId',
+        how='left',
+        suffixes=('_driver', '_constructor')
+    )
+    
+    # Step 4: Add circuit info if available
+    if circuits is not None:
+        merged = merged.merge(
+            circuits[['circuitId', 'name', 'location', 'country']],
+            on='circuitId',
+            how='left',
+            suffixes=('_team', '_circuit')
+        )
+    
+    # Step 5: Add status info if available
+    if status is not None:
+        merged = merged.merge(
+            status,
+            on='statusId',
+            how='left'
+        ).rename(columns={'status': 'race_status'})
+    
+    # Step 6: Data cleaning
+    # Remove rows with missing critical values
+    merged = merged.dropna(subset=['positionOrder', 'year', 'driverId', 'constructorId'])
+    
+    # Handle grid position nulls (practice starts) - drop them
+    merged = merged.dropna(subset=['grid'])
+    
+    # Convert position to integer
+    merged['positionOrder'] = merged['positionOrder'].astype(int)
+    merged['grid'] = merged['grid'].astype(int)
+    
+    # Sort by year, round for temporal consistency
+    merged = merged.sort_values(['year', 'round', 'positionOrder']).reset_index(drop=True)
+    
+    logger.info(f"Data prepared: {merged.shape[0]} rows, {merged.shape[1]} columns")
+    logger.info(f"Years covered: {merged['year'].min()} to {merged['year'].max()}")
+    logger.info(f"Races: {merged['raceId'].nunique()}, Drivers: {merged['driverId'].nunique()}")
+    
+    return merged
 
 
 def cache_data(data: pd.DataFrame, cache_path: Path = Path("data/cache/features.pkl")) -> None:
@@ -104,9 +165,11 @@ def cache_data(data: pd.DataFrame, cache_path: Path = Path("data/cache/features.
         data: Processed dataframe
         cache_path: Path to save pickle file
     """
-    # TODO: Implement caching
-    logger.info(f"Caching data to {cache_path}")
-    pass
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    data.to_pickle(cache_path)
+    size_mb = cache_path.stat().st_size / (1024 * 1024)
+    logger.info(f"Cached data to {cache_path} ({size_mb:.1f} MB)")
 
 
 def load_cached_data(cache_path: Path = Path("data/cache/features.pkl")) -> pd.DataFrame:
@@ -119,8 +182,13 @@ def load_cached_data(cache_path: Path = Path("data/cache/features.pkl")) -> pd.D
     Returns:
         pd.DataFrame: Cached dataframe
     """
-    # TODO: Implement cache loading
-    pass
+    if not cache_path.exists():
+        logger.warning(f"Cache not found: {cache_path}")
+        return None
+    
+    data = pd.read_pickle(cache_path)
+    logger.info(f"Loaded cached data from {cache_path} ({data.shape[0]} rows)")
+    return data
 
 
 if __name__ == "__main__":

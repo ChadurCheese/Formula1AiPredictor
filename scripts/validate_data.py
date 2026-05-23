@@ -76,7 +76,6 @@ def main():
     logger.info("=" * 60)
     logger.info("F1 RACE PREDICTOR - DATA VALIDATION")
     logger.info("=" * 60)
-    logger.info()
     
     if validate_data_structure():
         logger.info("\nReady to run: python scripts/train_model.py")
