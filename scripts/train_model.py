@@ -9,13 +9,22 @@ Run with: python scripts/train_model.py
 import logging
 import sys
 from pathlib import Path
+import pandas as pd
+import numpy as np
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.data_pipeline import load_raw_data, prepare_data, cache_data
-from src.features import build_feature_matrix, get_feature_names
-from src.traits import calculate_driver_traits, save_traits, load_traits
+from src.data_pipeline import load_raw_data, prepare_data, load_cached_data
+from src.features import (
+    engineer_driver_features,
+    engineer_constructor_features,
+    engineer_track_features,
+    engineer_weather_features,
+    build_feature_matrix,
+    get_feature_names
+)
+from src.traits import calculate_driver_traits, save_traits
 from src.model import train_model, evaluate_model, save_model
 from src.utils import setup_logging
 
@@ -32,45 +41,99 @@ def main():
     
     try:
         # Step 1: Load raw data
-        logger.info("\n[STEP 1/5] Loading raw data...")
+        logger.info("\n[STEP 1/7] Loading raw data...")
         raw_data = load_raw_data()
+        logger.info(f"Loaded {len(raw_data['results'])} race results")
         
         # Step 2: Prepare data
-        logger.info("\n[STEP 2/5] Preparing and cleaning data...")
-        # data = prepare_data(raw_data)  # TODO: Implement
-        logger.info("Data preparation placeholder")
+        logger.info("\n[STEP 2/7] Preparing and cleaning data...")
+        prepared_data = prepare_data(raw_data)
+        logger.info(f"Prepared data shape: {prepared_data.shape}")
         
         # Step 3: Calculate driver traits
-        logger.info("\n[STEP 3/5] Calculating driver traits...")
-        # driver_traits = calculate_driver_traits(
-        #     raw_data['results'],
-        #     raw_data['qualifying'],
-        #     raw_data['drivers']
-        # )  # TODO: Implement
-        logger.info("Trait calculation placeholder")
-        # save_traits(driver_traits)
+        logger.info("\n[STEP 3/7] Calculating driver traits...")
+        driver_traits = calculate_driver_traits(
+            prepared_data,
+            raw_data['qualifying'],
+            raw_data['drivers']
+        )
+        save_traits(driver_traits)
+        logger.info(f"Calculated traits for {len(driver_traits)} drivers")
         
-        # Step 4: Build feature matrix
-        logger.info("\n[STEP 4/5] Building feature matrix...")
-        # X, metadata, y = build_feature_matrix(...)  # TODO: Implement
-        logger.info("Feature matrix building placeholder")
+        # Step 4: Engineer features
+        logger.info("\n[STEP 4/7] Engineering features...")
+        driver_features = engineer_driver_features(prepared_data)
+        logger.info(f"Driver features: {driver_features.shape[0]} drivers × {driver_features.shape[1]} features")
         
-        # Step 5: Train model
-        logger.info("\n[STEP 5/5] Training model...")
-        # Split data into train/val/test
-        # model = train_model(X_train, y_train, X_val, y_val)  # TODO: Implement
-        logger.info("Model training placeholder")
+        constructor_features = engineer_constructor_features(prepared_data)
+        logger.info(f"Constructor features: {constructor_features.shape[0]} teams × {constructor_features.shape[1]} features")
         
-        # Evaluate
-        # metrics = evaluate_model(model, X_test, y_test)  # TODO: Implement
-        # save_model(model, metrics=metrics)  # TODO: Implement
+        track_features = engineer_track_features(prepared_data, raw_data['races'])
+        logger.info(f"Track features: {len(track_features)} driver-track combinations")
+        
+        weather_features = engineer_weather_features(prepared_data)
+        logger.info(f"Weather features placeholder: {len(weather_features)} entries")
+        
+        # Step 5: Build feature matrix
+        logger.info("\n[STEP 5/7] Building feature matrix...")
+        X, metadata, y = build_feature_matrix(
+            driver_features,
+            constructor_features,
+            track_features,
+            prepared_data
+        )
+        logger.info(f"Feature matrix: {X.shape[0]} samples × {X.shape[1]} features")
+        
+        # Step 6: Split data into train/val/test by season
+        logger.info("\n[STEP 6/7] Splitting data into train/val/test...")
+        
+        # Extract year from metadata
+        years = metadata['year'].values
+        
+        train_mask = years <= 2022
+        val_mask = years == 2023
+        test_mask = years == 2024
+        
+        X_train = X[train_mask]
+        y_train = y[train_mask]
+        
+        X_val = X[val_mask]
+        y_val = y[val_mask]
+        
+        X_test = X[test_mask]
+        y_test = y[test_mask]
+        
+        logger.info(f"Train set: {len(X_train)} samples (2020-2022)")
+        logger.info(f"Val set: {len(X_val)} samples (2023)")
+        logger.info(f"Test set: {len(X_test)} samples (2024)")
+        
+        # Step 7: Train and evaluate model
+        logger.info("\n[STEP 7/7] Training model...")
+        model = train_model(X_train, y_train, X_val, y_val)
+        
+        logger.info("Evaluating on validation set...")
+        val_metrics = evaluate_model(model, X_val, y_val)
+        
+        logger.info("Evaluating on test set...")
+        test_metrics = evaluate_model(model, X_test, y_test)
+        
+        # Save model
+        logger.info("Saving model...")
+        save_model(model, metrics={
+            "validation": val_metrics,
+            "test": test_metrics
+        })
         
         logger.info("\n" + "=" * 60)
         logger.info("✅ TRAINING COMPLETE")
         logger.info("=" * 60)
-        logger.info("Model saved to: models/model.pkl")
-        logger.info("Traits saved to: data/cache/driver_traits.json")
-        logger.info("Config saved to: models/model_config.json")
+        logger.info(f"Test MAE: {test_metrics['mae']:.2f} positions")
+        logger.info(f"Test R²: {test_metrics['r2']:.3f}")
+        logger.info(f"Within 2 positions: {test_metrics['within_2_positions']:.1f}%")
+        logger.info("\n📁 Output files:")
+        logger.info("  - Model saved to: models/model.pkl")
+        logger.info("  - Traits saved to: data/cache/driver_traits.json")
+        logger.info("  - Config saved to: models/model_config.json")
         
     except Exception as e:
         logger.error(f"❌ Training failed: {e}", exc_info=True)
@@ -79,3 +142,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

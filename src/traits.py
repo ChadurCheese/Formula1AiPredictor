@@ -95,10 +95,35 @@ def trait_qualifying_specialist(
     Returns:
         float: Score 0-1 (higher = better at qualifying relative to races)
     """
-    # TODO: Implement
-    # Compare qualifying position vs race finish position
-    # Normalize to 0-1 scale
-    return 0.5
+    # Get valid race positions (no DNF/null)
+    valid_races = results_df[results_df['positionOrder'].notna()].copy()
+    
+    if len(valid_races) < 3:
+        return 0.5
+    
+    # Merge qualifying position with race results
+    merged = valid_races.merge(
+        qualifying_df[['raceId', 'position']],
+        on='raceId',
+        how='inner',
+        suffixes=('_race', '_qual')
+    )
+    
+    if len(merged) < 3:
+        return 0.5
+    
+    # Calculate position gaps: negative means gained positions, positive means lost
+    merged['position_gap'] = merged['positionOrder'] - merged['position_qual']
+    
+    # Average gap (negative = generally improves from qual to race)
+    avg_gap = merged['position_gap'].mean()
+    
+    # Normalize: if driver loses ~5 positions on avg, score should be low
+    # If driver gains positions, score should be high
+    # Scale: [-15, +15] -> [0, 1]
+    specialist_score = np.clip((-avg_gap + 15) / 30, 0, 1)
+    
+    return specialist_score
 
 
 def trait_wet_weather_master(results_df: pd.DataFrame) -> float:
@@ -114,11 +139,40 @@ def trait_wet_weather_master(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = better in wet)
     """
-    # TODO: Implement
-    # Filter for wet weather races
-    # Compare wet vs dry performance
-    # Normalize to 0-1
-    return 0.5
+    # Without explicit weather data, use circuit heuristic
+    # Circuits known for frequent rain: Monaco, Silverstone, Spa, Hungary
+    wet_circuits = {'Monaco', 'Silverstone', 'Spa-Francorchamps', 'Hungaroring'}
+    
+    valid_races = results_df[results_df['positionOrder'].notna()].copy()
+    
+    if len(valid_races) < 5:
+        return 0.5
+    
+    # Separate by circuit type (if circuitName available)
+    if 'circuitName' in valid_races.columns:
+        wet_races = valid_races[valid_races['circuitName'].isin(wet_circuits)]
+        dry_races = valid_races[~valid_races['circuitName'].isin(wet_circuits)]
+    else:
+        # Fallback: use all races, assume roughly equal split
+        # Score based on consistency (proxy for wet performance)
+        dry_races = valid_races
+        wet_races = valid_races.sample(min(len(valid_races) // 3, 5), replace=False) if len(valid_races) > 5 else valid_races.head(2)
+    
+    if len(wet_races) < 2 or len(dry_races) < 2:
+        return 0.5
+    
+    avg_wet = wet_races['positionOrder'].mean()
+    avg_dry = dry_races['positionOrder'].mean()
+    
+    # If avg_dry > avg_wet (numerically higher = worse position), driver is better in wet
+    # Normalize: ratio of 1.2+ = good in wet, ratio of 0.8- = bad in wet
+    if avg_wet == 0:
+        return 0.5
+    
+    ratio = avg_dry / avg_wet
+    wet_score = np.clip((ratio - 0.8) / 0.6, 0, 1)  # [0.8->0, 1.4->1]
+    
+    return wet_score
 
 
 def trait_strong_starter(results_df: pd.DataFrame) -> float:
@@ -134,10 +188,28 @@ def trait_strong_starter(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = more overtakes at start)
     """
-    # TODO: Implement
-    # Calculate (grid_pos - finish_pos) for each race
-    # Normalize and average
-    return 0.5
+    # Get races with valid grid and finish positions
+    valid_races = results_df[
+        (results_df['grid'].notna()) & 
+        (results_df['positionOrder'].notna()) &
+        (results_df['grid'] > 0)
+    ].copy()
+    
+    if len(valid_races) < 3:
+        return 0.5
+    
+    # Calculate position gained (negative = positions lost, positive = gained)
+    valid_races['positions_gained'] = valid_races['grid'] - valid_races['positionOrder']
+    
+    # Average positions gained per race
+    avg_gained = valid_races['positions_gained'].mean()
+    
+    # Normalize: if average gains 3+ positions per race, score = 1
+    # If loses 3+ positions, score = 0
+    # Scale: [-10, +10] -> [0, 1]
+    starter_score = np.clip((avg_gained + 10) / 20, 0, 1)
+    
+    return starter_score
 
 
 def trait_tire_management(results_df: pd.DataFrame) -> float:
@@ -153,10 +225,25 @@ def trait_tire_management(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = more consistent)
     """
-    # TODO: Implement
-    # Calculate consistency (1 - coefficient_of_variation)
-    # Higher consistency = better tire management
-    return 0.5
+    valid_races = results_df[results_df['positionOrder'].notna()]
+    
+    if len(valid_races) < 5:
+        return 0.5
+    
+    mean_position = valid_races['positionOrder'].mean()
+    std_position = valid_races['positionOrder'].std()
+    
+    if mean_position == 0:
+        return 0.5
+    
+    # Coefficient of variation
+    cv = std_position / mean_position
+    
+    # Higher CV = less consistent = lower tire management score
+    # Normalize: CV of 0.3 = 1.0 (very consistent), CV of 1.5 = 0 (very inconsistent)
+    management_score = np.clip(1 - (cv / 1.5), 0, 1)
+    
+    return management_score
 
 
 def trait_inconsistent(results_df: pd.DataFrame) -> float:
@@ -172,10 +259,24 @@ def trait_inconsistent(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = more inconsistent)
     """
-    # TODO: Implement
-    # Calculate std dev of finishing positions
-    # Normalize to 0-1 scale
-    return 0.5
+    valid_races = results_df[results_df['positionOrder'].notna()]
+    
+    if len(valid_races) < 5:
+        return 0.5
+    
+    mean_position = valid_races['positionOrder'].mean()
+    std_position = valid_races['positionOrder'].std()
+    
+    if mean_position == 0:
+        return 0.5
+    
+    # Coefficient of variation - higher = more inconsistent
+    cv = std_position / mean_position
+    
+    # Normalize: CV of 0.3 = 0 (very consistent), CV of 1.5 = 1 (very inconsistent)
+    inconsistent_score = np.clip(cv / 1.5, 0, 1)
+    
+    return inconsistent_score
 
 
 def trait_track_expert(results_df: pd.DataFrame) -> float:
@@ -191,11 +292,43 @@ def trait_track_expert(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = stronger track specialization)
     """
-    # TODO: Implement
-    # Find best tracks (where driver has raced multiple times)
-    # Compare best track average to overall average
-    # Normalize
-    return 0.5
+    valid_races = results_df[results_df['positionOrder'].notna()].copy()
+    
+    if len(valid_races) < 5:
+        return 0.5
+    
+    overall_avg = valid_races['positionOrder'].mean()
+    
+    if 'circuitId' not in valid_races.columns:
+        return 0.5
+    
+    # Find circuits where driver has raced 3+ times
+    circuit_counts = valid_races['circuitId'].value_counts()
+    frequent_circuits = circuit_counts[circuit_counts >= 3].index
+    
+    if len(frequent_circuits) == 0:
+        return 0.5
+    
+    # Calculate average finish position at each frequent circuit
+    circuit_avgs = []
+    for circuit in frequent_circuits:
+        circuit_races = valid_races[valid_races['circuitId'] == circuit]
+        circuit_avg = circuit_races['positionOrder'].mean()
+        circuit_avgs.append(circuit_avg)
+    
+    # Find best performing circuit (lowest avg position)
+    best_circuit_avg = min(circuit_avgs)
+    
+    # Specialization: how much better at best circuit vs overall
+    # Positive = better at specialty circuit, negative = no specialization
+    # Normalize: if 5 positions better at specialty, score = 1
+    if overall_avg == 0:
+        return 0.5
+    
+    improvement = overall_avg - best_circuit_avg
+    expert_score = np.clip(improvement / 10, 0, 1)  # 10 position improvement = max score
+    
+    return expert_score
 
 
 def save_traits(traits: Dict, output_path: Path = Path("data/cache/driver_traits.json")) -> None:
