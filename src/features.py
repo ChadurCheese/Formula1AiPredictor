@@ -279,9 +279,16 @@ def build_feature_matrix(
     
     X_features = X[feature_cols].copy()
     
-    # Handle NaN values - fill with column mean
+    # Convert to numeric, coercing errors to NaN
     for col in X_features.columns:
-        X_features[col] = X_features[col].fillna(X_features[col].mean())
+        X_features[col] = pd.to_numeric(X_features[col], errors='coerce')
+    
+    # Handle NaN values - fill with column mean (only for numeric columns)
+    for col in X_features.columns:
+        if X_features[col].dtype in ['float64', 'int64']:
+            col_mean = X_features[col].mean()
+            if pd.notna(col_mean):
+                X_features[col] = X_features[col].fillna(col_mean)
     
     # Remove any remaining NaN
     X_features = X_features.dropna()
