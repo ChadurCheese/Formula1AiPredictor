@@ -1,5 +1,7 @@
 # Formula 1 AI Race Predictor
 
+[![Tests](https://github.com/ChadurCheese/Formula1AiPredictor/actions/workflows/tests.yml/badge.svg)](https://github.com/ChadurCheese/Formula1AiPredictor/actions/workflows/tests.yml)
+
 An intelligent ML system that predicts F1 race results with explainable driver traits, similar to player characteristics in Football Manager games.
 
 ## 🎯 Features
@@ -25,38 +27,42 @@ docs/             # Architecture and methodology docs
 
 ## 🚀 Quick Start
 
-### 1. Setup Environment
+The data (`data/raw/*.csv`) and a trained model (`models/model.pkl`) are already
+committed to this repo, so a fresh clone works out of the box:
+
+```bash
+git clone https://github.com/ChadurCheese/Formula1AiPredictor.git
+cd Formula1AiPredictor
+python run.py
+```
+
+`run.py` installs dependencies (skipped if already satisfied), trains the
+model if `models/model.pkl` is missing, and launches the Streamlit app in
+your browser. Useful flags:
+
+```bash
+python run.py --retrain        # retrain the model even if one already exists
+python run.py --skip-install   # skip the dependency check/install
+```
+
+### Manual setup (if you'd rather do it step by step)
+
 ```bash
 python -m venv venv
 venv\Scripts\activate  # Windows
 # source venv/bin/activate  # Mac/Linux
 
 pip install -r requirements.txt
+python scripts/train_model.py   # creates models/model.pkl, data/cache/driver_traits.json
+streamlit run app/app.py        # opens at http://localhost:8501
 ```
 
-### 2. Download Data
-Download from [Kaggle F1 Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2024):
-- races.csv
-- results.csv
-- drivers.csv
-- constructors.csv
-- qualifying.csv
-- pit_stops.csv
-- status.csv
+### Refreshing the data
 
-Save all CSVs to `data/raw/`
-
-### 3. Train Model
-```bash
-python scripts/train_model.py
-# Creates: models/model.pkl, data/cache/driver_traits.json
-```
-
-### 4. Run Web App
-```bash
-streamlit run app/app.py
-# Opens at http://localhost:8501
-```
+The committed CSVs are a snapshot. To pull a newer version, download from the
+[Kaggle F1 Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2024)
+(races, results, drivers, constructors, qualifying, pit_stops, status, circuits),
+replace the files in `data/raw/`, then run `python run.py --retrain`.
 
 ## 📊 Tech Stack
 
@@ -69,10 +75,17 @@ streamlit run app/app.py
 ## 📈 Model Performance
 
 - **Target**: Predict race finishing positions
-- **Accuracy Goal**: ±2 positions for 65%+ of predictions
+- **Current accuracy (2024 test set)**: ~50% of predictions within 2 positions, MAE ~3.0 positions
+  (honest, leakage-free numbers - see `models/model_config.json` for the exact current figures)
 - **Training Data**: 2020-2022
 - **Validation**: 2023
 - **Test Set**: 2024
+
+The original aspirational goal was 65%+ within 2 positions. Reaching that
+would likely need data this project doesn't have access to (weather, tire
+compound choices, safety car history) - see
+[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) and
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for details.
 
 ## 🎮 Driver Traits
 
@@ -91,7 +104,6 @@ Each driver is assigned 6 dynamically-calculated traits:
 - [Traits Methodology](docs/TRAITS_METHODOLOGY.md) - How traits are calculated
 - [Data Sources](docs/DATA_SOURCES.md) - Data pipeline info
 - [Implementation Setup](IMPLEMENTATION_SETUP.md) - Detailed setup guide
-- [Implementation Plan](IMPLEMENTATION_PLAN.md) - 7-day development plan
 
 ## 🔌 Future Extensions
 

@@ -90,6 +90,7 @@ def _get_pipeline() -> Dict:
         'y': y,
         'drivers_df': raw_data['drivers'],
         'races_df': raw_data['races'],
+        'constructors_df': raw_data['constructors'],
         'feature_names': list(X.columns),
         'shap_explainer': shap.TreeExplainer(model),
     }
@@ -154,6 +155,7 @@ def predict_race(race_id: int) -> List[Dict]:
     metadata = pipeline['metadata']
     y = pipeline['y']
     drivers_df = pipeline['drivers_df']
+    constructors_df = pipeline['constructors_df']
     feature_names = pipeline['feature_names']
     shap_explainer = pipeline['shap_explainer']
 
@@ -165,6 +167,7 @@ def predict_race(race_id: int) -> List[Dict]:
     predictions = []
     for idx in race_rows.index:
         driver_id = int(metadata.loc[idx, 'driverId'])
+        constructor_id = int(metadata.loc[idx, 'constructorId'])
         X_row = X.loc[idx]
 
         explanation = explain_prediction(
@@ -177,11 +180,18 @@ def predict_race(race_id: int) -> List[Dict]:
             if not driver_row.empty else f"Driver {driver_id}"
         )
 
+        constructor_row = constructors_df[constructors_df['constructorId'] == constructor_id]
+        constructor_name = (
+            constructor_row.iloc[0]['name'] if not constructor_row.empty else "Unknown"
+        )
+
         raw_position = explanation['predicted_position']
         predictions.append({
             'driver_id': driver_id,
             'driver_name': driver_name,
+            'constructor_name': constructor_name,
             'predicted_position': raw_position,
+            'starting_position': int(X_row['grid']),
             'confidence': explanation['confidence'],
             'trait_influences': explanation['trait_influences'],
             'explanation': explanation['summary'],

@@ -16,13 +16,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.traits import load_traits
 from src.data_pipeline import load_raw_data, prepare_data
-from config import TRAIT_NAMES
-from components.trait_visualizer import render_trait_radar, render_trait_bars
+from config import TRAIT_NAMES, TRAIT_COLORS, get_accuracy_caption
+from components.trait_visualizer import render_trait_radar, render_trait_bars, render_multi_driver_radar
 
 st.set_page_config(page_title="Driver Traits - F1 Race Predictor", page_icon="👤", layout="wide")
 
 st.title("👤 Driver Traits")
 st.caption("Traits reflect each driver's most recent seasons of form, not their entire career.")
+st.caption(get_accuracy_caption())
 
 
 @st.cache_data
@@ -60,7 +61,7 @@ with col1:
 
 with col2:
     st.subheader("Trait Breakdown")
-    render_trait_bars(driver_traits, TRAIT_NAMES)
+    render_trait_bars(driver_traits, TRAIT_NAMES, TRAIT_COLORS)
 
 st.markdown("---")
 st.subheader("Compare Drivers")
@@ -72,6 +73,9 @@ compare_names = st.multiselect(
 )
 
 if compare_names:
+    drivers_traits = {name: traits[name_to_id[name]] for name in compare_names}
+    render_multi_driver_radar(drivers_traits, TRAIT_NAMES)
+
     rows = []
     for name in compare_names:
         d_id = name_to_id[name]

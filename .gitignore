@@ -1,1 +1,19 @@
-.github/
+# Virtual environment
+venv/
+env/
+
+# Cache/temp
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.DS_Store

@@ -1,13 +1,17 @@
 # Core Data Science
-pandas==2.1.0
-numpy==1.24.3
+pandas==2.0.3
+numpy==1.26.4
 scikit-learn==1.3.0
 
 # Model Training
-xgboost==2.0.0
+xgboost==1.7.6
 
 # Explainability
-shap==0.42.1
+# NOTE: shap>=0.5x pulls in numpy>=2, which conflicts with streamlit 1.28's
+# numpy<2 requirement. 0.44.1 is the newest version confirmed compatible
+# with the numpy/streamlit pins below - don't bump this without also
+# re-checking streamlit's numpy constraint.
+shap==0.44.1
 
 # Frontend
 streamlit==1.28.0

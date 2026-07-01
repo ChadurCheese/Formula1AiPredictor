@@ -43,8 +43,21 @@ def load_season_predictions(race_ids: tuple):
     return pd.DataFrame(rows)
 
 
+@st.cache_data
+def load_leaderboard(years: tuple):
+    races_all = load_races()
+    subset = races_all[races_all["year"].isin(years)]
+    rows = []
+    for _, race in subset.iterrows():
+        race_id = int(race["raceId"])
+        for p in predict_race(race_id):
+            rows.append({**p, "race_id": race_id, "year": int(race["year"])})
+    return pd.DataFrame(rows)
+
+
 config = load_model_metrics()
 perf = config["performance"]["test"]
+races = load_races()
 
 st.subheader("Overall Model Performance (Test Set)")
 st.caption(
@@ -60,16 +73,47 @@ col3.metric("Within 2 Positions", f"{perf['within_2_positions']:.1f}%")
 col4.metric("Within 3 Positions", f"{perf['within_3_positions']:.1f}%")
 
 st.markdown("---")
+st.subheader("Accuracy Across Seasons")
+st.caption(
+    f"{config['training_data']['train_set']} was used to **train** the model, so accuracy there is "
+    f"expected to look better than real-world performance. {config['training_data']['val_set']} "
+    f"(validation) and {config['training_data']['test_set']} (test) are the honest, held-out numbers."
+)
+
+leaderboard_years = tuple(sorted(y for y in races["year"].unique() if y >= 2020))
+with st.spinner("Computing accuracy across seasons..."):
+    leaderboard_df = load_leaderboard(leaderboard_years)
+
+leaderboard_df["abs_error"] = (leaderboard_df["predicted_position"] - leaderboard_df["actual_position"]).abs()
+season_summary = (
+    leaderboard_df.groupby("year")
+    .agg(MAE=("abs_error", "mean"), **{"Within 2 Positions (%)": ("abs_error", lambda s: (s <= 2).mean() * 100)})
+    .reset_index()
+)
+
+lb_col1, lb_col2 = st.columns(2)
+with lb_col1:
+    st.markdown("**MAE by season**")
+    st.bar_chart(season_summary.set_index("year")["MAE"])
+with lb_col2:
+    st.markdown("**Within 2 Positions (%) by season**")
+    st.bar_chart(season_summary.set_index("year")["Within 2 Positions (%)"])
+
+st.markdown("---")
 st.subheader("Season Browser")
 
-races = load_races()
 years = sorted(races["year"].unique(), reverse=True)
 selected_year = st.selectbox("Season", years)
 
 season_races = races[races["year"] == selected_year].sort_values("round")
 
-with st.spinner(f"Loading predictions for {selected_year}..."):
-    df = load_season_predictions(tuple(season_races["raceId"].tolist()))
+if selected_year in leaderboard_years:
+    # Already computed above for the cross-season leaderboard - avoid
+    # redoing the (relatively expensive) prediction pass for this season.
+    df = leaderboard_df[leaderboard_df["year"] == selected_year].copy()
+else:
+    with st.spinner(f"Loading predictions for {selected_year}..."):
+        df = load_season_predictions(tuple(season_races["raceId"].tolist()))
 
 if df.empty or df["actual_position"].isna().all():
     st.info("No actual results available yet for this season.")

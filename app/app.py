@@ -5,8 +5,14 @@ Multi-page web UI for F1 prediction system.
 Entry point: streamlit run app.py
 """
 
+import sys
+from pathlib import Path
+
 import streamlit as st
 import logging
+
+sys.path.insert(0, str(Path(__file__).parent))
+from config import get_accuracy_caption
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +32,7 @@ def main():
     """Main app entry point. Use the sidebar to navigate to other pages."""
 
     st.title("🏎️ Formula 1 Race Predictor")
+    st.caption(get_accuracy_caption())
 
     st.markdown("""
     Predict F1 race results with explainable driver traits.
@@ -69,11 +76,38 @@ def show_home():
         """)
     
     st.markdown("---")
-    
+
     st.markdown("### 🚀 Quick Start")
-    st.write("1. Go to **Predictions** to see race forecasts")
-    st.write("2. Check **Driver Traits** for player profiles")
-    st.write("3. Review **Historical Analysis** for model performance")
+    render_page_links()
+
+
+def render_page_links() -> None:
+    """
+    Direct links into the other pages. Uses plain HTML anchors instead of
+    st.page_link since that API requires Streamlit >= 1.31 (this project
+    pins 1.28 to avoid a numpy/shap version conflict - see docs/DATA_SOURCES.md).
+    """
+    links = [
+        ("/predictions", "🎯", "Predictions", "See race forecasts"),
+        ("/driver_traits", "👤", "Driver Traits", "Browse player-style profiles"),
+        ("/historical_analysis", "📊", "Historical Analysis", "Review model performance"),
+    ]
+    cols = st.columns(len(links))
+    for col, (href, icon, label, description) in zip(cols, links):
+        with col:
+            st.markdown(
+                f"""
+                <a href="{href}" target="_self" style="text-decoration: none;">
+                    <div style="border: 1px solid rgba(128,128,128,0.3); border-radius: 8px;
+                                padding: 16px; text-align: center;">
+                        <div style="font-size: 1.8rem;">{icon}</div>
+                        <div style="font-weight: 600; margin-top: 4px;">{label}</div>
+                        <div style="font-size: 0.85rem; opacity: 0.7;">{description}</div>
+                    </div>
+                </a>
+                """,
+                unsafe_allow_html=True,
+            )
 
 
 if __name__ == "__main__":

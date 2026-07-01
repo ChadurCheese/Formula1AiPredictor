@@ -17,10 +17,12 @@ from src.predict import get_available_races, predict_race
 from components.comparison_table import render_comparison_table, render_accuracy_metrics
 from components.trait_visualizer import render_trait_influence_chart
 from components.prediction_card import render_podium_cards
+from config import TRAIT_COLORS, CONSTRUCTOR_COLORS, DEFAULT_CONSTRUCTOR_COLOR, get_accuracy_caption
 
 st.set_page_config(page_title="Predictions - F1 Race Predictor", page_icon="🎯", layout="wide")
 
 st.title("🎯 Race Predictions")
+st.caption(get_accuracy_caption())
 
 
 @st.cache_data
@@ -51,7 +53,7 @@ predictions = load_predictions(race_id)
 if not predictions:
     st.warning("No prediction data available for this race.")
 else:
-    render_podium_cards(predictions)
+    render_podium_cards(predictions, CONSTRUCTOR_COLORS, DEFAULT_CONSTRUCTOR_COLOR)
 
     st.markdown("---")
     comparison_df = render_comparison_table(predictions)
@@ -65,4 +67,4 @@ else:
     detail = next(p for p in predictions if p['driver_name'] == selected_driver)
 
     st.write(f"**{detail['explanation']}**")
-    render_trait_influence_chart(detail['trait_influences'])
+    render_trait_influence_chart(detail['trait_influences'], TRAIT_COLORS)
