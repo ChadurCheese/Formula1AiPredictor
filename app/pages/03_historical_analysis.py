@@ -13,8 +13,10 @@ import streamlit as st
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.predict import get_available_races, predict_race
+from components.comparison_table import render_comparison_table, render_accuracy_metrics
 
 st.set_page_config(page_title="Historical Analysis - F1 Race Predictor", page_icon="📊", layout="wide")
 
@@ -74,12 +76,11 @@ if df.empty or df["actual_position"].isna().all():
 else:
     df["abs_error"] = (df["predicted_position"] - df["actual_position"]).abs()
 
-    season_mae = df["abs_error"].mean()
-    season_within2 = (df["abs_error"] <= 2).mean() * 100
-
-    c1, c2 = st.columns(2)
-    c1.metric(f"{selected_year} MAE", f"{season_mae:.2f} positions")
-    c2.metric(f"{selected_year} Within 2 Positions", f"{season_within2:.0f}%")
+    render_accuracy_metrics(
+        df.rename(columns={"abs_error": "Error"}),
+        mae_label=f"{selected_year} MAE",
+        within2_label=f"{selected_year} Within 2 Positions",
+    )
 
     round_to_name = season_races.set_index("raceId")["name"]
     round_to_round = season_races.set_index("raceId")["round"]
@@ -100,13 +101,9 @@ else:
     selected_label = st.selectbox("Select a race", race_labels)
     selected_race = season_races.iloc[race_labels.index(selected_label)]
 
-    race_detail = df[df["race_id"] == selected_race["raceId"]].sort_values("predicted_position")
-    display_df = race_detail[["driver_name", "predicted_position", "actual_position", "abs_error"]].rename(
-        columns={
-            "driver_name": "Driver",
-            "predicted_position": "Predicted",
-            "actual_position": "Actual",
-            "abs_error": "Error",
-        }
+    race_predictions = (
+        df[df["race_id"] == selected_race["raceId"]]
+        .sort_values("predicted_position")
+        .to_dict("records")
     )
-    st.dataframe(display_df, use_container_width=True, hide_index=True)
+    render_comparison_table(race_predictions)

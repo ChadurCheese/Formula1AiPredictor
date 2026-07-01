@@ -9,11 +9,14 @@ import sys
 from pathlib import Path
 
 import streamlit as st
-import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.predict import get_available_races, predict_race
+from components.comparison_table import render_comparison_table, render_accuracy_metrics
+from components.trait_visualizer import render_trait_influence_chart
+from components.prediction_card import render_podium_cards
 
 st.set_page_config(page_title="Predictions - F1 Race Predictor", page_icon="🎯", layout="wide")
 
@@ -48,29 +51,11 @@ predictions = load_predictions(race_id)
 if not predictions:
     st.warning("No prediction data available for this race.")
 else:
-    has_actuals = all(p['actual_position'] is not None for p in predictions)
+    render_podium_cards(predictions)
 
-    rows = []
-    for rank, p in enumerate(predictions, start=1):
-        row = {
-            "Predicted Rank": rank,
-            "Driver": p['driver_name'],
-            "Predicted Position": round(p['predicted_position'], 1),
-            "Confidence": f"{p['confidence']:.0%}",
-        }
-        if has_actuals:
-            row["Actual Position"] = int(p['actual_position'])
-            row["Error"] = round(abs(p['predicted_position'] - p['actual_position']), 1)
-        rows.append(row)
-
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-
-    if has_actuals:
-        mae = sum(abs(p['predicted_position'] - p['actual_position']) for p in predictions) / len(predictions)
-        within_2 = sum(1 for p in predictions if abs(p['predicted_position'] - p['actual_position']) <= 2) / len(predictions)
-        col1, col2 = st.columns(2)
-        col1.metric("Mean Absolute Error", f"{mae:.2f} positions")
-        col2.metric("Within 2 Positions", f"{within_2:.0%}")
+    st.markdown("---")
+    comparison_df = render_comparison_table(predictions)
+    render_accuracy_metrics(comparison_df)
 
     st.markdown("---")
     st.subheader("Driver Explanations")
@@ -80,7 +65,4 @@ else:
     detail = next(p for p in predictions if p['driver_name'] == selected_driver)
 
     st.write(f"**{detail['explanation']}**")
-
-    trait_df = pd.DataFrame(detail['trait_influences'])
-    if not trait_df.empty:
-        st.bar_chart(trait_df.set_index('trait')['impact'])
+    render_trait_influence_chart(detail['trait_influences'])

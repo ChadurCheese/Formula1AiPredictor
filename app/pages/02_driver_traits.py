@@ -10,7 +10,6 @@ from pathlib import Path
 
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -18,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.traits import load_traits
 from src.data_pipeline import load_raw_data, prepare_data
 from config import TRAIT_NAMES
+from components.trait_visualizer import render_trait_radar, render_trait_bars
 
 st.set_page_config(page_title="Driver Traits - F1 Race Predictor", page_icon="👤", layout="wide")
 
@@ -56,29 +56,11 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader(selected_name)
-
-    categories = [TRAIT_NAMES.get(t, t) for t in driver_traits.keys()]
-    values = list(driver_traits.values())
-
-    fig = go.Figure()
-    fig.add_trace(go.Scatterpolar(
-        r=values + [values[0]],
-        theta=categories + [categories[0]],
-        fill='toself',
-        name=selected_name,
-    ))
-    fig.update_layout(
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
-        showlegend=False,
-        margin=dict(l=40, r=40, t=20, b=20),
-    )
-    st.plotly_chart(fig, use_container_width=True)
+    render_trait_radar(selected_name, driver_traits, TRAIT_NAMES)
 
 with col2:
     st.subheader("Trait Breakdown")
-    for trait, score in driver_traits.items():
-        st.write(TRAIT_NAMES.get(trait, trait))
-        st.progress(score, text=f"{score:.2f}")
+    render_trait_bars(driver_traits, TRAIT_NAMES)
 
 st.markdown("---")
 st.subheader("Compare Drivers")
