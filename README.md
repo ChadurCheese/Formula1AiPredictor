@@ -104,6 +104,7 @@ Each driver is assigned 6 dynamically-calculated traits:
 - [Traits Methodology](docs/TRAITS_METHODOLOGY.md) - How traits are calculated
 - [Data Sources](docs/DATA_SOURCES.md) - Data pipeline info
 - [Implementation Setup](IMPLEMENTATION_SETUP.md) - Detailed setup guide
+- [Future Improvements](docs/FUTURE_IMPROVEMENTS.md) - Concrete next steps and known gaps
 
 ## 🔌 Future Extensions
 
