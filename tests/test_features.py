@@ -15,6 +15,8 @@ from src.features import (
     engineer_driver_features,
     engineer_constructor_features,
     engineer_track_features,
+    engineer_pitstop_features,
+    engineer_circuit_overtaking_features,
     build_feature_matrix,
 )
 
@@ -65,19 +67,35 @@ class TestLapTimeToSeconds:
 
 
 class TestQualifyingFeatures:
-    def test_pole_sitter_has_zero_gap(self):
-        qualifying_df = pd.DataFrame([
-            [1, 100, 1, 1, "1:25.000", None, None],
-            [2, 100, 2, 2, "1:26.500", None, None],
-        ], columns=["qualifyId", "raceId", "driverId", "position", "q1", "q2", "q3"])
+    def _qualifying_df(self):
+        return pd.DataFrame([
+            # qualifyId, raceId, driverId, constructorId, position, q1, q2, q3
+            [1, 100, 1, 10, 1, "1:25.000", None, None],
+            [2, 100, 2, 10, 2, "1:26.500", None, None],
+            [3, 100, 3, 20, 3, "1:27.000", None, None],
+        ], columns=["qualifyId", "raceId", "driverId", "constructorId", "position", "q1", "q2", "q3"])
 
-        result = engineer_qualifying_features(qualifying_df)
+    def test_pole_sitter_has_zero_gap(self):
+        result = engineer_qualifying_features(self._qualifying_df())
 
         pole = result[result["driverId"] == 1].iloc[0]
         other = result[result["driverId"] == 2].iloc[0]
         assert pole["qual_gap_seconds"] == pytest.approx(0.0)
         assert other["qual_gap_seconds"] == pytest.approx(1.5)
         assert pole["qual_position"] == 1
+
+    def test_teammate_gap_reflects_same_constructor_only(self):
+        result = engineer_qualifying_features(self._qualifying_df())
+
+        # Driver 1 (10) is 1.5s faster than teammate driver 2 (10)
+        driver1 = result[result["driverId"] == 1].iloc[0]
+        driver2 = result[result["driverId"] == 2].iloc[0]
+        assert driver1["teammate_qual_gap_seconds"] == pytest.approx(-1.5)
+        assert driver2["teammate_qual_gap_seconds"] == pytest.approx(1.5)
+
+        # Driver 3 has no teammate in this race - gap is NaN
+        driver3 = result[result["driverId"] == 3].iloc[0]
+        assert pd.isna(driver3["teammate_qual_gap_seconds"])
 
 
 class TestDriverFeatures:
@@ -144,6 +162,49 @@ class TestTrackFeatures:
 
         assert revisit["track_familiarity"] == 1
         assert revisit["track_avg_finish"] == pytest.approx(5.0)  # from race 100
+
+
+class TestPitstopFeatures:
+    def test_uses_only_prior_races(self, results_df):
+        pit_stops_df = pd.DataFrame([
+            # raceId, driverId, stop, lap, time, duration, milliseconds
+            [100, 1, 1, 20, "17:00:00", "3.000", 3000],
+            [100, 2, 1, 20, "17:00:00", "5.000", 5000],
+            [101, 1, 1, 20, "17:00:00", "9.000", 9000],
+            [101, 2, 1, 20, "17:00:00", "9.000", 9000],
+        ], columns=["raceId", "driverId", "stop", "lap", "time", "duration", "milliseconds"])
+
+        features = engineer_pitstop_features(pit_stops_df, results_df)
+
+        # Constructor 10's race 101 pit-speed feature should reflect only
+        # race 100's stops (avg of 3.0 and 5.0 = 4.0), not race 101's own
+        row = features[(features["constructorId"] == 10) & (features["raceId"] == 101)].iloc[0]
+        assert row["avg_pit_stop_duration"] == pytest.approx(4.0)
+
+    def test_first_race_has_no_history(self, results_df):
+        pit_stops_df = pd.DataFrame([
+            [100, 1, 1, 20, "17:00:00", "3.000", 3000],
+        ], columns=["raceId", "driverId", "stop", "lap", "time", "duration", "milliseconds"])
+
+        features = engineer_pitstop_features(pit_stops_df, results_df)
+        first_race = features[(features["constructorId"] == 10) & (features["raceId"] == 100)].iloc[0]
+        assert pd.isna(first_race["avg_pit_stop_duration"])
+
+
+class TestCircuitOvertakingFeatures:
+    def test_uses_only_prior_races_at_circuit(self, results_df):
+        features = engineer_circuit_overtaking_features(results_df)
+        # Circuit 1 hosts race 100 (round 1) and race 102 (round 3) - race
+        # 102's feature should reflect only race 100's grid/finish shuffle
+        race_102 = features[(features["circuitId"] == 1) & (features["raceId"] == 102)].iloc[0]
+
+        # Race 100 position changes: driver1 |5-5|=0, driver2 |8-8|=0, driver3 |3-3|=0 -> mean 0
+        assert race_102["circuit_avg_position_change"] == pytest.approx(0.0)
+
+    def test_first_race_at_circuit_has_no_history(self, results_df):
+        features = engineer_circuit_overtaking_features(results_df)
+        first = features[(features["circuitId"] == 1) & (features["raceId"] == 100)].iloc[0]
+        assert pd.isna(first["circuit_avg_position_change"])
 
 
 class TestBuildFeatureMatrix:

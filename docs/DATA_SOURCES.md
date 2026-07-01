@@ -13,7 +13,7 @@ loaded by `src/data_pipeline.py::load_raw_data()`.
 | `drivers.csv` | yes | Driver names, nationality |
 | `constructors.csv` | yes | Constructor (team) names, nationality |
 | `qualifying.csv` | yes | Qualifying position and Q1/Q2/Q3 lap times - the only pre-race-day signal used as a feature |
-| `pit_stops.csv` | loaded, unused | Not currently wired into any feature - candidate for pit-strategy features (Day 8 follow-up) |
+| `pit_stops.csv` | yes | Constructor's average pit stop duration from **prior races only** (proxy for pit crew speed) - the race's own stop count/duration would leak the outcome, so it's never used directly, only as historical team form |
 | `status.csv` | optional | Human-readable finish status (`Finished`, `Retired`, `Engine`, etc.), joined onto `results` as `race_status` |
 | `circuits.csv` | optional | Circuit name, location, country |
 

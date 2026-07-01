@@ -27,13 +27,13 @@ MODEL_CONFIG = {
     "model_type": "xgboost",
     "hyperparameters": {
         "max_depth": 3,
-        "learning_rate": 0.03,
+        "learning_rate": 0.02,
         "n_estimators": 200,
         "objective": "reg:squarederror",
         "random_state": 42,
         "subsample": 0.8,
         "colsample_bytree": 0.8,
-        "reg_lambda": 5,
+        "reg_lambda": 3,
     },
     "training_data": {
         "train_set": "2020-2022",
@@ -85,40 +85,76 @@ def train_model(
     return model
 
 
+def _rank_within_race(y_pred: np.ndarray, race_ids: pd.Series) -> np.ndarray:
+    """
+    Convert raw continuous predictions into within-race integer ranks (1..N).
+
+    Finishing position is inherently a permutation of 1..N within a race, so
+    scoring raw regression output directly against it undersells the model:
+    two close-but-not-identical predictions for different drivers are
+    perfectly fine, but the raw values don't have to *land* on the right
+    integers to reflect the correct order. Ranking within each race turns
+    "close" predictions into an exact discrete position whenever the
+    relative order is right.
+
+    Args:
+        y_pred: Raw model predictions, aligned with race_ids by position
+        race_ids: Race ID per prediction, same order as y_pred
+
+    Returns:
+        np.ndarray: Integer rank (1..N) of each prediction within its race
+    """
+    df = pd.DataFrame({"pred": y_pred, "race_id": race_ids.values})
+    df["rank"] = df.groupby("race_id")["pred"].rank(method="first")
+    return df["rank"].values
+
+
 def evaluate_model(
     model: xgb.XGBRegressor,
     X_test: pd.DataFrame,
-    y_test: pd.Series
+    y_test: pd.Series,
+    race_ids: pd.Series = None,
 ) -> Dict:
     """
     Evaluate model performance on test set.
-    
+
     Metrics:
         - MSE: Mean Squared Error
         - MAE: Mean Absolute Error (avg position error)
         - R2: Coefficient of determination
         - Within X positions: % predictions within 1, 2, 3 positions
-    
+
     Args:
         model: Trained model
         X_test: Test features
         y_test: Test targets
-    
+        race_ids: Optional race ID per test row (same index/order as X_test).
+            If provided, predictions are converted to within-race integer
+            ranks before computing "within X positions" accuracy - a fairer
+            metric since finishing position is an ordinal permutation, not
+            an independent continuous value. MSE/MAE/R2 are still computed
+            on the raw predictions.
+
     Returns:
         dict: Performance metrics
     """
     y_pred = model.predict(X_test)
-    
+
     mse = mean_squared_error(y_test, y_pred)
     mae = mean_absolute_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
-    
+
+    if race_ids is not None:
+        scored_pred = _rank_within_race(y_pred, race_ids)
+    else:
+        scored_pred = y_pred
+
     # Calculate "within X positions" accuracy
-    errors = np.abs(y_pred - y_test.values)
+    errors = np.abs(scored_pred - y_test.values)
     within_1 = (errors <= 1).sum() / len(errors) * 100
     within_2 = (errors <= 2).sum() / len(errors) * 100
     within_3 = (errors <= 3).sum() / len(errors) * 100
-    
+
     metrics = {
         "mse": float(mse),
         "mae": float(mae),
@@ -128,10 +164,10 @@ def evaluate_model(
         "within_3_positions": float(within_3),
         "test_samples": len(X_test),
     }
-    
+
     logger.info(f"Model Evaluation: MAE={mae:.2f}, R²={r2:.3f}")
     logger.info(f"Predictions within: 1 pos={within_1:.1f}%, 2 pos={within_2:.1f}%, 3 pos={within_3:.1f}%")
-    
+
     return metrics
 
 

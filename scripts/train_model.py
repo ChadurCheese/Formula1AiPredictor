@@ -23,6 +23,8 @@ from src.features import (
     engineer_weather_features,
     engineer_qualifying_features,
     engineer_season_form_features,
+    engineer_pitstop_features,
+    engineer_circuit_overtaking_features,
     build_feature_matrix,
     get_feature_names
 )
@@ -82,6 +84,12 @@ def main():
         season_features = engineer_season_form_features(prepared_data)
         logger.info(f"Season form features: {len(season_features)} entries")
 
+        pitstop_features = engineer_pitstop_features(raw_data['pit_stops'], prepared_data)
+        logger.info(f"Pit stop features: {len(pitstop_features)} entries")
+
+        circuit_features = engineer_circuit_overtaking_features(prepared_data)
+        logger.info(f"Circuit overtaking features: {len(circuit_features)} entries")
+
         # Step 5: Build feature matrix
         logger.info("\n[STEP 5/7] Building feature matrix...")
         X, metadata, y = build_feature_matrix(
@@ -91,6 +99,8 @@ def main():
             prepared_data,
             qualifying_features=qualifying_features,
             season_features=season_features,
+            pitstop_features=pitstop_features,
+            circuit_features=circuit_features,
         )
         logger.info(f"Feature matrix: {X.shape[0]} samples × {X.shape[1]} features")
         
@@ -122,10 +132,10 @@ def main():
         model = train_model(X_train, y_train, X_val, y_val)
         
         logger.info("Evaluating on validation set...")
-        val_metrics = evaluate_model(model, X_val, y_val)
-        
+        val_metrics = evaluate_model(model, X_val, y_val, race_ids=metadata.loc[X_val.index, 'raceId'])
+
         logger.info("Evaluating on test set...")
-        test_metrics = evaluate_model(model, X_test, y_test)
+        test_metrics = evaluate_model(model, X_test, y_test, race_ids=metadata.loc[X_test.index, 'raceId'])
         
         # Save model
         logger.info("Saving model...")

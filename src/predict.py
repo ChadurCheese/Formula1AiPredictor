@@ -24,6 +24,8 @@ from src.features import (
     engineer_track_features,
     engineer_qualifying_features,
     engineer_season_form_features,
+    engineer_pitstop_features,
+    engineer_circuit_overtaking_features,
     build_feature_matrix,
 )
 from src.model import load_model
@@ -66,6 +68,8 @@ def _get_pipeline() -> Dict:
     track_features = engineer_track_features(prepared, raw_data['races'])
     qualifying_features = engineer_qualifying_features(raw_data['qualifying'])
     season_features = engineer_season_form_features(prepared)
+    pitstop_features = engineer_pitstop_features(raw_data['pit_stops'], prepared)
+    circuit_features = engineer_circuit_overtaking_features(prepared)
 
     X, metadata, y = build_feature_matrix(
         driver_features,
@@ -74,6 +78,8 @@ def _get_pipeline() -> Dict:
         prepared,
         qualifying_features=qualifying_features,
         season_features=season_features,
+        pitstop_features=pitstop_features,
+        circuit_features=circuit_features,
     )
 
     _pipeline_cache = {
@@ -171,17 +177,29 @@ def predict_race(race_id: int) -> List[Dict]:
             if not driver_row.empty else f"Driver {driver_id}"
         )
 
+        raw_position = explanation['predicted_position']
         predictions.append({
             'driver_id': driver_id,
             'driver_name': driver_name,
-            'predicted_position': explanation['predicted_position'],
+            'predicted_position': raw_position,
             'confidence': explanation['confidence'],
             'trait_influences': explanation['trait_influences'],
             'explanation': explanation['summary'],
             'actual_position': float(y.loc[idx]) if idx in y.index else None,
         })
 
+    # Convert raw regression output into within-race integer ranks (1..N).
+    # Finishing position is a permutation, so this is both a fairer accuracy
+    # metric (see src.model._rank_within_race) and a cleaner display value
+    # ("P3" instead of "P3.3").
     predictions.sort(key=lambda p: p['predicted_position'])
+    for rank, prediction in enumerate(predictions, start=1):
+        raw_rounded = round(prediction['predicted_position'])
+        prediction['explanation'] = prediction['explanation'].replace(
+            f"Predicted P{raw_rounded}", f"Predicted P{rank}", 1
+        )
+        prediction['predicted_position'] = float(rank)
+
     return predictions
 
 

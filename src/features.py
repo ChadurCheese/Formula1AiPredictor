@@ -37,9 +37,15 @@ def engineer_qualifying_features(qualifying_df: pd.DataFrame) -> pd.DataFrame:
     Features:
         - qual_position: Official qualifying position
         - qual_gap_seconds: Best lap time gap to the pole-sitter's best lap
+        - teammate_qual_gap_seconds: Best lap time gap to same-race teammate
+          (positive = slower than teammate). This isolates driver skill /
+          car-side setup from overall car pace, since teammates share
+          equipment - a large positive gap suggests the driver is
+          underperforming their car that weekend.
 
     Args:
-        qualifying_df: Qualifying session results (qualifyId, raceId, driverId, q1/q2/q3)
+        qualifying_df: Qualifying session results (qualifyId, raceId, driverId,
+            constructorId, q1/q2/q3)
 
     Returns:
         pd.DataFrame: One row per (raceId, driverId)
@@ -54,11 +60,104 @@ def engineer_qualifying_features(qualifying_df: pd.DataFrame) -> pd.DataFrame:
     pole_time = df.groupby('raceId')['best_lap'].transform('min')
     df['qual_gap_seconds'] = df['best_lap'] - pole_time
 
-    qual_features = df[['raceId', 'driverId', 'position', 'qual_gap_seconds']].rename(
-        columns={'position': 'qual_position'}
-    )
+    team_group = df.groupby(['raceId', 'constructorId'])['best_lap']
+    team_sum = team_group.transform('sum')
+    team_count = team_group.transform('count')
+    teammate_avg = (team_sum - df['best_lap']) / (team_count - 1)
+    df['teammate_qual_gap_seconds'] = (df['best_lap'] - teammate_avg).where(team_count > 1)
+
+    qual_features = df[
+        ['raceId', 'driverId', 'position', 'qual_gap_seconds', 'teammate_qual_gap_seconds']
+    ].rename(columns={'position': 'qual_position'})
     logger.info(f"Engineered qualifying features for {len(qual_features)} race entries")
     return qual_features
+
+
+def engineer_pitstop_features(pit_stops_df: pd.DataFrame, results_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate pit-crew-speed features from prior races only.
+
+    A race's own pit stop count/duration is a live strategy decision made
+    during that race, so it would leak the outcome if used directly. Instead
+    this uses the constructor's *average* pit stop duration from prior races
+    as a proxy for pit crew quality/speed - a real, pre-existing team
+    characteristic that's fair to use as a prediction input.
+
+    Features:
+        - avg_pit_stop_duration: Constructor's average pit stop duration (seconds)
+          across prior races only
+
+    Args:
+        pit_stops_df: Raw pit stop records (raceId, driverId, duration, ...)
+        results_df: Results dataframe, used to attach constructorId and year/round
+
+    Returns:
+        pd.DataFrame: One row per (raceId, constructorId)
+    """
+    logger.info("Engineering pit stop features (prior-races-only)...")
+
+    stops = pit_stops_df.merge(
+        results_df[['raceId', 'driverId', 'constructorId', 'year', 'round']],
+        on=['raceId', 'driverId'],
+        how='inner',
+    )
+    stops['duration'] = pd.to_numeric(stops['duration'], errors='coerce')
+
+    race_level = (
+        stops.groupby(['constructorId', 'raceId', 'year', 'round'])
+        .agg(avg_duration=('duration', 'mean'))
+        .reset_index()
+        .sort_values(['constructorId', 'year', 'round'])
+    )
+    grp = race_level.groupby('constructorId')
+    race_level['avg_pit_stop_duration'] = grp['avg_duration'].transform(lambda s: s.shift().expanding().mean())
+
+    pitstop_features = race_level[['raceId', 'constructorId', 'avg_pit_stop_duration']]
+    logger.info(f"Engineered pit stop features for {len(pitstop_features)} race entries")
+    return pitstop_features
+
+
+def engineer_circuit_overtaking_features(results_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate how easy a circuit is to overtake on, using only prior races
+    held at that circuit (expanding window with shift(1)).
+
+    Some circuits (e.g. tight street circuits) are notoriously hard to pass
+    on, which caps how much a driver can realistically gain even from a
+    great race; others are much easier. This is a track-level characteristic
+    (not driver-specific), computed from how much the whole field's grid-to-finish
+    positions typically move at that circuit.
+
+    Features:
+        - circuit_avg_position_change: Average |grid - finish| across the
+          whole field in prior races at this circuit. Higher = more
+          overtaking/shuffling typically happens there.
+
+    Args:
+        results_df: Results dataframe with circuitId, grid, positionOrder
+
+    Returns:
+        pd.DataFrame: One row per (raceId, circuitId)
+    """
+    logger.info("Engineering circuit overtaking features (prior-races-only)...")
+
+    df = results_df.copy()
+    df['position_change_abs'] = (df['grid'] - df['positionOrder']).abs()
+
+    race_level = (
+        df.groupby(['circuitId', 'raceId', 'year', 'round'])
+        .agg(avg_position_change=('position_change_abs', 'mean'))
+        .reset_index()
+        .sort_values(['circuitId', 'year', 'round'])
+    )
+    grp = race_level.groupby('circuitId')
+    race_level['circuit_avg_position_change'] = grp['avg_position_change'].transform(
+        lambda s: s.shift().expanding().mean()
+    )
+
+    circuit_features = race_level[['raceId', 'circuitId', 'circuit_avg_position_change']]
+    logger.info(f"Engineered circuit overtaking features for {len(circuit_features)} race entries")
+    return circuit_features
 
 
 def engineer_season_form_features(results_df: pd.DataFrame) -> pd.DataFrame:
@@ -280,6 +379,8 @@ def build_feature_matrix(
     race_info: pd.DataFrame,
     qualifying_features: pd.DataFrame = None,
     season_features: pd.DataFrame = None,
+    pitstop_features: pd.DataFrame = None,
+    circuit_features: pd.DataFrame = None,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series]:
     """
     Combine all features into single feature matrix for model.
@@ -291,6 +392,8 @@ def build_feature_matrix(
         race_info: Race and result information with target
         qualifying_features: Optional qualifying-derived features
         season_features: Optional in-season championship momentum features
+        pitstop_features: Optional pit-crew-speed features
+        circuit_features: Optional circuit overtaking-difficulty features
 
     Returns:
         Tuple[X, metadata, y]: Feature matrix, metadata, target variable
@@ -337,12 +440,25 @@ def build_feature_matrix(
         # and assume an average gap
         X['qual_position'] = X['qual_position'].fillna(X['grid'])
         X['qual_gap_seconds'] = X['qual_gap_seconds'].fillna(X['qual_gap_seconds'].mean())
+        X['teammate_qual_gap_seconds'] = X['teammate_qual_gap_seconds'].fillna(0)
 
     # Merge in-season championship momentum (prior races of same season only)
     if season_features is not None:
         X = X.merge(season_features, on=['raceId', 'driverId'], how='left')
         X['season_points_so_far'] = X['season_points_so_far'].fillna(0)
         X['season_position_so_far'] = X['season_position_so_far'].fillna(X['season_position_so_far'].max())
+
+    # Merge pit-crew-speed features (constructor's prior-race pit stop average)
+    if pitstop_features is not None:
+        X = X.merge(pitstop_features, on=['raceId', 'constructorId'], how='left')
+        X['avg_pit_stop_duration'] = X['avg_pit_stop_duration'].fillna(X['avg_pit_stop_duration'].mean())
+
+    # Merge circuit overtaking-difficulty features (prior races at this circuit)
+    if circuit_features is not None:
+        X = X.merge(circuit_features, on=['raceId', 'circuitId'], how='left')
+        X['circuit_avg_position_change'] = X['circuit_avg_position_change'].fillna(
+            X['circuit_avg_position_change'].mean()
+        )
     
     # Extract target and metadata
     y = X['positionOrder'].astype(float)

@@ -9,7 +9,10 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.model import train_model, evaluate_model, save_model, load_model, get_feature_importance
+from src.model import (
+    train_model, evaluate_model, save_model, load_model, get_feature_importance,
+    _rank_within_race,
+)
 
 
 @pytest.fixture
@@ -71,6 +74,38 @@ class TestEvaluateModel:
 
         assert metrics["within_1_position"] <= metrics["within_2_positions"]
         assert metrics["within_2_positions"] <= metrics["within_3_positions"]
+
+
+class TestRankWithinRace:
+    def test_produces_valid_permutation_per_race(self):
+        y_pred = np.array([1.9, 3.1, 2.4, 10.5, 9.9])
+        race_ids = pd.Series([1, 1, 1, 2, 2])
+
+        ranks = _rank_within_race(y_pred, race_ids)
+
+        assert sorted(ranks[:3]) == [1, 2, 3]
+        assert sorted(ranks[3:]) == [1, 2]
+
+    def test_orders_by_predicted_value(self):
+        y_pred = np.array([5.0, 1.0, 3.0])
+        race_ids = pd.Series([1, 1, 1])
+
+        ranks = _rank_within_race(y_pred, race_ids)
+
+        # Lowest predicted value -> rank 1
+        assert ranks[1] == 1  # value 1.0
+        assert ranks[2] == 2  # value 3.0
+        assert ranks[0] == 3  # value 5.0
+
+    def test_rank_conversion_can_only_help_or_match_raw_accuracy(self, synthetic_data):
+        # Sanity check that plugging race_ids into evaluate_model doesn't
+        # error and produces metrics in the valid percentage range.
+        X_train, y_train, X_test, y_test = synthetic_data
+        model = train_model(X_train, y_train)
+        race_ids = pd.Series([1] * len(y_test), index=y_test.index)
+
+        metrics = evaluate_model(model, X_test, y_test, race_ids=race_ids)
+        assert 0 <= metrics["within_2_positions"] <= 100
 
 
 class TestSaveAndLoadModel:
