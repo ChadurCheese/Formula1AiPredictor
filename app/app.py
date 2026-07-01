@@ -23,37 +23,21 @@ st.set_page_config(
 
 
 def main():
-    """Main app entry point."""
-    
+    """Main app entry point. Use the sidebar to navigate to other pages."""
+
     st.title("🏎️ Formula 1 Race Predictor")
-    
+
     st.markdown("""
     Predict F1 race results with explainable driver traits.
-    
+
     **Features:**
     - Race position predictions based on historical data
     - Driver trait analysis (FM-game style)
     - Prediction explanations with trait breakdowns
     - Historical race analysis
     """)
-    
-    # Create sidebar navigation
-    st.sidebar.title("Navigation")
-    page = st.sidebar.radio(
-        "Select a page:",
-        ["🏠 Home", "🎯 Predictions", "👤 Driver Traits", "📊 Historical Analysis"],
-        label_visibility="collapsed"
-    )
-    
-    # TODO: Route to different pages based on selection
-    if page == "🏠 Home":
-        show_home()
-    elif page == "🎯 Predictions":
-        st.info("Predictions page - to be implemented")
-    elif page == "👤 Driver Traits":
-        st.info("Driver Traits page - to be implemented")
-    elif page == "📊 Historical Analysis":
-        st.info("Historical Analysis page - to be implemented")
+
+    show_home()
 
 
 def show_home():

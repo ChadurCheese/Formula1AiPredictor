@@ -11,16 +11,98 @@ Functions:
 """
 
 import pandas as pd
+import numpy as np
 from typing import Tuple
 import logging
 
 logger = logging.getLogger(__name__)
 
 
+def _lap_time_to_seconds(value) -> float:
+    """Convert a 'M:SS.mmm' lap time string to seconds, NaN if missing."""
+    if not isinstance(value, str) or ':' not in value:
+        return np.nan
+    minutes, rest = value.split(':', 1)
+    try:
+        return int(minutes) * 60 + float(rest)
+    except ValueError:
+        return np.nan
+
+
+def engineer_qualifying_features(qualifying_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate qualifying-derived features. Qualifying happens before the race,
+    so these are safe to use as prediction inputs (no leakage).
+
+    Features:
+        - qual_position: Official qualifying position
+        - qual_gap_seconds: Best lap time gap to the pole-sitter's best lap
+
+    Args:
+        qualifying_df: Qualifying session results (qualifyId, raceId, driverId, q1/q2/q3)
+
+    Returns:
+        pd.DataFrame: One row per (raceId, driverId)
+    """
+    logger.info("Engineering qualifying features...")
+
+    df = qualifying_df.copy()
+    for col in ['q1', 'q2', 'q3']:
+        df[col] = df[col].apply(_lap_time_to_seconds)
+    df['best_lap'] = df[['q1', 'q2', 'q3']].min(axis=1)
+
+    pole_time = df.groupby('raceId')['best_lap'].transform('min')
+    df['qual_gap_seconds'] = df['best_lap'] - pole_time
+
+    qual_features = df[['raceId', 'driverId', 'position', 'qual_gap_seconds']].rename(
+        columns={'position': 'qual_position'}
+    )
+    logger.info(f"Engineered qualifying features for {len(qual_features)} race entries")
+    return qual_features
+
+
+def engineer_season_form_features(results_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate in-season championship momentum using only prior races of the
+    same season (expanding window with shift(1)) - no leakage from future
+    rounds or other seasons.
+
+    Features:
+        - season_points_so_far: Cumulative points earned this season before this race
+        - season_position_so_far: Championship standing before this race (rank by points)
+
+    Args:
+        results_df: Results dataframe
+
+    Returns:
+        pd.DataFrame: One row per (raceId, driverId)
+    """
+    logger.info("Engineering season form features (prior-races-only)...")
+
+    df = results_df.sort_values(['driverId', 'year', 'round']).copy()
+    grp = df.groupby(['driverId', 'year'])
+    df['season_points_so_far'] = grp['points'].transform(lambda s: s.shift().cumsum().fillna(0))
+
+    df['season_position_so_far'] = (
+        df.groupby(['year', 'round'])['season_points_so_far']
+        .rank(ascending=False, method='min')
+    )
+
+    season_features = df[['raceId', 'driverId', 'season_points_so_far', 'season_position_so_far']]
+    logger.info(f"Engineered season form features for {len(season_features)} race entries")
+    return season_features
+
+
 def engineer_driver_features(results_df: pd.DataFrame) -> pd.DataFrame:
     """
     Calculate driver-based features from historical results.
-    
+
+    All stats are computed as an *expanding window over prior races only*
+    (via shift(1) before expanding/rolling), so a race's features never
+    include information from that race or any later race. This keeps the
+    features valid to use at prediction time and avoids leaking a driver's
+    future form into earlier predictions.
+
     Features:
         - avg_points_per_race
         - avg_finish_position
@@ -28,108 +110,95 @@ def engineer_driver_features(results_df: pd.DataFrame) -> pd.DataFrame:
         - consistency (std dev of finishes)
         - form (last 5 races average)
         - races_completed
-    
+
     Args:
         results_df: Results dataframe with driver race history
-    
+
     Returns:
-        pd.DataFrame: Driver features indexed by driver_id
+        pd.DataFrame: Driver features, one row per (raceId, driverId)
     """
-    logger.info("Engineering driver features...")
-    
-    driver_stats = []
-    
-    for driver_id in results_df['driverId'].unique():
-        driver_races = results_df[results_df['driverId'] == driver_id].sort_values('year')
-        
-        if len(driver_races) < 3:  # Skip drivers with very few races
-            continue
-        
-        # Basic stats
-        avg_points = driver_races['points'].mean()
-        avg_finish = driver_races['positionOrder'].mean()
-        dnf_rate = (driver_races['race_status'] == 'Retired').sum() / len(driver_races) if 'race_status' in driver_races.columns else 0
-        consistency = driver_races['positionOrder'].std()
-        races_completed = len(driver_races)
-        
-        # Form: last 5 races average
-        last_5 = driver_races.tail(5)
-        form_avg = last_5['positionOrder'].mean() if len(last_5) > 0 else avg_finish
-        
-        driver_stats.append({
-            'driverId': driver_id,
-            'avg_points_per_race': avg_points,
-            'avg_finish_position': avg_finish,
-            'dnf_rate': dnf_rate,
-            'consistency': consistency,
-            'form_last_5_races': form_avg,
-            'races_completed': races_completed,
-        })
-    
-    driver_features = pd.DataFrame(driver_stats).set_index('driverId')
-    logger.info(f"Engineered features for {len(driver_features)} drivers")
+    logger.info("Engineering driver features (prior-races-only)...")
+
+    df = results_df.sort_values(['driverId', 'year', 'round']).copy()
+    df['is_dnf'] = (df['race_status'] == 'Retired').astype(float) if 'race_status' in df.columns else 0.0
+
+    grp = df.groupby('driverId')
+    df['races_completed'] = grp.cumcount()
+    df['avg_points_per_race'] = grp['points'].transform(lambda s: s.shift().expanding().mean())
+    df['avg_finish_position'] = grp['positionOrder'].transform(lambda s: s.shift().expanding().mean())
+    df['consistency'] = grp['positionOrder'].transform(lambda s: s.shift().expanding().std())
+    df['dnf_rate'] = grp['is_dnf'].transform(lambda s: s.shift().expanding().mean())
+    df['form_last_5_races'] = grp['positionOrder'].transform(lambda s: s.shift().rolling(5, min_periods=1).mean())
+
+    driver_features = df[[
+        'raceId', 'driverId', 'avg_points_per_race', 'avg_finish_position',
+        'dnf_rate', 'consistency', 'form_last_5_races', 'races_completed',
+    ]]
+    logger.info(f"Engineered driver features for {len(driver_features)} race entries")
     return driver_features
 
 
 def engineer_constructor_features(results_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Calculate constructor/team-based features.
-    
+    Calculate constructor/team-based features using only prior races
+    (expanding window with shift(1)) to avoid leaking future team form.
+
     Features:
         - avg_constructor_position
         - constructor_points_per_race
         - team_consistency
-    
+
     Args:
         results_df: Results dataframe
-    
+
     Returns:
-        pd.DataFrame: Constructor features indexed by constructor_id
+        pd.DataFrame: Constructor features, one row per (raceId, constructorId)
     """
-    logger.info("Engineering constructor features...")
-    
-    constructor_stats = []
-    
-    for constructor_id in results_df['constructorId'].unique():
-        constructor_races = results_df[results_df['constructorId'] == constructor_id]
-        
-        if len(constructor_races) < 3:
-            continue
-        
-        avg_pos = constructor_races['positionOrder'].mean()
-        avg_points = constructor_races['points'].mean()
-        consistency = constructor_races['positionOrder'].std()
-        
-        constructor_stats.append({
-            'constructorId': constructor_id,
-            'avg_constructor_position': avg_pos,
-            'constructor_points_per_race': avg_points,
-            'team_consistency': consistency,
-        })
-    
-    constructor_features = pd.DataFrame(constructor_stats).set_index('constructorId')
-    logger.info(f"Engineered features for {len(constructor_features)} constructors")
+    logger.info("Engineering constructor features (prior-races-only)...")
+
+    # Each constructor fields two drivers per race, so first collapse to one
+    # row per (constructorId, raceId) - averaging both cars' results - before
+    # computing the expanding window. Otherwise the two teammate rows for the
+    # same race would merge many-to-many with the driver-level feature matrix.
+    race_level = (
+        results_df.groupby(['constructorId', 'raceId', 'year', 'round'])
+        .agg(positionOrder=('positionOrder', 'mean'), points=('points', 'sum'))
+        .reset_index()
+        .sort_values(['constructorId', 'year', 'round'])
+    )
+    grp = race_level.groupby('constructorId')
+
+    race_level['avg_constructor_position'] = grp['positionOrder'].transform(lambda s: s.shift().expanding().mean())
+    race_level['constructor_points_per_race'] = grp['points'].transform(lambda s: s.shift().expanding().mean())
+    race_level['team_consistency'] = grp['positionOrder'].transform(lambda s: s.shift().expanding().std())
+
+    constructor_features = race_level[[
+        'raceId', 'constructorId', 'avg_constructor_position',
+        'constructor_points_per_race', 'team_consistency',
+    ]]
+    logger.info(f"Engineered constructor features for {len(constructor_features)} race entries")
     return constructor_features
 
 
 def engineer_track_features(results_df: pd.DataFrame, races_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Calculate track-specific features.
-    
+    Calculate track-specific features using only prior visits to that
+    circuit (expanding window with shift(1)).
+
     Features:
-        - track_avg_finishing_position (for each driver/track combo)
-        - track_familiarity (times raced here)
-        - track_performance_delta (vs driver average)
-    
+        - track_avg_finish (driver's avg finish at this circuit, prior visits only)
+        - track_familiarity (times raced here before this race)
+        - track_performance_delta (track avg vs driver's overall avg so far)
+
     Args:
         results_df: Results dataframe
         races_df: Races dataframe with circuit info
-    
+
     Returns:
-        pd.DataFrame: Track features indexed by (driverId, circuitId)
+        pd.DataFrame: Track features, one row per (raceId, driverId, circuitId)
     """
-    logger.info("Engineering track features...")
-    
+    logger.info("Engineering track features (prior-visits-only)...")
+
     # Merge with circuit info if not already present
     if 'circuitId' not in results_df.columns:
         merged = results_df.merge(
@@ -139,28 +208,25 @@ def engineer_track_features(results_df: pd.DataFrame, races_df: pd.DataFrame) ->
         )
     else:
         merged = results_df.copy()
-    
-    track_stats = []
-    
-    for (driver_id, circuit_id), group in merged.groupby(['driverId', 'circuitId']):
-        if len(group) < 1:
-            continue
-        
-        avg_finish = group['positionOrder'].mean()
-        familiarity = len(group)  # Number of times at this track
-        driver_overall_avg = merged[merged['driverId'] == driver_id]['positionOrder'].mean()
-        perf_delta = driver_overall_avg - avg_finish  # Positive = better at this track
-        
-        track_stats.append({
-            'driverId': driver_id,
-            'circuitId': circuit_id,
-            'track_avg_finish': avg_finish,
-            'track_familiarity': familiarity,
-            'track_performance_delta': perf_delta,
-        })
-    
-    track_features = pd.DataFrame(track_stats)
-    logger.info(f"Engineered track features for {len(track_features)} driver-circuit combinations")
+
+    df = merged.sort_values(['driverId', 'circuitId', 'year', 'round']).copy()
+    track_grp = df.groupby(['driverId', 'circuitId'])
+    df['track_avg_finish'] = track_grp['positionOrder'].transform(lambda s: s.shift().expanding().mean())
+    df['track_familiarity'] = track_grp.cumcount()
+
+    # Driver's overall average finish so far (across all circuits), needed to
+    # compute track specialization delta without using future races.
+    df = df.sort_values(['driverId', 'year', 'round'])
+    driver_grp = df.groupby('driverId')
+    df['driver_overall_avg_sofar'] = driver_grp['positionOrder'].transform(lambda s: s.shift().expanding().mean())
+
+    df['track_performance_delta'] = df['driver_overall_avg_sofar'] - df['track_avg_finish']
+
+    track_features = df[[
+        'raceId', 'driverId', 'circuitId', 'track_avg_finish',
+        'track_familiarity', 'track_performance_delta', 'driver_overall_avg_sofar',
+    ]]
+    logger.info(f"Engineered track features for {len(track_features)} race entries")
     return track_features
 
 
@@ -211,17 +277,21 @@ def build_feature_matrix(
     driver_features: pd.DataFrame,
     constructor_features: pd.DataFrame,
     track_features: pd.DataFrame,
-    race_info: pd.DataFrame
+    race_info: pd.DataFrame,
+    qualifying_features: pd.DataFrame = None,
+    season_features: pd.DataFrame = None,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series]:
     """
     Combine all features into single feature matrix for model.
-    
+
     Args:
         driver_features: Driver-level features
         constructor_features: Constructor-level features
         track_features: Track-specific features
         race_info: Race and result information with target
-    
+        qualifying_features: Optional qualifying-derived features
+        season_features: Optional in-season championship momentum features
+
     Returns:
         Tuple[X, metadata, y]: Feature matrix, metadata, target variable
             - X: Feature matrix (races x features)
@@ -229,60 +299,85 @@ def build_feature_matrix(
             - y: Target (finishing position)
     """
     logger.info("Building feature matrix...")
-    
+
     # Start with race info
     X = race_info.copy()
-    
-    # Merge driver features
+
+    # Merge driver features (one row per raceId+driverId, prior-races-only)
     X = X.merge(
         driver_features,
-        left_on='driverId',
-        right_index=True,
+        on=['raceId', 'driverId'],
         how='left'
     )
-    
-    # Merge constructor features
+
+    # Merge constructor features (one row per raceId+constructorId, prior-races-only)
     X = X.merge(
         constructor_features,
-        left_on='constructorId',
-        right_index=True,
+        on=['raceId', 'constructorId'],
         how='left'
     )
-    
-    # Merge track features
+
+    # Merge track features (one row per raceId+driverId+circuitId, prior-visits-only)
     X = X.merge(
         track_features,
-        on=['driverId', 'circuitId'],
+        on=['raceId', 'driverId', 'circuitId'],
         how='left'
     )
-    
-    # Fill missing track features with overall driver average
-    for col in ['track_avg_finish', 'track_performance_delta']:
-        if col in X.columns:
-            X[col] = X.groupby('driverId')[col].transform(
-                lambda x: x.fillna(x.mean())
-            )
+
+    # Cold start: no prior visit to this circuit yet - fall back to the
+    # driver's overall average so far instead of leaving track stats blank
+    X['track_avg_finish'] = X['track_avg_finish'].fillna(X['driver_overall_avg_sofar'])
+    X['track_performance_delta'] = X['track_performance_delta'].fillna(0)
+    X = X.drop(columns=['driver_overall_avg_sofar'])
+
+    # Merge qualifying features (known before the race - no leakage)
+    if qualifying_features is not None:
+        X = X.merge(qualifying_features, on=['raceId', 'driverId'], how='left')
+        # Missing qualifying record (e.g. DNQ) - use grid as a stand-in position
+        # and assume an average gap
+        X['qual_position'] = X['qual_position'].fillna(X['grid'])
+        X['qual_gap_seconds'] = X['qual_gap_seconds'].fillna(X['qual_gap_seconds'].mean())
+
+    # Merge in-season championship momentum (prior races of same season only)
+    if season_features is not None:
+        X = X.merge(season_features, on=['raceId', 'driverId'], how='left')
+        X['season_points_so_far'] = X['season_points_so_far'].fillna(0)
+        X['season_position_so_far'] = X['season_position_so_far'].fillna(X['season_position_so_far'].max())
     
     # Extract target and metadata
     y = X['positionOrder'].astype(float)
     metadata = X[['raceId', 'driverId', 'constructorId', 'year', 'round']].copy()
     
-    # Select feature columns (exclude identifiers and target)
-    feature_cols = [col for col in X.columns if col not in [
+    # Select feature columns (exclude identifiers, target, and race-outcome leakage)
+    exclude_cols = [
+        # Identifiers / metadata
         'raceId', 'driverId', 'constructorId', 'year', 'round',
-        'positionOrder', 'race_name', 'date', 'circuitId',
+        'race_name', 'date', 'circuitId',
         'surname', 'forename', 'nationality_driver',
-        'name_constructor', 'nationality_constructor',
-        'location_circuit', 'country', 'grid', 'points',
-        'statusId', 'race_status'
-    ]]
-    
+        'name_team', 'nationality_constructor',
+        'name_circuit', 'location', 'country',
+        'statusId', 'race_status', 'resultId', 'number',
+        # Target
+        'positionOrder',
+        # Leakage: these are outcomes of the race being predicted,
+        # not known ahead of time
+        'position', 'positionText', 'laps', 'time', 'milliseconds',
+        'fastestLap', 'rank', 'fastestLapTime', 'fastestLapSpeed', 'points',
+    ]
+    feature_cols = [col for col in X.columns if col not in exclude_cols]
+
     X_features = X[feature_cols].copy()
-    
+
     # Convert to numeric, coercing errors to NaN
     for col in X_features.columns:
         X_features[col] = pd.to_numeric(X_features[col], errors='coerce')
-    
+
+    # Drop columns that are entirely non-numeric/NaN (can't be imputed)
+    all_nan_cols = [col for col in X_features.columns if X_features[col].isna().all()]
+    if all_nan_cols:
+        logger.warning(f"Dropping all-NaN feature columns: {all_nan_cols}")
+        X_features = X_features.drop(columns=all_nan_cols)
+
     # Handle NaN values - fill with column mean (only for numeric columns)
     for col in X_features.columns:
         if X_features[col].dtype in ['float64', 'int64']:

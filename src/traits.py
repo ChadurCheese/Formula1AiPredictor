@@ -35,30 +35,55 @@ logger = logging.getLogger(__name__)
 def calculate_driver_traits(
     results_df: pd.DataFrame,
     qualifying_df: pd.DataFrame,
-    drivers_df: pd.DataFrame
+    drivers_df: pd.DataFrame,
+    recent_seasons: int = 2,
+    min_recent_races: int = 5,
 ) -> Dict:
     """
     Calculate all 6 traits for all drivers from historical data.
-    
+
+    Traits reflect *current form*, not a driver's whole career: each driver's
+    stats are computed from only their last `recent_seasons` seasons (relative
+    to the most recent season in the data). This avoids, e.g., a rookie year
+    full of retirements permanently dragging down a driver's consistency
+    score years after they've become a front-runner. If a driver doesn't have
+    enough races in that recent window (e.g. a rookie), their full career is
+    used as a fallback instead of the default neutral score.
+
     Args:
         results_df: Race results with finishing positions
         qualifying_df: Qualifying session data
         drivers_df: Driver information
-    
+        recent_seasons: Number of most recent seasons to use for each driver
+        min_recent_races: Minimum races required in the recent window before
+            falling back to the driver's full career history
+
     Returns:
         dict: Traits indexed by driver_id
               {driver_id: {trait_name: score (0-1), ...}, ...}
     """
     driver_traits = {}
-    
+
+    max_year = results_df['year'].max()
+    cutoff_year = max_year - recent_seasons + 1
+    recent_results = results_df[results_df['year'] >= cutoff_year]
+
     for driver_id in drivers_df['driverId'].unique():
         try:
-            driver_races = results_df[results_df['driverId'] == driver_id]
+            driver_races_recent = recent_results[recent_results['driverId'] == driver_id]
+            driver_races_career = results_df[results_df['driverId'] == driver_id]
+
+            # Use recent form if there's enough of it, otherwise fall back to
+            # full career (e.g. for a driver who hasn't raced recently)
+            driver_races = (
+                driver_races_recent if len(driver_races_recent) >= min_recent_races
+                else driver_races_career
+            )
             driver_quali = qualifying_df[qualifying_df['driverId'] == driver_id]
-            
-            if len(driver_races) < 5:  # Skip drivers with < 5 races
+
+            if len(driver_races) < 5:  # Skip drivers with < 5 races total
                 continue
-            
+
             traits = {
                 "qualifying_specialist": trait_qualifying_specialist(driver_races, driver_quali),
                 "wet_weather_master": trait_wet_weather_master(driver_races),
@@ -67,13 +92,13 @@ def calculate_driver_traits(
                 "inconsistent": trait_inconsistent(driver_races),
                 "track_expert": trait_track_expert(driver_races),
             }
-            
+
             driver_traits[driver_id] = traits
-        
+
         except Exception as e:
             logger.warning(f"Error calculating traits for driver {driver_id}: {e}")
             continue
-    
+
     logger.info(f"Calculated traits for {len(driver_traits)} drivers")
     return driver_traits
 
@@ -212,10 +237,35 @@ def trait_strong_starter(results_df: pd.DataFrame) -> float:
     return starter_score
 
 
+def _inconsistency_from_std(std_position: float, floor: float = 1.0, ceiling: float = 7.0) -> float:
+    """
+    Normalize a raw standard deviation of finishing position into a 0-1
+    inconsistency score using a fixed absolute scale.
+
+    Uses raw std rather than coefficient of variation (std/mean) because CV
+    inflates for drivers with a low mean position: a front-runner averaging
+    P1-P2 can have a tiny absolute std (e.g. 3) yet a large CV simply because
+    the denominator is small, making dominant drivers look "inconsistent".
+    Floor/ceiling (1-7 positions) are calibrated from the observed spread of
+    full-time drivers' finishing position std in the dataset.
+
+    Args:
+        std_position: Standard deviation of finishing positions
+        floor: Std at or below which a driver is considered maximally consistent
+        ceiling: Std at or above which a driver is considered maximally inconsistent
+
+    Returns:
+        float: Score 0-1 (higher = more inconsistent)
+    """
+    if pd.isna(std_position):
+        return 0.5
+    return float(np.clip((std_position - floor) / (ceiling - floor), 0, 1))
+
+
 def trait_tire_management(results_df: pd.DataFrame) -> float:
     """
     Calculate Tire Management Expert trait.
-    
+
     High value = Consistent across different tire strategies
     Metric: 1 - (std_dev_finishes / mean_finishes)
     
@@ -226,23 +276,15 @@ def trait_tire_management(results_df: pd.DataFrame) -> float:
         float: Score 0-1 (higher = more consistent)
     """
     valid_races = results_df[results_df['positionOrder'].notna()]
-    
+
     if len(valid_races) < 5:
         return 0.5
-    
-    mean_position = valid_races['positionOrder'].mean()
+
     std_position = valid_races['positionOrder'].std()
-    
-    if mean_position == 0:
-        return 0.5
-    
-    # Coefficient of variation
-    cv = std_position / mean_position
-    
-    # Higher CV = less consistent = lower tire management score
-    # Normalize: CV of 0.3 = 1.0 (very consistent), CV of 1.5 = 0 (very inconsistent)
-    management_score = np.clip(1 - (cv / 1.5), 0, 1)
-    
+
+    # Higher std = less consistent = lower tire management score
+    management_score = 1 - _inconsistency_from_std(std_position)
+
     return management_score
 
 
@@ -260,23 +302,13 @@ def trait_inconsistent(results_df: pd.DataFrame) -> float:
         float: Score 0-1 (higher = more inconsistent)
     """
     valid_races = results_df[results_df['positionOrder'].notna()]
-    
+
     if len(valid_races) < 5:
         return 0.5
-    
-    mean_position = valid_races['positionOrder'].mean()
+
     std_position = valid_races['positionOrder'].std()
-    
-    if mean_position == 0:
-        return 0.5
-    
-    # Coefficient of variation - higher = more inconsistent
-    cv = std_position / mean_position
-    
-    # Normalize: CV of 0.3 = 0 (very consistent), CV of 1.5 = 1 (very inconsistent)
-    inconsistent_score = np.clip(cv / 1.5, 0, 1)
-    
-    return inconsistent_score
+
+    return _inconsistency_from_std(std_position)
 
 
 def trait_track_expert(results_df: pd.DataFrame) -> float:

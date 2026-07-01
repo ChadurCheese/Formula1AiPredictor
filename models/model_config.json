@@ -1,0 +1,38 @@
+{
+  "model_type": "xgboost",
+  "hyperparameters": {
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "n_estimators": 200,
+    "objective": "reg:squarederror",
+    "random_state": 42,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 5
+  },
+  "training_data": {
+    "train_set": "2020-2022",
+    "val_set": "2023",
+    "test_set": "2024"
+  },
+  "performance": {
+    "validation": {
+      "mse": 19.751767632822933,
+      "mae": 3.337911385839636,
+      "r2": 0.4059618757045734,
+      "within_1_position": 20.0,
+      "within_2_positions": 39.77272727272727,
+      "within_3_positions": 56.36363636363636,
+      "test_samples": 440
+    },
+    "test": {
+      "mse": 16.05535548904801,
+      "mae": 3.0056140333227424,
+      "r2": 0.5153920770105631,
+      "within_1_position": 23.382045929018787,
+      "within_2_positions": 43.0062630480167,
+      "within_3_positions": 62.21294363256785,
+      "test_samples": 479
+    }
+  }
+}

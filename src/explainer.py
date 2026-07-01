@@ -25,24 +25,30 @@ def explain_prediction(
     X_row: pd.Series,
     driver_traits: Dict,
     driver_id: int,
-    feature_names: List[str] = None
+    feature_names: List[str] = None,
+    explainer: "shap.TreeExplainer" = None,
 ) -> Dict:
     """
     Generate explanation for a single prediction.
-    
+
     Combines:
         - Base prediction (finishing position)
         - SHAP feature importance
         - Driver trait influences
         - Confidence score
-    
+
     Args:
         model: Trained XGBoost model
         X_row: Single sample feature vector
         driver_traits: Driver traits dictionary
         driver_id: Driver ID for trait lookup
         feature_names: List of feature names
-    
+        explainer: Optional pre-built shap.TreeExplainer for this model.
+            Building a TreeExplainer is relatively expensive, so callers
+            generating many explanations (e.g. a whole race or season)
+            should build one once and pass it in rather than let this
+            function build a fresh one on every call.
+
     Returns:
         dict: Complete explanation including:
             - predicted_position: Base prediction
@@ -53,11 +59,12 @@ def explain_prediction(
     """
     # Get base prediction
     base_pred = model.predict(X_row.values.reshape(1, -1))[0]
-    
+
     # Get SHAP explanations
-    explainer = shap.TreeExplainer(model)
+    if explainer is None:
+        explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(X_row.values.reshape(1, -1))
-    
+
     # Get feature importances
     feature_contrib = shap_values[0]
     if feature_names is None:

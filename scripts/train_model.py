@@ -21,6 +21,8 @@ from src.features import (
     engineer_constructor_features,
     engineer_track_features,
     engineer_weather_features,
+    engineer_qualifying_features,
+    engineer_season_form_features,
     build_feature_matrix,
     get_feature_names
 )
@@ -73,14 +75,22 @@ def main():
         
         weather_features = engineer_weather_features(prepared_data)
         logger.info(f"Weather features placeholder: {len(weather_features)} entries")
-        
+
+        qualifying_features = engineer_qualifying_features(raw_data['qualifying'])
+        logger.info(f"Qualifying features: {len(qualifying_features)} entries")
+
+        season_features = engineer_season_form_features(prepared_data)
+        logger.info(f"Season form features: {len(season_features)} entries")
+
         # Step 5: Build feature matrix
         logger.info("\n[STEP 5/7] Building feature matrix...")
         X, metadata, y = build_feature_matrix(
             driver_features,
             constructor_features,
             track_features,
-            prepared_data
+            prepared_data,
+            qualifying_features=qualifying_features,
+            season_features=season_features,
         )
         logger.info(f"Feature matrix: {X.shape[0]} samples × {X.shape[1]} features")
         
@@ -90,7 +100,7 @@ def main():
         # Extract year from metadata
         years = metadata['year'].values
         
-        train_mask = years <= 2022
+        train_mask = (years >= 2020) & (years <= 2022)
         val_mask = years == 2023
         test_mask = years == 2024
         

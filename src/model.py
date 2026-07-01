@@ -26,13 +26,14 @@ logger = logging.getLogger(__name__)
 MODEL_CONFIG = {
     "model_type": "xgboost",
     "hyperparameters": {
-        "max_depth": 6,
-        "learning_rate": 0.1,
-        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.03,
+        "n_estimators": 200,
         "objective": "reg:squarederror",
         "random_state": 42,
         "subsample": 0.8,
         "colsample_bytree": 0.8,
+        "reg_lambda": 5,
     },
     "training_data": {
         "train_set": "2020-2022",

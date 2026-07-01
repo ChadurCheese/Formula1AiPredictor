@@ -137,6 +137,14 @@ def prepare_data(raw_data: Dict[str, pd.DataFrame]) -> pd.DataFrame:
         ).rename(columns={'status': 'race_status'})
     
     # Step 6: Data cleaning
+    # A small number of historical races (shared-drive era) have duplicate
+    # raceId+driverId rows (e.g. disqualified then re-classified). Keep the
+    # first entry so per-driver expanding features aren't double-counted.
+    dup_count = merged.duplicated(subset=['raceId', 'driverId']).sum()
+    if dup_count:
+        logger.info(f"Dropping {dup_count} duplicate raceId+driverId rows")
+        merged = merged.drop_duplicates(subset=['raceId', 'driverId'], keep='first')
+
     # Remove rows with missing critical values
     merged = merged.dropna(subset=['positionOrder', 'year', 'driverId', 'constructorId'])
     
