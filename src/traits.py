@@ -164,25 +164,27 @@ def trait_wet_weather_master(results_df: pd.DataFrame) -> float:
     Returns:
         float: Score 0-1 (higher = better in wet)
     """
-    # Without explicit weather data, use circuit heuristic
-    # Circuits known for frequent rain: Monaco, Silverstone, Spa, Hungary
-    wet_circuits = {'Monaco', 'Silverstone', 'Spa-Francorchamps', 'Hungaroring'}
-    
+    # Without explicit weather data, use a circuit heuristic. Names must match
+    # circuits.csv's `name` column exactly (which is what survives into the
+    # prepared results dataframe as `name_circuit` after the drivers/circuits
+    # merge - see src/data_pipeline.py::prepare_data).
+    wet_circuits = {'Circuit de Monaco', 'Silverstone Circuit', 'Circuit de Spa-Francorchamps', 'Hungaroring'}
+
     valid_races = results_df[results_df['positionOrder'].notna()].copy()
-    
+
     if len(valid_races) < 5:
         return 0.5
-    
-    # Separate by circuit type (if circuitName available)
-    if 'circuitName' in valid_races.columns:
-        wet_races = valid_races[valid_races['circuitName'].isin(wet_circuits)]
-        dry_races = valid_races[~valid_races['circuitName'].isin(wet_circuits)]
-    else:
-        # Fallback: use all races, assume roughly equal split
-        # Score based on consistency (proxy for wet performance)
-        dry_races = valid_races
-        wet_races = valid_races.sample(min(len(valid_races) // 3, 5), replace=False) if len(valid_races) > 5 else valid_races.head(2)
-    
+
+    if 'name_circuit' not in valid_races.columns:
+        # No circuit info available - don't fabricate a distinction, just
+        # stay neutral rather than randomly sampling (previous behavior was
+        # non-deterministic: re-running trait calculation could give a
+        # different score each time for the same driver).
+        return 0.5
+
+    wet_races = valid_races[valid_races['name_circuit'].isin(wet_circuits)]
+    dry_races = valid_races[~valid_races['name_circuit'].isin(wet_circuits)]
+
     if len(wet_races) < 2 or len(dry_races) < 2:
         return 0.5
     

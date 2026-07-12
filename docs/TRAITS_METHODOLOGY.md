@@ -69,3 +69,34 @@ is a coarse heuristic - a circuit being "wet-prone" doesn't mean every race
 held there was actually wet. Improving this would require joining an
 external weather dataset (see `docs/DATA_SOURCES.md` and the Day 8
 follow-up in the project roadmap).
+
+**Bug history**: this heuristic was silently broken for a while - the code
+checked for a column called `circuitName`, but the actual column (from
+`data_pipeline.py`'s merge) is `name_circuit`. The check was therefore always
+`False`, so every driver fell into a fallback that randomly sampled races
+with no fixed seed, giving a different, meaningless score each time traits
+were recalculated. Fixed by matching the real column name and removing the
+random fallback (returns a neutral 0.5 when circuit info truly isn't
+available, instead of guessing). See `tests/test_traits.py::TestWetWeatherMaster`
+for the regression tests.
+
+## Displaying traits: color relative to the population, not an absolute scale
+
+A raw score like "0.4" is meaningless without something to compare it to. The
+Driver Traits page colors each trait bar (and overlays a grey "Average" trace
+on the radar chart) relative to the **current grid's average** for that trait
+(`app/components/trait_visualizer.py::compute_trait_baselines`), not a fixed
+threshold:
+
+| Tier | Color | Band (z-score vs. population mean) |
+|---|---|---|
+| Bad | red | z < -0.5 |
+| Average | orange | -0.5 <= z < 0.5 |
+| Above Average | green | 0.5 <= z < 1.5 |
+| Superb | blue | z >= 1.5 |
+
+The baseline is computed from active (last-2-seasons) drivers only, not the
+full historical population - comparing a current driver to 1950s-era drivers
+wouldn't be a meaningful "average." `inconsistent` is inverted before
+banding, since a *higher* raw score means *worse* performance for that one
+trait - the color always reads as "how good," never "how big the number is."

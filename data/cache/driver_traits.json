@@ -1,7 +1,7 @@
 {
   "1": {
     "qualifying_specialist": 0.5297101449275362,
-    "wet_weather_master": 0.4373539036933146,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5366666666666666,
     "tire_management": 0.39480337121862996,
     "inconsistent": 0.60519662878137,
@@ -9,7 +9,7 @@
   },
   "2": {
     "qualifying_specialist": 0.5247619047619048,
-    "wet_weather_master": 0.7447337377822716,
+    "wet_weather_master": 0.4872685185185185,
     "strong_starter": 0.5307065217391305,
     "tire_management": 0.2662801772280997,
     "inconsistent": 0.7337198227719003,
@@ -17,7 +17,7 @@
   },
   "3": {
     "qualifying_specialist": 0.4527508090614887,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.42535787321063373,
     "strong_starter": 0.4325242718446602,
     "tire_management": 0.12428081500669241,
     "inconsistent": 0.8757191849933076,
@@ -25,7 +25,7 @@
   },
   "4": {
     "qualifying_specialist": 0.4971014492753623,
-    "wet_weather_master": 0.3097404785979102,
+    "wet_weather_master": 0.5591026747195856,
     "strong_starter": 0.4833333333333333,
     "tire_management": 0.40351924434835096,
     "inconsistent": 0.596480755651649,
@@ -33,7 +33,7 @@
   },
   "5": {
     "qualifying_specialist": 0.5199404761904762,
-    "wet_weather_master": 0.39657738095238093,
+    "wet_weather_master": 0.40810704447068064,
     "strong_starter": 0.5227678571428571,
     "tire_management": 0.2290668697952194,
     "inconsistent": 0.7709331302047806,
@@ -41,7 +41,7 @@
   },
   "6": {
     "qualifying_specialist": 0.5314814814814814,
-    "wet_weather_master": 0.8472222222222222,
+    "wet_weather_master": 0.6825396825396828,
     "strong_starter": 0.5361111111111111,
     "tire_management": 0.5672290995878284,
     "inconsistent": 0.43277090041217164,
@@ -49,7 +49,7 @@
   },
   "7": {
     "qualifying_specialist": 0.5246913580246914,
-    "wet_weather_master": 0.4530490086045643,
+    "wet_weather_master": 0.38209982788296015,
     "strong_starter": 0.5333333333333333,
     "tire_management": 0.4131794692758647,
     "inconsistent": 0.5868205307241353,
@@ -57,7 +57,7 @@
   },
   "8": {
     "qualifying_specialist": 0.48120456905503634,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.35837610105152595,
     "strong_starter": 0.4619596541786743,
     "tire_management": 0.13826443733966032,
     "inconsistent": 0.8617355626603397,
@@ -65,7 +65,7 @@
   },
   "9": {
     "qualifying_specialist": 0.49797979797979797,
-    "wet_weather_master": 0.5543377032738735,
+    "wet_weather_master": 0.18039153101393757,
     "strong_starter": 0.471875,
     "tire_management": 0.1564262619373863,
     "inconsistent": 0.8435737380626137,
@@ -73,7 +73,7 @@
   },
   "10": {
     "qualifying_specialist": 0.5659574468085107,
-    "wet_weather_master": 0.7139219015280134,
+    "wet_weather_master": 0.4787524366471737,
     "strong_starter": 0.602127659574468,
     "tire_management": 0.21746872492233738,
     "inconsistent": 0.7825312750776626,
@@ -81,7 +81,7 @@
   },
   "11": {
     "qualifying_specialist": 0.5298245614035088,
-    "wet_weather_master": 0.1826056826056825,
+    "wet_weather_master": 0.16986995850478323,
     "strong_starter": 0.5543956043956044,
     "tire_management": 0.39834811924418634,
     "inconsistent": 0.6016518807558137,
@@ -89,7 +89,7 @@
   },
   "12": {
     "qualifying_specialist": 0.5202380952380953,
-    "wet_weather_master": 0.13518170426065163,
+    "wet_weather_master": 0.15359477124183007,
     "strong_starter": 0.5142857142857143,
     "tire_management": 0.3273801706133953,
     "inconsistent": 0.6726198293866047,
@@ -97,7 +97,7 @@
   },
   "13": {
     "qualifying_specialist": 0.48365758754863813,
-    "wet_weather_master": 0.5408979089790896,
+    "wet_weather_master": 0.29212904224966196,
     "strong_starter": 0.4762081784386617,
     "tire_management": 0.24622012145679062,
     "inconsistent": 0.7537798785432094,
@@ -105,7 +105,7 @@
   },
   "14": {
     "qualifying_specialist": 0.4486868686868687,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.3281057810578107,
     "strong_starter": 0.4097165991902834,
     "tire_management": 0.08739554581236242,
     "inconsistent": 0.9126044541876376,
@@ -113,7 +113,7 @@
   },
   "15": {
     "qualifying_specialist": 0.457168458781362,
-    "wet_weather_master": 0.6099646226415094,
+    "wet_weather_master": 0.3238870183314628,
     "strong_starter": 0.4021484375,
     "tire_management": 0.17416001961363836,
     "inconsistent": 0.8258399803863616,
@@ -121,7 +121,7 @@
   },
   "16": {
     "qualifying_specialist": 0.5106770833333333,
-    "wet_weather_master": 0.10748387896825382,
+    "wet_weather_master": 0.4829824561403506,
     "strong_starter": 0.513671875,
     "tire_management": 0.3752083175725206,
     "inconsistent": 0.6247916824274794,
@@ -129,7 +129,7 @@
   },
   "17": {
     "qualifying_specialist": 0.42887788778877883,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5930884290249036,
     "strong_starter": 0.42373271889400926,
     "tire_management": 0.09417528517914919,
     "inconsistent": 0.9058247148208508,
@@ -137,7 +137,7 @@
   },
   "18": {
     "qualifying_specialist": 0.5034220532319391,
-    "wet_weather_master": 0.0361289378896749,
+    "wet_weather_master": 0.10024210580538799,
     "strong_starter": 0.5155339805825243,
     "tire_management": 0.16606238808025797,
     "inconsistent": 0.833937611919742,
@@ -145,7 +145,7 @@
   },
   "19": {
     "qualifying_specialist": 0.5318181818181819,
-    "wet_weather_master": 0.2516339869281046,
+    "wet_weather_master": 0.1256490134994807,
     "strong_starter": 0.55,
     "tire_management": 0.6662642521146054,
     "inconsistent": 0.3337357478853947,
@@ -153,7 +153,7 @@
   },
   "20": {
     "qualifying_specialist": 0.47190635451505014,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.3087212413055107,
     "strong_starter": 0.46375838926174495,
     "tire_management": 0.09902729226776541,
     "inconsistent": 0.9009727077322346,
@@ -161,7 +161,7 @@
   },
   "21": {
     "qualifying_specialist": 0.5253763440860215,
-    "wet_weather_master": 0.09783098845598841,
+    "wet_weather_master": 0.37378052626163044,
     "strong_starter": 0.5217391304347826,
     "tire_management": 0.2101240622291075,
     "inconsistent": 0.7898759377708925,
@@ -169,7 +169,7 @@
   },
   "22": {
     "qualifying_specialist": 0.4612094395280236,
-    "wet_weather_master": 0.26147466484889786,
+    "wet_weather_master": 0.3553850132449869,
     "strong_starter": 0.43138461538461537,
     "tire_management": 0.0767535040187628,
     "inconsistent": 0.9232464959812372,
@@ -177,7 +177,7 @@
   },
   "23": {
     "qualifying_specialist": 0.4311526479750779,
-    "wet_weather_master": 0.7222222222222223,
+    "wet_weather_master": 0.7248226950354608,
     "strong_starter": 0.39805555555555555,
     "tire_management": 0.12928348125706235,
     "inconsistent": 0.8707165187429377,
@@ -185,7 +185,7 @@
   },
   "24": {
     "qualifying_specialist": 0.5378600823045268,
-    "wet_weather_master": 0.4348422496570644,
+    "wet_weather_master": 0.46904838536637705,
     "strong_starter": 0.546875,
     "tire_management": 0.33075501743430946,
     "inconsistent": 0.6692449825656905,
@@ -193,7 +193,7 @@
   },
   "25": {
     "qualifying_specialist": 0.5656862745098039,
-    "wet_weather_master": 0.5700483091787438,
+    "wet_weather_master": 0.27937765751836097,
     "strong_starter": 0.5369565217391304,
     "tire_management": 0.24559623001923547,
     "inconsistent": 0.7544037699807645,
@@ -201,7 +201,7 @@
   },
   "26": {
     "qualifying_specialist": 0.5738095238095239,
-    "wet_weather_master": 0.4356136820925553,
+    "wet_weather_master": 0.427938808373591,
     "strong_starter": 0.5821428571428571,
     "tire_management": 0.4878748153417969,
     "inconsistent": 0.5121251846582031,
@@ -209,7 +209,7 @@
   },
   "27": {
     "qualifying_specialist": 0.5934782608695652,
-    "wet_weather_master": 0.4082125603864736,
+    "wet_weather_master": 0.5097020097020096,
     "strong_starter": 0.6304347826086957,
     "tire_management": 0.5449860017204189,
     "inconsistent": 0.45501399827958106,
@@ -217,7 +217,7 @@
   },
   "29": {
     "qualifying_specialist": 0.6158730158730158,
-    "wet_weather_master": 0.36298622012907755,
+    "wet_weather_master": 0.1792717086834735,
     "strong_starter": 0.6595238095238095,
     "tire_management": 0.7364889010244731,
     "inconsistent": 0.26351109897552694,
@@ -225,7 +225,7 @@
   },
   "30": {
     "qualifying_specialist": 0.44600694444444444,
-    "wet_weather_master": 0.5777417027417028,
+    "wet_weather_master": 0.11291007216057229,
     "strong_starter": 0.39935064935064934,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -233,7 +233,7 @@
   },
   "31": {
     "qualifying_specialist": 0.4317708333333333,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.6031786503484615,
     "strong_starter": 0.34210526315789475,
     "tire_management": 0.0716418914082424,
     "inconsistent": 0.9283581085917576,
@@ -241,7 +241,7 @@
   },
   "32": {
     "qualifying_specialist": 0.49150326797385624,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.1745770160404305,
     "strong_starter": 0.4745098039215686,
     "tire_management": 0.380207183591716,
     "inconsistent": 0.619792816408284,
@@ -249,7 +249,7 @@
   },
   "33": {
     "qualifying_specialist": 0.6207207207207207,
-    "wet_weather_master": 0.46174532741696883,
+    "wet_weather_master": 0.5598290598290597,
     "strong_starter": 0.6621621621621622,
     "tire_management": 0.5277288176482808,
     "inconsistent": 0.4722711823517191,
@@ -257,7 +257,7 @@
   },
   "35": {
     "qualifying_specialist": 0.45421686746987955,
-    "wet_weather_master": 0.16586921850079725,
+    "wet_weather_master": 0.4182006278538812,
     "strong_starter": 0.4442424242424242,
     "tire_management": 0.2158692290226637,
     "inconsistent": 0.7841307709773363,
@@ -265,7 +265,7 @@
   },
   "36": {
     "qualifying_specialist": 0.5857142857142857,
-    "wet_weather_master": 0.08441558441558436,
+    "wet_weather_master": 0.568627450980392,
     "strong_starter": 0.5785714285714285,
     "tire_management": 0.7287181059897969,
     "inconsistent": 0.27128189401020303,
@@ -273,7 +273,7 @@
   },
   "37": {
     "qualifying_specialist": 0.5302469135802469,
-    "wet_weather_master": 0.8715221828338168,
+    "wet_weather_master": 0.24963832345090348,
     "strong_starter": 0.5504716981132075,
     "tire_management": 0.2638691266912295,
     "inconsistent": 0.7361308733087705,
@@ -281,7 +281,7 @@
   },
   "38": {
     "qualifying_specialist": 0.5696969696969697,
-    "wet_weather_master": 0.6164274322169061,
+    "wet_weather_master": 0.24372759856630807,
     "strong_starter": 0.6272727272727272,
     "tire_management": 0.7332167988863341,
     "inconsistent": 0.266783201113666,
@@ -289,7 +289,7 @@
   },
   "39": {
     "qualifying_specialist": 0.5794326241134752,
-    "wet_weather_master": 0.13161375661375652,
+    "wet_weather_master": 0.4664694280078896,
     "strong_starter": 0.6097826086956522,
     "tire_management": 0.4455249945461911,
     "inconsistent": 0.5544750054538089,
@@ -297,7 +297,7 @@
   },
   "40": {
     "qualifying_specialist": 0.5636363636363637,
-    "wet_weather_master": 0.6178861788617889,
+    "wet_weather_master": 0.15873015873015855,
     "strong_starter": 0.5909090909090909,
     "tire_management": 0.5168803770127357,
     "inconsistent": 0.48311962298726424,
@@ -305,7 +305,7 @@
   },
   "41": {
     "qualifying_specialist": 0.5848484848484848,
-    "wet_weather_master": 0.13538781163434915,
+    "wet_weather_master": 0.09961685823754785,
     "strong_starter": 0.581081081081081,
     "tire_management": 0.3853731045810238,
     "inconsistent": 0.6146268954189762,
@@ -313,7 +313,7 @@
   },
   "42": {
     "qualifying_specialist": 0.5066666666666666,
-    "wet_weather_master": 0.2475490196078432,
+    "wet_weather_master": 0.07458143074581425,
     "strong_starter": 0.5025000000000001,
     "tire_management": 0.437371565195911,
     "inconsistent": 0.562628434804089,
@@ -321,7 +321,7 @@
   },
   "43": {
     "qualifying_specialist": 0.4797619047619047,
-    "wet_weather_master": 0.4061986863711002,
+    "wet_weather_master": 0.9744801512287338,
     "strong_starter": 0.4660714285714286,
     "tire_management": 0.451833689953018,
     "inconsistent": 0.548166310046982,
@@ -329,7 +329,7 @@
   },
   "44": {
     "qualifying_specialist": 0.5101449275362319,
-    "wet_weather_master": 0.26766026949775407,
+    "wet_weather_master": 0.41054882394868136,
     "strong_starter": 0.5132911392405063,
     "tire_management": 0.2949640541088794,
     "inconsistent": 0.7050359458911206,
@@ -337,7 +337,7 @@
   },
   "45": {
     "qualifying_specialist": 0.530952380952381,
-    "wet_weather_master": 0.3482142857142856,
+    "wet_weather_master": 0.2156862745098039,
     "strong_starter": 0.5321428571428571,
     "tire_management": 0.7752134086196129,
     "inconsistent": 0.22478659138038712,
@@ -345,7 +345,7 @@
   },
   "46": {
     "qualifying_specialist": 0.5666666666666667,
-    "wet_weather_master": 0.2630906768837806,
+    "wet_weather_master": 0.4580498866213149,
     "strong_starter": 0.5833333333333333,
     "tire_management": 0.8333333333333334,
     "inconsistent": 0.16666666666666666,
@@ -353,7 +353,7 @@
   },
   "47": {
     "qualifying_specialist": 0.6083333333333333,
-    "wet_weather_master": 0.3442982456140353,
+    "wet_weather_master": 0.4084084084084083,
     "strong_starter": 0.6725,
     "tire_management": 0.5967071933972152,
     "inconsistent": 0.4032928066027848,
@@ -361,7 +361,7 @@
   },
   "48": {
     "qualifying_specialist": 0.6766666666666666,
-    "wet_weather_master": 0.19319319319319295,
+    "wet_weather_master": 0.020344287949921602,
     "strong_starter": 0.7958333333333334,
     "tire_management": 0.4261772913268298,
     "inconsistent": 0.5738227086731702,
@@ -369,7 +369,7 @@
   },
   "49": {
     "qualifying_specialist": 0.4139917695473251,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.35486823333064155,
     "strong_starter": 0.3980891719745223,
     "tire_management": 0.07215784454850471,
     "inconsistent": 0.9278421554514953,
@@ -377,7 +377,7 @@
   },
   "50": {
     "qualifying_specialist": 0.5309941520467836,
-    "wet_weather_master": 0.581047130941614,
+    "wet_weather_master": 0.5086803680907989,
     "strong_starter": 0.6042056074766355,
     "tire_management": 0.35763706914096216,
     "inconsistent": 0.6423629308590378,
@@ -385,7 +385,7 @@
   },
   "51": {
     "qualifying_specialist": 0.5875,
-    "wet_weather_master": 0.26343201754385964,
+    "wet_weather_master": 0.2302118171683389,
     "strong_starter": 0.63125,
     "tire_management": 0.6686381459899815,
     "inconsistent": 0.3313618540100185,
@@ -393,7 +393,7 @@
   },
   "52": {
     "qualifying_specialist": 0.5928571428571429,
-    "wet_weather_master": 0.3004926108374382,
+    "wet_weather_master": 0.5999999999999999,
     "strong_starter": 0.6392857142857142,
     "tire_management": 0.5493296386949063,
     "inconsistent": 0.45067036130509375,
@@ -401,7 +401,7 @@
   },
   "53": {
     "qualifying_specialist": 0.7200000000000001,
-    "wet_weather_master": 0.3733333333333333,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8300000000000001,
     "tire_management": 0.8460769323054776,
     "inconsistent": 0.15392306769452238,
@@ -409,7 +409,7 @@
   },
   "54": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.27777777777777773,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.6833333333333333,
     "tire_management": 0.4163580881718163,
     "inconsistent": 0.5836419118281837,
@@ -417,7 +417,7 @@
   },
   "55": {
     "qualifying_specialist": 0.4150537634408602,
-    "wet_weather_master": 0.10929169840060926,
+    "wet_weather_master": 0.2023044651763186,
     "strong_starter": 0.3888613861386139,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -425,7 +425,7 @@
   },
   "56": {
     "qualifying_specialist": 0.39427083333333335,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.15707040572792358,
     "strong_starter": 0.4153061224489796,
     "tire_management": 0.01865922760017702,
     "inconsistent": 0.981340772399823,
@@ -433,7 +433,7 @@
   },
   "57": {
     "qualifying_specialist": 0.3704301075268817,
-    "wet_weather_master": 0.6279461279461278,
+    "wet_weather_master": 0.38259441707717595,
     "strong_starter": 0.3742331288343558,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -441,7 +441,7 @@
   },
   "58": {
     "qualifying_specialist": 0.5399999999999999,
-    "wet_weather_master": 0.1552706552706551,
+    "wet_weather_master": 0.5205802968960864,
     "strong_starter": 0.775,
     "tire_management": 0.4503131274401245,
     "inconsistent": 0.5496868725598755,
@@ -449,7 +449,7 @@
   },
   "59": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.46953235710911667,
+    "wet_weather_master": 0.6310459228217218,
     "strong_starter": 0.6303571428571428,
     "tire_management": 0.47749401116089285,
     "inconsistent": 0.5225059888391071,
@@ -457,7 +457,7 @@
   },
   "60": {
     "qualifying_specialist": 0.75,
-    "wet_weather_master": 0.48595848595848573,
+    "wet_weather_master": 0.018729880011706022,
     "strong_starter": 0.8523809523809524,
     "tire_management": 0.5975078145508457,
     "inconsistent": 0.40249218544915427,
@@ -465,7 +465,7 @@
   },
   "62": {
     "qualifying_specialist": 0.6333333333333333,
-    "wet_weather_master": 0.2605421686746986,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.79,
     "tire_management": 0.4865931412298945,
     "inconsistent": 0.5134068587701055,
@@ -473,7 +473,7 @@
   },
   "63": {
     "qualifying_specialist": 0.604,
-    "wet_weather_master": 0.34584584584584577,
+    "wet_weather_master": 0.43521062271062266,
     "strong_starter": 0.6372727272727273,
     "tire_management": 0.3214335837723893,
     "inconsistent": 0.6785664162276107,
@@ -481,7 +481,7 @@
   },
   "64": {
     "qualifying_specialist": 0.6618055555555556,
-    "wet_weather_master": 0.11167227833894493,
+    "wet_weather_master": 0.3755102040816327,
     "strong_starter": 0.6357142857142858,
     "tire_management": 0.25810272035575144,
     "inconsistent": 0.7418972796442486,
@@ -489,7 +489,7 @@
   },
   "65": {
     "qualifying_specialist": 0.5037037037037037,
-    "wet_weather_master": 0.16007295173961822,
+    "wet_weather_master": 0.4042666666666665,
     "strong_starter": 0.5246913580246914,
     "tire_management": 0.025359198037554376,
     "inconsistent": 0.9746408019624456,
@@ -497,7 +497,7 @@
   },
   "66": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.20728291316526593,
+    "wet_weather_master": 0.20512820512820495,
     "strong_starter": 0.5205882352941177,
     "tire_management": 0.30643888865356417,
     "inconsistent": 0.6935611113464358,
@@ -505,7 +505,7 @@
   },
   "67": {
     "qualifying_specialist": 0.5018181818181818,
-    "wet_weather_master": 0.34827144686299627,
+    "wet_weather_master": 0.3079390537289495,
     "strong_starter": 0.51,
     "tire_management": 0.36797010411784103,
     "inconsistent": 0.632029895882159,
@@ -513,7 +513,7 @@
   },
   "68": {
     "qualifying_specialist": 0.6,
-    "wet_weather_master": 0.24202674897119342,
+    "wet_weather_master": 0.34244080145719485,
     "strong_starter": 0.671875,
     "tire_management": 0.4564777625222183,
     "inconsistent": 0.5435222374777817,
@@ -521,7 +521,7 @@
   },
   "69": {
     "qualifying_specialist": 0.6519999999999999,
-    "wet_weather_master": 0.4535373158491178,
+    "wet_weather_master": 0.20664360304952262,
     "strong_starter": 0.7714285714285715,
     "tire_management": 0.30881501425121216,
     "inconsistent": 0.6911849857487878,
@@ -529,7 +529,7 @@
   },
   "70": {
     "qualifying_specialist": 0.5333333333333333,
-    "wet_weather_master": 0.41548602912239274,
+    "wet_weather_master": 0.1884057971014491,
     "strong_starter": 0.5392857142857144,
     "tire_management": 0.06174276700004322,
     "inconsistent": 0.9382572329999568,
@@ -537,7 +537,7 @@
   },
   "71": {
     "qualifying_specialist": 0.4022598870056497,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.6433319766653101,
     "strong_starter": 0.35905172413793107,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -545,7 +545,7 @@
   },
   "73": {
     "qualifying_specialist": 0.6435897435897435,
-    "wet_weather_master": 0.06471306471306486,
+    "wet_weather_master": 0.27140974967061915,
     "strong_starter": 0.75,
     "tire_management": 0.36564560690202963,
     "inconsistent": 0.6343543930979704,
@@ -553,7 +553,7 @@
   },
   "74": {
     "qualifying_specialist": 0.638095238095238,
-    "wet_weather_master": 0.3373917748917747,
+    "wet_weather_master": 0.01697530864197531,
     "strong_starter": 0.7375,
     "tire_management": 0.5551453397014223,
     "inconsistent": 0.44485466029857773,
@@ -561,7 +561,7 @@
   },
   "75": {
     "qualifying_specialist": 0.6666666666666666,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.7706959706959704,
     "strong_starter": 0.7242424242424242,
     "tire_management": 0.3686459142973305,
     "inconsistent": 0.6313540857026695,
@@ -569,7 +569,7 @@
   },
   "76": {
     "qualifying_specialist": 0.5714285714285714,
-    "wet_weather_master": 0.04659498207885286,
+    "wet_weather_master": 0.5093896713615025,
     "strong_starter": 0.554,
     "tire_management": 0.31411059704317745,
     "inconsistent": 0.6858894029568225,
@@ -577,7 +577,7 @@
   },
   "77": {
     "qualifying_specialist": 0.3615942028985507,
-    "wet_weather_master": 0.38274932614555246,
+    "wet_weather_master": 0.2085442756905585,
     "strong_starter": 0.27285714285714285,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -585,7 +585,7 @@
   },
   "78": {
     "qualifying_specialist": 0.5333333333333333,
-    "wet_weather_master": 0.753968253968254,
+    "wet_weather_master": 0.2559562536790903,
     "strong_starter": 0.633673469387755,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -593,7 +593,7 @@
   },
   "79": {
     "qualifying_specialist": 0.48194444444444445,
-    "wet_weather_master": 0.30414441270235554,
+    "wet_weather_master": 0.3471258701036495,
     "strong_starter": 0.5605263157894738,
     "tire_management": 0.24359534630913837,
     "inconsistent": 0.7564046536908616,
@@ -601,7 +601,7 @@
   },
   "81": {
     "qualifying_specialist": 0.4839506172839506,
-    "wet_weather_master": 0.17137320044296783,
+    "wet_weather_master": 0.17279942279942268,
     "strong_starter": 0.5417910447761194,
     "tire_management": 0.11612373956472288,
     "inconsistent": 0.8838762604352771,
@@ -609,7 +609,7 @@
   },
   "83": {
     "qualifying_specialist": 0.6666666666666666,
-    "wet_weather_master": 0.3172487745098039,
+    "wet_weather_master": 0.43481481481481493,
     "strong_starter": 0.7671875,
     "tire_management": 0.35569312123016505,
     "inconsistent": 0.644306878769835,
@@ -617,7 +617,7 @@
   },
   "84": {
     "qualifying_specialist": 0.4484848484848485,
-    "wet_weather_master": 0.2758352758352758,
+    "wet_weather_master": 0.4537815126050419,
     "strong_starter": 0.5930379746835442,
     "tire_management": 0.0034304119805667055,
     "inconsistent": 0.9965695880194333,
@@ -625,7 +625,7 @@
   },
   "85": {
     "qualifying_specialist": 0.6158730158730158,
-    "wet_weather_master": 0.42948717948717946,
+    "wet_weather_master": 0.3612440191387556,
     "strong_starter": 0.6425925925925926,
     "tire_management": 0.386742379954094,
     "inconsistent": 0.613257620045906,
@@ -633,7 +633,7 @@
   },
   "86": {
     "qualifying_specialist": 0.6833333333333333,
-    "wet_weather_master": 0.287037037037037,
+    "wet_weather_master": 0.37359098228663457,
     "strong_starter": 0.75,
     "tire_management": 0.49423786461609975,
     "inconsistent": 0.5057621353839002,
@@ -641,7 +641,7 @@
   },
   "87": {
     "qualifying_specialist": 0.5111111111111112,
-    "wet_weather_master": 0.23927101704879478,
+    "wet_weather_master": 0.7104400213528558,
     "strong_starter": 0.5040983606557378,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -649,7 +649,7 @@
   },
   "88": {
     "qualifying_specialist": 0.5523809523809524,
-    "wet_weather_master": 0.8738344988344989,
+    "wet_weather_master": 0.20187165775401067,
     "strong_starter": 0.5361538461538461,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -657,7 +657,7 @@
   },
   "89": {
     "qualifying_specialist": 0.5907407407407407,
-    "wet_weather_master": 0.3076131687242797,
+    "wet_weather_master": 0.2713633398564906,
     "strong_starter": 0.6333333333333333,
     "tire_management": 0.2851098968458864,
     "inconsistent": 0.7148901031541136,
@@ -665,7 +665,7 @@
   },
   "90": {
     "qualifying_specialist": 0.6843137254901961,
-    "wet_weather_master": 0.6416254964642059,
+    "wet_weather_master": 0.25242456168787286,
     "strong_starter": 0.6464285714285715,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -673,7 +673,7 @@
   },
   "91": {
     "qualifying_specialist": 0.6,
-    "wet_weather_master": 0.20073557878435938,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.48048780487804876,
     "tire_management": 0.0448157450835861,
     "inconsistent": 0.9551842549164139,
@@ -681,7 +681,7 @@
   },
   "92": {
     "qualifying_specialist": 0.6444444444444444,
-    "wet_weather_master": 0.2623049219687873,
+    "wet_weather_master": 0.630858346498157,
     "strong_starter": 0.6223404255319149,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -689,7 +689,7 @@
   },
   "93": {
     "qualifying_specialist": 0.6476190476190476,
-    "wet_weather_master": 0.515406162464986,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7214285714285714,
     "tire_management": 0.24156121007260578,
     "inconsistent": 0.7584387899273942,
@@ -697,7 +697,7 @@
   },
   "94": {
     "qualifying_specialist": 0.6097222222222223,
-    "wet_weather_master": 0.947606142728094,
+    "wet_weather_master": 0.18425223835839427,
     "strong_starter": 0.5588235294117647,
     "tire_management": 0.017353924095675377,
     "inconsistent": 0.9826460759043246,
@@ -705,7 +705,7 @@
   },
   "95": {
     "qualifying_specialist": 0.2555555555555556,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.702997682589519,
     "strong_starter": 0.2757978723404255,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -713,7 +713,7 @@
   },
   "96": {
     "qualifying_specialist": 0.593939393939394,
-    "wet_weather_master": 0.34130781499202534,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.6409090909090909,
     "tire_management": 0.15811735345896982,
     "inconsistent": 0.8418826465410302,
@@ -721,7 +721,7 @@
   },
   "97": {
     "qualifying_specialist": 0.5142857142857143,
-    "wet_weather_master": 0.3613445378151259,
+    "wet_weather_master": 0.21759259259259256,
     "strong_starter": 0.5214285714285715,
     "tire_management": 0.12710530210571358,
     "inconsistent": 0.8728946978942864,
@@ -729,7 +729,7 @@
   },
   "99": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3806734453286176,
+    "wet_weather_master": 0.28813519318369546,
     "strong_starter": 0.7092105263157895,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -737,7 +737,7 @@
   },
   "100": {
     "qualifying_specialist": 0.6571428571428571,
-    "wet_weather_master": 0.4757236227824465,
+    "wet_weather_master": 0.025055650463322404,
     "strong_starter": 0.7127118644067797,
     "tire_management": 0.01869265039369783,
     "inconsistent": 0.9813073496063022,
@@ -745,7 +745,7 @@
   },
   "101": {
     "qualifying_specialist": 0.7911111111111111,
-    "wet_weather_master": 0.36842105263157865,
+    "wet_weather_master": 0.4121212121212122,
     "strong_starter": 0.8416666666666666,
     "tire_management": 0.11475725518596047,
     "inconsistent": 0.8852427448140395,
@@ -753,7 +753,7 @@
   },
   "102": {
     "qualifying_specialist": 0.0,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.2506211180124224,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -761,7 +761,7 @@
   },
   "103": {
     "qualifying_specialist": 0.7358974358974358,
-    "wet_weather_master": 0.4544917257683216,
+    "wet_weather_master": 0.7508650519031139,
     "strong_starter": 0.6444444444444445,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -769,7 +769,7 @@
   },
   "104": {
     "qualifying_specialist": 0.6822222222222223,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.1022554310225543,
     "strong_starter": 0.8175000000000001,
     "tire_management": 0.08412514384163672,
     "inconsistent": 0.9158748561583633,
@@ -777,7 +777,7 @@
   },
   "105": {
     "qualifying_specialist": 0.5711111111111111,
-    "wet_weather_master": 0.7383052659716653,
+    "wet_weather_master": 0.27995915715213965,
     "strong_starter": 0.5185567010309279,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -785,7 +785,7 @@
   },
   "106": {
     "qualifying_specialist": 0.6666666666666666,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.775,
     "tire_management": 0.009162966968555675,
     "inconsistent": 0.9908370330314443,
@@ -793,7 +793,7 @@
   },
   "108": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.12549960031974394,
+    "wet_weather_master": 0.42022357723577247,
     "strong_starter": 0.85625,
     "tire_management": 0.062091875135794505,
     "inconsistent": 0.9379081248642055,
@@ -801,7 +801,7 @@
   },
   "109": {
     "qualifying_specialist": 0.4523809523809524,
-    "wet_weather_master": 0.780721966205837,
+    "wet_weather_master": 0.2966820987654321,
     "strong_starter": 0.6048387096774194,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -809,7 +809,7 @@
   },
   "110": {
     "qualifying_specialist": 0.4,
-    "wet_weather_master": 0.3524586931661341,
+    "wet_weather_master": 0.2786377708978327,
     "strong_starter": 0.43774038461538456,
     "tire_management": 0.05383982817704158,
     "inconsistent": 0.9461601718229584,
@@ -817,7 +817,7 @@
   },
   "111": {
     "qualifying_specialist": 0.8666666666666667,
-    "wet_weather_master": 0.6842105263157898,
+    "wet_weather_master": 0.13333333333333308,
     "strong_starter": 0.9277777777777778,
     "tire_management": 0.3544338045992529,
     "inconsistent": 0.6455661954007471,
@@ -825,7 +825,7 @@
   },
   "112": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11823035850495804,
+    "wet_weather_master": 0.29403929403929385,
     "strong_starter": 0.6068807339449541,
     "tire_management": 0.09282305765353038,
     "inconsistent": 0.9071769423464696,
@@ -833,7 +833,7 @@
   },
   "114": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.12935323383084563,
+    "wet_weather_master": 0.16305469556243551,
     "strong_starter": 0.8520833333333334,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -841,7 +841,7 @@
   },
   "117": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.4488105992171032,
     "strong_starter": 0.3370646766169154,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -849,7 +849,7 @@
   },
   "118": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5003631082062454,
+    "wet_weather_master": 0.7173555117367225,
     "strong_starter": 0.40371621621621623,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -857,7 +857,7 @@
   },
   "119": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.13977158091944072,
+    "wet_weather_master": 0.3722452069981882,
     "strong_starter": 0.3276264591439689,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -865,7 +865,7 @@
   },
   "120": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.014705882352941124,
+    "wet_weather_master": 0.148148148148148,
     "strong_starter": 0.86875,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -873,7 +873,7 @@
   },
   "121": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.2165242165242165,
     "strong_starter": 0.21538461538461537,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -881,7 +881,7 @@
   },
   "122": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.09662640566430625,
+    "wet_weather_master": 0.5402475646378084,
     "strong_starter": 0.43578947368421056,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -889,7 +889,7 @@
   },
   "123": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.04849819331526636,
+    "wet_weather_master": 0.17008752567016988,
     "strong_starter": 0.5328220858895706,
     "tire_management": 0.0422194993182492,
     "inconsistent": 0.9577805006817508,
@@ -897,7 +897,7 @@
   },
   "125": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.03418803418803407,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8666666666666666,
     "tire_management": 0.22385762508460327,
     "inconsistent": 0.7761423749153967,
@@ -905,7 +905,7 @@
   },
   "127": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.005208333333333223,
+    "wet_weather_master": 0.4364820846905537,
     "strong_starter": 0.5306666666666666,
     "tire_management": 0.00427433086315665,
     "inconsistent": 0.9957256691368433,
@@ -913,7 +913,7 @@
   },
   "128": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.28028293545534916,
+    "wet_weather_master": 0.4253670169163126,
     "strong_starter": 0.75,
     "tire_management": 0.10404090541115618,
     "inconsistent": 0.8959590945888438,
@@ -921,7 +921,7 @@
   },
   "129": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5271646859083194,
+    "wet_weather_master": 0.24649997947202038,
     "strong_starter": 0.625609756097561,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -929,7 +929,7 @@
   },
   "130": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6515151515151515,
+    "wet_weather_master": 0.1321839080459769,
     "strong_starter": 0.6,
     "tire_management": 0.4431635290622352,
     "inconsistent": 0.5568364709377648,
@@ -937,7 +937,7 @@
   },
   "131": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.16593792866941015,
+    "wet_weather_master": 0.36209797605884314,
     "strong_starter": 0.48428571428571426,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -945,7 +945,7 @@
   },
   "133": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10390946502057594,
+    "wet_weather_master": 0.5853736148547469,
     "strong_starter": 0.6982456140350877,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -953,7 +953,7 @@
   },
   "134": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3262108262108262,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 1.0,
     "inconsistent": 0.0,
@@ -961,7 +961,7 @@
   },
   "135": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.30357142857142844,
+    "wet_weather_master": 0.38709677419354827,
     "strong_starter": 0.5,
     "tire_management": 0.9776844301620531,
     "inconsistent": 0.022315569837946952,
@@ -969,7 +969,7 @@
   },
   "136": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6649035165050443,
+    "wet_weather_master": 0.7141687141687141,
     "strong_starter": 0.7717391304347826,
     "tire_management": 0.05498320974150228,
     "inconsistent": 0.9450167902584977,
@@ -977,7 +977,7 @@
   },
   "137": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10691876284080175,
+    "wet_weather_master": 0.32703305224386936,
     "strong_starter": 0.3465686274509804,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -985,7 +985,7 @@
   },
   "138": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.13800832532820978,
     "strong_starter": 0.5054054054054055,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -993,7 +993,7 @@
   },
   "139": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1547619047619046,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.49324324324324326,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1001,7 +1001,7 @@
   },
   "140": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.425310849940385,
+    "wet_weather_master": 0.10798750557786693,
     "strong_starter": 0.6316455696202532,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1009,7 +1009,7 @@
   },
   "141": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.42551622418879037,
+    "wet_weather_master": 0.11868686868686862,
     "strong_starter": 0.9642857142857142,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1017,7 +1017,7 @@
   },
   "142": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3516483516483515,
+    "wet_weather_master": 0.3416252072968488,
     "strong_starter": 0.5,
     "tire_management": 1.0,
     "inconsistent": 0.0,
@@ -1025,7 +1025,7 @@
   },
   "145": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11815635345047112,
+    "wet_weather_master": 0.3876575401999131,
     "strong_starter": 0.38571428571428573,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1033,7 +1033,7 @@
   },
   "146": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.42592592592592593,
+    "wet_weather_master": 0.24894514767932474,
     "strong_starter": 0.6555555555555556,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1041,7 +1041,7 @@
   },
   "147": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3021806853582556,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.7,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1049,7 +1049,7 @@
   },
   "148": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11511339813226588,
+    "wet_weather_master": 0.14074074074074072,
     "strong_starter": 0.8214285714285715,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1057,7 +1057,7 @@
   },
   "149": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3208020050125312,
+    "wet_weather_master": 0.33333333333333326,
     "strong_starter": 0.5,
     "tire_management": 1.0,
     "inconsistent": 0.0,
@@ -1065,7 +1065,7 @@
   },
   "151": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6428571428571428,
+    "wet_weather_master": 0.618387262455059,
     "strong_starter": 0.45357142857142857,
     "tire_management": 0.04014652967504617,
     "inconsistent": 0.9598534703249538,
@@ -1073,7 +1073,7 @@
   },
   "152": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3062330623306233,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.3840579710144928,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1081,7 +1081,7 @@
   },
   "153": {
     "qualifying_specialist": 0.5485507246376812,
-    "wet_weather_master": 0.3944408392818518,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5630434782608695,
     "tire_management": 0.4039325812711373,
     "inconsistent": 0.5960674187288627,
@@ -1089,7 +1089,7 @@
   },
   "154": {
     "qualifying_specialist": 0.45966850828729283,
-    "wet_weather_master": 0.1468070280224974,
+    "wet_weather_master": 0.2558214154748808,
     "strong_starter": 0.43547486033519556,
     "tire_management": 0.27049294207087726,
     "inconsistent": 0.7295070579291227,
@@ -1097,7 +1097,7 @@
   },
   "155": {
     "qualifying_specialist": 0.5102222222222222,
-    "wet_weather_master": 0.4598515519568151,
+    "wet_weather_master": 0.4242720822118914,
     "strong_starter": 0.5131578947368421,
     "tire_management": 0.18781873422067052,
     "inconsistent": 0.8121812657793295,
@@ -1105,7 +1105,7 @@
   },
   "156": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.23271780303030287,
+    "wet_weather_master": 0.4357696566998892,
     "strong_starter": 0.8071428571428572,
     "tire_management": 0.022954648786107312,
     "inconsistent": 0.9770453512138927,
@@ -1113,7 +1113,7 @@
   },
   "157": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5788670437202622,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.7777777777777778,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1121,7 +1121,7 @@
   },
   "158": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.32711732711732705,
+    "wet_weather_master": 0.5352118945868944,
     "strong_starter": 0.5306818181818181,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1129,7 +1129,7 @@
   },
   "159": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3748759920634918,
+    "wet_weather_master": 0.46581196581196604,
     "strong_starter": 0.7615384615384615,
     "tire_management": 0.005979706099732529,
     "inconsistent": 0.9940202939002675,
@@ -1137,7 +1137,7 @@
   },
   "160": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.27541827541827546,
+    "wet_weather_master": 0.28499880931118643,
     "strong_starter": 0.6973684210526316,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1145,7 +1145,7 @@
   },
   "161": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3190476190476192,
+    "wet_weather_master": 0.3129251700680271,
     "strong_starter": 0.5,
     "tire_management": 0.6220521807487791,
     "inconsistent": 0.3779478192512209,
@@ -1153,7 +1153,7 @@
   },
   "162": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.43646549528902456,
+    "wet_weather_master": 0.3641423176306898,
     "strong_starter": 0.5,
     "tire_management": 0.3854534322376417,
     "inconsistent": 0.6145465677623583,
@@ -1161,7 +1161,7 @@
   },
   "163": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.22655640939971042,
+    "wet_weather_master": 0.07740125035521461,
     "strong_starter": 0.4171140939597316,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1169,7 +1169,7 @@
   },
   "164": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.33659491193737756,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.8802917690052585,
     "inconsistent": 0.11970823099474152,
@@ -1177,7 +1177,7 @@
   },
   "165": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4586797682035778,
+    "wet_weather_master": 0.3996265172735758,
     "strong_starter": 0.7125,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1185,7 +1185,7 @@
   },
   "166": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5110513739545997,
+    "wet_weather_master": 0.19534632034632035,
     "strong_starter": 0.7240740740740741,
     "tire_management": 0.06806040904103317,
     "inconsistent": 0.9319395909589668,
@@ -1193,7 +1193,7 @@
   },
   "167": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.12725090036014391,
+    "wet_weather_master": 0.09561965811965815,
     "strong_starter": 0.5647058823529412,
     "tire_management": 0.2922053812557347,
     "inconsistent": 0.7077946187442653,
@@ -1201,7 +1201,7 @@
   },
   "169": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2627865961199294,
+    "wet_weather_master": 1.0,
     "strong_starter": 1.0,
     "tire_management": 0.12109318492379761,
     "inconsistent": 0.8789068150762024,
@@ -1209,7 +1209,7 @@
   },
   "170": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.4446068875893435,
     "strong_starter": 0.29609375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1217,7 +1217,7 @@
   },
   "172": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6155626780626782,
+    "wet_weather_master": 0.8202125352418133,
     "strong_starter": 0.4768361581920904,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1225,7 +1225,7 @@
   },
   "173": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7043908472479898,
+    "wet_weather_master": 0.17414238008500282,
     "strong_starter": 0.46805555555555556,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1233,7 +1233,7 @@
   },
   "174": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.22240259740259727,
+    "wet_weather_master": 0.12499999999999993,
     "strong_starter": 0.4766666666666667,
     "tire_management": 0.04470575099433527,
     "inconsistent": 0.9552942490056647,
@@ -1241,7 +1241,7 @@
   },
   "175": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0015142537362563178,
+    "wet_weather_master": 0.27833778467017034,
     "strong_starter": 0.4098290598290598,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1249,7 +1249,7 @@
   },
   "176": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.49116161616161613,
+    "wet_weather_master": 0.7810337810337808,
     "strong_starter": 0.7548780487804878,
     "tire_management": 0.09390456343553788,
     "inconsistent": 0.9060954365644621,
@@ -1257,7 +1257,7 @@
   },
   "177": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5861170977011495,
+    "wet_weather_master": 0.4541577825159915,
     "strong_starter": 0.41885964912280704,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1265,7 +1265,7 @@
   },
   "178": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.15126424501424485,
+    "wet_weather_master": 0.10974628546907672,
     "strong_starter": 0.5042735042735043,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1273,7 +1273,7 @@
   },
   "179": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6819727891156462,
+    "wet_weather_master": 0.09884559884559885,
     "strong_starter": 0.8942307692307694,
     "tire_management": 0.1514242201733822,
     "inconsistent": 0.8485757798266178,
@@ -1281,7 +1281,7 @@
   },
   "180": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.41563786008230447,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8555555555555555,
     "tire_management": 0.26356843294395216,
     "inconsistent": 0.7364315670560478,
@@ -1289,7 +1289,7 @@
   },
   "181": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.39852008456659593,
+    "wet_weather_master": 0.33499999999999974,
     "strong_starter": 0.409375,
     "tire_management": 0.06296239802965664,
     "inconsistent": 0.9370376019703434,
@@ -1297,7 +1297,7 @@
   },
   "182": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5614224137931034,
+    "wet_weather_master": 0.36416824794433905,
     "strong_starter": 0.38459302325581396,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1305,7 +1305,7 @@
   },
   "183": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.20544554455445527,
+    "wet_weather_master": 0.20833333333333334,
     "strong_starter": 0.5263157894736843,
     "tire_management": 0.04761971417926325,
     "inconsistent": 0.9523802858207367,
@@ -1313,7 +1313,7 @@
   },
   "184": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.26797385620915015,
     "strong_starter": 0.7166666666666666,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1321,7 +1321,7 @@
   },
   "185": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.3771929824561404,
     "strong_starter": 0.925,
     "tire_management": 0.058273526334521986,
     "inconsistent": 0.941726473665478,
@@ -1329,7 +1329,7 @@
   },
   "186": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.21527777777777776,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8,
     "tire_management": 0.13663909901449112,
     "inconsistent": 0.8633609009855089,
@@ -1337,7 +1337,7 @@
   },
   "187": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11559087678490658,
+    "wet_weather_master": 0.31496350364963477,
     "strong_starter": 0.5203947368421052,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1345,7 +1345,7 @@
   },
   "188": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19927536231884035,
+    "wet_weather_master": 0.148148148148148,
     "strong_starter": 0.7,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1353,7 +1353,7 @@
   },
   "189": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2954545454545454,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8875,
     "tire_management": 0.0070365258493181315,
     "inconsistent": 0.9929634741506819,
@@ -1361,7 +1361,7 @@
   },
   "190": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.583118001722653,
+    "wet_weather_master": 0.11688311688311674,
     "strong_starter": 0.7958333333333334,
     "tire_management": 0.057354397300701465,
     "inconsistent": 0.9426456026992985,
@@ -1369,7 +1369,7 @@
   },
   "191": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3267973856209148,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.8639016312569174,
     "inconsistent": 0.13609836874308254,
@@ -1377,7 +1377,7 @@
   },
   "192": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6104910714285713,
+    "wet_weather_master": 0.16445182724252494,
     "strong_starter": 0.9052631578947368,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1385,7 +1385,7 @@
   },
   "193": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.802681992337165,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.7933333333333333,
     "tire_management": 0.09786919177816256,
     "inconsistent": 0.9021308082218374,
@@ -1393,7 +1393,7 @@
   },
   "194": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.002057175285521777,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8041666666666666,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1401,7 +1401,7 @@
   },
   "195": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5020393029291803,
+    "wet_weather_master": 0.19999999999999982,
     "strong_starter": 0.525,
     "tire_management": 0.1309736143957888,
     "inconsistent": 0.8690263856042112,
@@ -1409,7 +1409,7 @@
   },
   "196": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.018682399213372412,
+    "wet_weather_master": 0.21827744904667973,
     "strong_starter": 0.8695652173913043,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1417,7 +1417,7 @@
   },
   "197": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.23419196836918343,
+    "wet_weather_master": 0.5814273215848017,
     "strong_starter": 0.5115942028985507,
     "tire_management": 0.0801146769441895,
     "inconsistent": 0.9198853230558105,
@@ -1425,7 +1425,7 @@
   },
   "199": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.36734693877551017,
+    "wet_weather_master": 0.2821268237934901,
     "strong_starter": 0.3599315068493151,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1433,7 +1433,7 @@
   },
   "200": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.17804646752015152,
+    "wet_weather_master": 0.5253827558420628,
     "strong_starter": 0.6306603773584906,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1441,7 +1441,7 @@
   },
   "201": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.37209302325581395,
+    "wet_weather_master": 0.4615384615384614,
     "strong_starter": 0.985,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1449,7 +1449,7 @@
   },
   "202": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.7588141025641026,
     "strong_starter": 0.4507042253521127,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1457,7 +1457,7 @@
   },
   "203": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2598039215686273,
+    "wet_weather_master": 0.41679766449584565,
     "strong_starter": 0.3574626865671642,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1465,7 +1465,7 @@
   },
   "204": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2068452380952381,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.4666666666666667,
     "tire_management": 0.04177690134431111,
     "inconsistent": 0.9582230986556889,
@@ -1473,7 +1473,7 @@
   },
   "205": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6327503974562795,
+    "wet_weather_master": 0.17899464831804268,
     "strong_starter": 0.8175000000000001,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1481,7 +1481,7 @@
   },
   "206": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5420283564814814,
+    "wet_weather_master": 0.10500155327741512,
     "strong_starter": 0.7,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1489,7 +1489,7 @@
   },
   "207": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.10851416027924703,
     "strong_starter": 0.30546875,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1497,7 +1497,7 @@
   },
   "208": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5511651469098278,
+    "wet_weather_master": 0.08287795992714028,
     "strong_starter": 0.5,
     "tire_management": 0.2806058419464982,
     "inconsistent": 0.7193941580535018,
@@ -1505,7 +1505,7 @@
   },
   "209": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19739952718676107,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8699999999999999,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1513,7 +1513,7 @@
   },
   "210": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5982905982905984,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1521,7 +1521,7 @@
   },
   "211": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7927927927927929,
+    "wet_weather_master": 0.3147396889790399,
     "strong_starter": 0.75,
     "tire_management": 0.0018783890248749158,
     "inconsistent": 0.9981216109751251,
@@ -1529,7 +1529,7 @@
   },
   "212": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.01698708168039853,
+    "wet_weather_master": 0.560303893637227,
     "strong_starter": 0.6414634146341462,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1537,7 +1537,7 @@
   },
   "213": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.553704667707791,
+    "wet_weather_master": 0.17063492063492058,
     "strong_starter": 0.7333333333333334,
     "tire_management": 0.4520892285728798,
     "inconsistent": 0.5479107714271202,
@@ -1545,7 +1545,7 @@
   },
   "216": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.225108225108225,
     "strong_starter": 0.65,
     "tire_management": 0.018306011762383778,
     "inconsistent": 0.9816939882376162,
@@ -1553,7 +1553,7 @@
   },
   "217": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7878787878787878,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.72,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1561,7 +1561,7 @@
   },
   "219": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.21440208536982716,
+    "wet_weather_master": 0.4409273913647094,
     "strong_starter": 0.1673469387755102,
     "tire_management": 0.13753615275447562,
     "inconsistent": 0.8624638472455244,
@@ -1569,7 +1569,7 @@
   },
   "221": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.7639965546942292,
     "strong_starter": 0.41052631578947374,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1577,7 +1577,7 @@
   },
   "222": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2798672566371683,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.440625,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1593,7 +1593,7 @@
   },
   "224": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8691807819324597,
+    "wet_weather_master": 0.8722087238227468,
     "strong_starter": 0.5606896551724139,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1601,7 +1601,7 @@
   },
   "225": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3424908424908424,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 1.0,
     "inconsistent": 0.0,
@@ -1609,7 +1609,7 @@
   },
   "229": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.06091806091806096,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8473684210526315,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1617,7 +1617,7 @@
   },
   "230": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6813186813186811,
+    "wet_weather_master": 0.47417840375586867,
     "strong_starter": 0.4337837837837838,
     "tire_management": 0.02014199858541943,
     "inconsistent": 0.9798580014145806,
@@ -1625,7 +1625,7 @@
   },
   "231": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19280878420663358,
+    "wet_weather_master": 0.4246075209930633,
     "strong_starter": 0.28043478260869564,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1633,7 +1633,7 @@
   },
   "232": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.18903318903318886,
+    "wet_weather_master": 0.17384370015948966,
     "strong_starter": 0.5035087719298246,
     "tire_management": 0.03994990498388862,
     "inconsistent": 0.9600500950161114,
@@ -1641,7 +1641,7 @@
   },
   "233": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.14656536878759102,
+    "wet_weather_master": 0.44374578935549047,
     "strong_starter": 0.46283783783783783,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1649,7 +1649,7 @@
   },
   "235": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4917355371900826,
+    "wet_weather_master": 0.6705581157194059,
     "strong_starter": 0.45999999999999996,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1657,7 +1657,7 @@
   },
   "236": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3931623931623929,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1665,7 +1665,7 @@
   },
   "237": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.292079207920792,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.9400000000000001,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1673,7 +1673,7 @@
   },
   "238": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.6196427779993793,
     "strong_starter": 0.35365853658536583,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1681,7 +1681,7 @@
   },
   "239": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3630952380952379,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8602941176470589,
     "tire_management": 0.05972520658347724,
     "inconsistent": 0.9402747934165228,
@@ -1689,7 +1689,7 @@
   },
   "240": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.20601851851851855,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.75,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1697,7 +1697,7 @@
   },
   "241": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.39455782312925164,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.6865046569704023,
     "inconsistent": 0.31349534302959775,
@@ -1705,7 +1705,7 @@
   },
   "243": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6777747917226551,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.712962962962963,
     "tire_management": 0.004719407575997647,
     "inconsistent": 0.9952805924240024,
@@ -1713,7 +1713,7 @@
   },
   "245": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.21684587813620057,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.6675934515227622,
     "inconsistent": 0.3324065484772379,
@@ -1721,7 +1721,7 @@
   },
   "246": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11728395061728385,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8576923076923076,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1729,7 +1729,7 @@
   },
   "247": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10582010582010563,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.19913831508666713,
     "inconsistent": 0.8008616849133329,
@@ -1737,7 +1737,7 @@
   },
   "250": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5337822149988392,
+    "wet_weather_master": 0.26678240740740733,
     "strong_starter": 0.3875,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1745,7 +1745,7 @@
   },
   "251": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.16584967320261454,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.611111111111111,
     "tire_management": 0.17359858716440224,
     "inconsistent": 0.8264014128355978,
@@ -1753,7 +1753,7 @@
   },
   "252": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4140907825118349,
+    "wet_weather_master": 0.03518187239117473,
     "strong_starter": 0.4833333333333333,
     "tire_management": 0.10747513768929284,
     "inconsistent": 0.8925248623107072,
@@ -1761,7 +1761,7 @@
   },
   "253": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.06763285024154575,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8833333333333334,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1769,7 +1769,7 @@
   },
   "254": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7428571428571429,
     "tire_management": 0.16732826118169342,
     "inconsistent": 0.8326717388183066,
@@ -1777,7 +1777,7 @@
   },
   "255": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8020833333333333,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.384375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1785,7 +1785,7 @@
   },
   "256": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.9111111111111111,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5818181818181818,
     "tire_management": 0.13694949175043736,
     "inconsistent": 0.8630505082495626,
@@ -1793,7 +1793,7 @@
   },
   "257": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4901277584204411,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.85,
     "tire_management": 0.04096876438747732,
     "inconsistent": 0.9590312356125227,
@@ -1801,7 +1801,7 @@
   },
   "258": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5234305923961096,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.97,
     "tire_management": 0.06774852475568582,
     "inconsistent": 0.9322514752443142,
@@ -1809,7 +1809,7 @@
   },
   "259": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8162878787878788,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.6625,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1817,7 +1817,7 @@
   },
   "260": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.39285714285714296,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.7757986866813809,
     "inconsistent": 0.22420131331861914,
@@ -1825,7 +1825,7 @@
   },
   "262": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.21350762527233114,
+    "wet_weather_master": 0.13377869133264814,
     "strong_starter": 0.509,
     "tire_management": 0.16176582177648446,
     "inconsistent": 0.8382341782235155,
@@ -1833,7 +1833,7 @@
   },
   "265": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.38650173611111116,
+    "wet_weather_master": 0.2694541231126598,
     "strong_starter": 0.7363636363636363,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1841,7 +1841,7 @@
   },
   "267": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7260536398467432,
+    "wet_weather_master": 0.8045977011494254,
     "strong_starter": 0.8555555555555555,
     "tire_management": 0.004427593455107792,
     "inconsistent": 0.9955724065448922,
@@ -1849,7 +1849,7 @@
   },
   "270": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3809523809523811,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6599999999999999,
     "tire_management": 0.0763048510802583,
     "inconsistent": 0.9236951489197417,
@@ -1857,7 +1857,7 @@
   },
   "271": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4920634920634922,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.9166666666666667,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1865,7 +1865,7 @@
   },
   "275": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.27941176470588214,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.823076923076923,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1873,7 +1873,7 @@
   },
   "276": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2888888888888889,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.755,
     "tire_management": 0.21022914791662972,
     "inconsistent": 0.7897708520833703,
@@ -1881,7 +1881,7 @@
   },
   "277": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.21614583333333326,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.9071428571428571,
     "tire_management": 0.39290293175767177,
     "inconsistent": 0.6070970682423282,
@@ -1889,7 +1889,7 @@
   },
   "278": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.29708439255562863,
     "strong_starter": 0.3848484848484849,
     "tire_management": 0.00646337493407112,
     "inconsistent": 0.9935366250659289,
@@ -1897,7 +1897,7 @@
   },
   "280": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.08930637805459107,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.6785714285714286,
     "tire_management": 0.06583428290482651,
     "inconsistent": 0.9341657170951735,
@@ -1905,7 +1905,7 @@
   },
   "283": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.44858156028368773,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7166666666666666,
     "tire_management": 0.06314596613226497,
     "inconsistent": 0.936854033867735,
@@ -1913,7 +1913,7 @@
   },
   "288": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.42881944444444414,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.6733333333333333,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1921,7 +1921,7 @@
   },
   "289": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.15315756803554498,
+    "wet_weather_master": 0.5233380962101108,
     "strong_starter": 0.5181818181818182,
     "tire_management": 0.11205814377574674,
     "inconsistent": 0.8879418562242533,
@@ -1929,7 +1929,7 @@
   },
   "290": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3360745614035088,
+    "wet_weather_master": 0.36082342411456325,
     "strong_starter": 0.6285714285714286,
     "tire_management": 0.12152429084237815,
     "inconsistent": 0.8784757091576219,
@@ -1937,7 +1937,7 @@
   },
   "293": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.09176788124156529,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.37727272727272726,
     "tire_management": 0.14971630692041327,
     "inconsistent": 0.8502836930795867,
@@ -1945,7 +1945,7 @@
   },
   "294": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.9252873563218393,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.495,
     "tire_management": 0.14695356249725633,
     "inconsistent": 0.8530464375027437,
@@ -1953,7 +1953,7 @@
   },
   "295": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8020833333333333,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8666666666666666,
     "tire_management": 0.16250864457386216,
     "inconsistent": 0.8374913554261378,
@@ -1961,7 +1961,7 @@
   },
   "296": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.17222222222222214,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7678571428571429,
     "tire_management": 0.4280851576220348,
     "inconsistent": 0.5719148423779652,
@@ -1969,7 +1969,7 @@
   },
   "298": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 1.0,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -1977,7 +1977,7 @@
   },
   "304": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8034784226190472,
+    "wet_weather_master": 0.023505572441742673,
     "strong_starter": 0.45223214285714286,
     "tire_management": 0.11730001635069298,
     "inconsistent": 0.882699983649307,
@@ -1985,7 +1985,7 @@
   },
   "305": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.930905695611578,
+    "wet_weather_master": 0.3584486166007905,
     "strong_starter": 0.461,
     "tire_management": 0.03997524875391045,
     "inconsistent": 0.9600247512460895,
@@ -1993,7 +1993,7 @@
   },
   "306": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.20987654320987648,
+    "wet_weather_master": 0.355105105105105,
     "strong_starter": 0.5117647058823529,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2001,7 +2001,7 @@
   },
   "307": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.16801619433198375,
+    "wet_weather_master": 0.16666666666666663,
     "strong_starter": 0.6833333333333333,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2009,7 +2009,7 @@
   },
   "309": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6763952892985148,
+    "wet_weather_master": 0.6349206349206349,
     "strong_starter": 0.41500000000000004,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2017,7 +2017,7 @@
   },
   "312": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.3983739837398374,
     "strong_starter": 0.6458333333333333,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2025,7 +2025,7 @@
   },
   "313": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.39658119658119645,
+    "wet_weather_master": 0.23355506282335553,
     "strong_starter": 0.6681818181818182,
     "tire_management": 0.05774788934307262,
     "inconsistent": 0.9422521106569274,
@@ -2033,7 +2033,7 @@
   },
   "314": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.32938121047877156,
+    "wet_weather_master": 0.2113095238095238,
     "strong_starter": 0.5367647058823529,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2041,7 +2041,7 @@
   },
   "316": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.20987654320987648,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.45629378596975434,
     "inconsistent": 0.5437062140302457,
@@ -2049,7 +2049,7 @@
   },
   "317": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.512228260869565,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.45652173913043476,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2057,7 +2057,7 @@
   },
   "320": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.05256869772998792,
+    "wet_weather_master": 0.07270233196159123,
     "strong_starter": 0.5383333333333333,
     "tire_management": 0.07267985139896627,
     "inconsistent": 0.9273201486010337,
@@ -2065,7 +2065,7 @@
   },
   "321": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6301369863013699,
+    "wet_weather_master": 0.7935963407661522,
     "strong_starter": 0.5222222222222223,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2073,7 +2073,7 @@
   },
   "322": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4313725490196078,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.9357142857142857,
     "tire_management": 0.9742165769367914,
     "inconsistent": 0.025783423063208577,
@@ -2081,7 +2081,7 @@
   },
   "327": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3564915327833259,
+    "wet_weather_master": 0.18415637860082307,
     "strong_starter": 0.4695652173913043,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2089,7 +2089,7 @@
   },
   "328": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.907520325203252,
     "strong_starter": 0.3545,
     "tire_management": 0.05401747869760365,
     "inconsistent": 0.9459825213023964,
@@ -2097,7 +2097,7 @@
   },
   "329": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19366479550922208,
+    "wet_weather_master": 0.14095238095238088,
     "strong_starter": 0.7767857142857142,
     "tire_management": 0.25852975866316463,
     "inconsistent": 0.7414702413368354,
@@ -2105,7 +2105,7 @@
   },
   "330": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2036356209150327,
+    "wet_weather_master": 0.5347222222222222,
     "strong_starter": 0.634375,
     "tire_management": 0.22245052740243076,
     "inconsistent": 0.7775494725975692,
@@ -2113,7 +2113,7 @@
   },
   "332": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3620689655172412,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7083333333333334,
     "tire_management": 0.05855835047910174,
     "inconsistent": 0.9414416495208983,
@@ -2121,7 +2121,7 @@
   },
   "333": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1623931623931622,
+    "wet_weather_master": 0.6886395511921458,
     "strong_starter": 0.5887096774193548,
     "tire_management": 0.12469052216321119,
     "inconsistent": 0.8753094778367888,
@@ -2129,7 +2129,7 @@
   },
   "337": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8020833333333333,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6611111111111111,
     "tire_management": 0.2808211822721125,
     "inconsistent": 0.7191788177278875,
@@ -2137,7 +2137,7 @@
   },
   "338": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8063562453806358,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6227272727272728,
     "tire_management": 0.2618534988320752,
     "inconsistent": 0.7381465011679248,
@@ -2145,7 +2145,7 @@
   },
   "339": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4651600753295667,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.6152935210755777,
     "inconsistent": 0.3847064789244224,
@@ -2153,7 +2153,7 @@
   },
   "340": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.15530303030303025,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7,
     "tire_management": 0.026897359274124955,
     "inconsistent": 0.973102640725875,
@@ -2161,7 +2161,7 @@
   },
   "341": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.6351990540007884,
     "strong_starter": 0.36607142857142855,
     "tire_management": 0.04884453769161723,
     "inconsistent": 0.9511554623083828,
@@ -2169,7 +2169,7 @@
   },
   "342": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2894736842105263,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.76,
     "tire_management": 0.6529654997525853,
     "inconsistent": 0.34703450024741467,
@@ -2177,7 +2177,7 @@
   },
   "345": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5712962962962963,
     "tire_management": 0.322140161771586,
     "inconsistent": 0.677859838228414,
@@ -2185,7 +2185,7 @@
   },
   "346": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.9743589743589747,
+    "wet_weather_master": 0.45675600994749915,
     "strong_starter": 0.5369791666666667,
     "tire_management": 0.28220800985988925,
     "inconsistent": 0.7177919901401107,
@@ -2193,7 +2193,7 @@
   },
   "347": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.38973053931899243,
     "strong_starter": 0.5261904761904762,
     "tire_management": 0.22429821815653872,
     "inconsistent": 0.7757017818434613,
@@ -2201,7 +2201,7 @@
   },
   "350": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7028657616892913,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.6538461538461539,
     "tire_management": 0.27033034395135713,
     "inconsistent": 0.7296696560486429,
@@ -2209,7 +2209,7 @@
   },
   "351": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.4347826086956519,
     "strong_starter": 0.6791666666666667,
     "tire_management": 0.04078445790639629,
     "inconsistent": 0.9592155420936037,
@@ -2217,7 +2217,7 @@
   },
   "352": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3209263854425145,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6318181818181818,
     "tire_management": 0.43846981466121127,
     "inconsistent": 0.5615301853387887,
@@ -2225,7 +2225,7 @@
   },
   "353": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8928571428571429,
     "tire_management": 0.04592556986481988,
     "inconsistent": 0.9540744301351801,
@@ -2233,7 +2233,7 @@
   },
   "356": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.1451008899462508,
     "strong_starter": 0.4110236220472441,
     "tire_management": 0.08788876721610916,
     "inconsistent": 0.9121112327838908,
@@ -2241,7 +2241,7 @@
   },
   "357": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.33333333333333326,
     "strong_starter": 0.45,
     "tire_management": 0.2330215940115803,
     "inconsistent": 0.7669784059884197,
@@ -2249,7 +2249,7 @@
   },
   "358": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.30065359477124187,
+    "wet_weather_master": 0.2703827799776626,
     "strong_starter": 0.33916666666666667,
     "tire_management": 0.17443821303845342,
     "inconsistent": 0.8255617869615466,
@@ -2257,7 +2257,7 @@
   },
   "359": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2151300236406617,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.6590909090909091,
     "tire_management": 0.217295973099231,
     "inconsistent": 0.782704026900769,
@@ -2265,7 +2265,7 @@
   },
   "360": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6893203883495144,
+    "wet_weather_master": 0.45503530286139,
     "strong_starter": 0.484313725490196,
     "tire_management": 0.16260054199848606,
     "inconsistent": 0.8373994580015139,
@@ -2273,7 +2273,7 @@
   },
   "361": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5344827586206898,
+    "wet_weather_master": 0.47736625514403275,
     "strong_starter": 0.5660714285714286,
     "tire_management": 0.33732483016413084,
     "inconsistent": 0.6626751698358692,
@@ -2281,7 +2281,7 @@
   },
   "364": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.14524555903866238,
+    "wet_weather_master": 0.260186887254902,
     "strong_starter": 0.35930232558139535,
     "tire_management": 0.2231844978531229,
     "inconsistent": 0.7768155021468771,
@@ -2289,7 +2289,7 @@
   },
   "368": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6574074074074073,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.75,
     "tire_management": 0.261946533963454,
     "inconsistent": 0.738053466036546,
@@ -2297,7 +2297,7 @@
   },
   "370": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3869774324824271,
+    "wet_weather_master": 0.6235233692860809,
     "strong_starter": 0.6823529411764706,
     "tire_management": 0.2510032227727542,
     "inconsistent": 0.7489967772272458,
@@ -2305,7 +2305,7 @@
   },
   "373": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.09507678410117441,
+    "wet_weather_master": 0.7383177570093458,
     "strong_starter": 0.33055555555555555,
     "tire_management": 0.09272863452165614,
     "inconsistent": 0.9072713654783439,
@@ -2313,7 +2313,7 @@
   },
   "374": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.44303542673107876,
+    "wet_weather_master": 0.800287356321839,
     "strong_starter": 0.5041666666666667,
     "tire_management": 0.3330291560433948,
     "inconsistent": 0.6669708439566052,
@@ -2321,7 +2321,7 @@
   },
   "375": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.24615384615384614,
+    "wet_weather_master": 0.24774774774774744,
     "strong_starter": 0.58,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2329,7 +2329,7 @@
   },
   "376": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.028895768833849256,
+    "wet_weather_master": 0.7259259259259259,
     "strong_starter": 0.7735294117647059,
     "tire_management": 0.23888100994345984,
     "inconsistent": 0.7611189900565402,
@@ -2337,7 +2337,7 @@
   },
   "380": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6043360433604336,
+    "wet_weather_master": 0.7398373983739837,
     "strong_starter": 0.5,
     "tire_management": 0.3314835345348385,
     "inconsistent": 0.6685164654651615,
@@ -2345,7 +2345,7 @@
   },
   "382": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.23611111111111102,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.375,
     "tire_management": 0.5530804092927786,
     "inconsistent": 0.4469195907072214,
@@ -2353,7 +2353,7 @@
   },
   "383": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.11760213822069487,
     "strong_starter": 0.64,
     "tire_management": 0.4541113756645979,
     "inconsistent": 0.5458886243354021,
@@ -2361,7 +2361,7 @@
   },
   "385": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5519972451790633,
+    "wet_weather_master": 0.1860682561944834,
     "strong_starter": 0.4654761904761905,
     "tire_management": 0.08657040250140546,
     "inconsistent": 0.9134295974985945,
@@ -2369,7 +2369,7 @@
   },
   "386": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10923242082662377,
+    "wet_weather_master": 0.34093106782704796,
     "strong_starter": 0.48584905660377353,
     "tire_management": 0.21833537102552103,
     "inconsistent": 0.781664628974479,
@@ -2377,7 +2377,7 @@
   },
   "387": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3850931677018632,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.3166666666666667,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2385,7 +2385,7 @@
   },
   "388": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.05416666666666644,
+    "wet_weather_master": 0.17708333333333326,
     "strong_starter": 0.61,
     "tire_management": 0.4071590288829169,
     "inconsistent": 0.5928409711170831,
@@ -2393,7 +2393,7 @@
   },
   "389": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6576168929110104,
+    "wet_weather_master": 0.9814814814814814,
     "strong_starter": 0.8458333333333334,
     "tire_management": 0.5624907899316798,
     "inconsistent": 0.4375092100683202,
@@ -2409,7 +2409,7 @@
   },
   "396": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.6611111111111111,
     "tire_management": 0.35253606168039753,
     "inconsistent": 0.6474639383196025,
@@ -2417,7 +2417,7 @@
   },
   "397": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.9417989417989419,
+    "wet_weather_master": 0.14545454545454548,
     "strong_starter": 0.6909090909090909,
     "tire_management": 0.08311967918800933,
     "inconsistent": 0.9168803208119907,
@@ -2425,7 +2425,7 @@
   },
   "399": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.46666666666666673,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.89,
     "tire_management": 0.33000664013259107,
     "inconsistent": 0.6699933598674089,
@@ -2433,7 +2433,7 @@
   },
   "401": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8963388676032354,
+    "wet_weather_master": 0.4752791068580542,
     "strong_starter": 0.45,
     "tire_management": 0.10452390982752291,
     "inconsistent": 0.8954760901724771,
@@ -2441,7 +2441,7 @@
   },
   "403": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.816773504273504,
+    "wet_weather_master": 0.6188992731048808,
     "strong_starter": 0.5447916666666667,
     "tire_management": 0.04627898357852278,
     "inconsistent": 0.9537210164214772,
@@ -2449,7 +2449,7 @@
   },
   "404": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2893450635386117,
+    "wet_weather_master": 0.045427876959181865,
     "strong_starter": 0.44699999999999995,
     "tire_management": 0.09330105798921906,
     "inconsistent": 0.9066989420107809,
@@ -2457,7 +2457,7 @@
   },
   "405": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10935441370223972,
+    "wet_weather_master": 0.0987654320987654,
     "strong_starter": 0.5045454545454546,
     "tire_management": 0.42845972078394545,
     "inconsistent": 0.5715402792160545,
@@ -2465,7 +2465,7 @@
   },
   "408": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.694,
     "tire_management": 0.21155678583770854,
     "inconsistent": 0.7884432141622915,
@@ -2473,7 +2473,7 @@
   },
   "418": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.22751322751322745,
+    "wet_weather_master": 0.13953488372093,
     "strong_starter": 0.5276315789473685,
     "tire_management": 0.10766114032318319,
     "inconsistent": 0.8923388596768168,
@@ -2481,7 +2481,7 @@
   },
   "420": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5442176870748299,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.7666666666666666,
     "tire_management": 0.37484337388971956,
     "inconsistent": 0.6251566261102804,
@@ -2489,7 +2489,7 @@
   },
   "423": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7826086956521738,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.725,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2497,7 +2497,7 @@
   },
   "425": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6125,
     "tire_management": 0.34677507491674386,
     "inconsistent": 0.6532249250832561,
@@ -2505,7 +2505,7 @@
   },
   "427": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7574595055413469,
+    "wet_weather_master": 0.6801351381992157,
     "strong_starter": 0.5234939759036145,
     "tire_management": 0.0472868363669634,
     "inconsistent": 0.9527131636330366,
@@ -2513,7 +2513,7 @@
   },
   "428": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.31871345029239756,
+    "wet_weather_master": 0.44907407407407396,
     "strong_starter": 0.6625,
     "tire_management": 0.2947806734398085,
     "inconsistent": 0.7052193265601915,
@@ -2521,7 +2521,7 @@
   },
   "429": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6318407960199006,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.7611111111111111,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2529,7 +2529,7 @@
   },
   "430": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3094384707287934,
+    "wet_weather_master": 0.21603375527426158,
     "strong_starter": 0.7767857142857142,
     "tire_management": 0.291310449706344,
     "inconsistent": 0.708689550293656,
@@ -2537,7 +2537,7 @@
   },
   "431": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4033613445378152,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6799999999999999,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2545,7 +2545,7 @@
   },
   "432": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7375,
     "tire_management": 0.29743967930631354,
     "inconsistent": 0.7025603206936865,
@@ -2553,7 +2553,7 @@
   },
   "434": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5185185185185186,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.775,
     "tire_management": 0.48625284922689505,
     "inconsistent": 0.513747150773105,
@@ -2561,7 +2561,7 @@
   },
   "435": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.31223628691983124,
     "strong_starter": 0.3291666666666667,
     "tire_management": 0.13323965885654543,
     "inconsistent": 0.8667603411434546,
@@ -2569,7 +2569,7 @@
   },
   "436": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19696969696969677,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2577,7 +2577,7 @@
   },
   "437": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.41210997837503816,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.74375,
     "tire_management": 0.16991982142246254,
     "inconsistent": 0.8300801785775375,
@@ -2585,7 +2585,7 @@
   },
   "438": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.4249084249084249,
     "strong_starter": 0.7083333333333334,
     "tire_management": 0.3241249506609388,
     "inconsistent": 0.6758750493390612,
@@ -2593,7 +2593,7 @@
   },
   "439": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.40909090909090895,
+    "wet_weather_master": 0.2742316784869977,
     "strong_starter": 0.5,
     "tire_management": 0.20923955891032853,
     "inconsistent": 0.7907604410896715,
@@ -2601,7 +2601,7 @@
   },
   "440": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.31978319783197817,
+    "wet_weather_master": 0.2291666666666666,
     "strong_starter": 0.8,
     "tire_management": 0.4709607417193985,
     "inconsistent": 0.5290392582806015,
@@ -2609,7 +2609,7 @@
   },
   "449": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0801687763713079,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.4875,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2617,7 +2617,7 @@
   },
   "842": {
     "qualifying_specialist": 0.5152173913043478,
-    "wet_weather_master": 0.035426731078904705,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5177777777777778,
     "tire_management": 0.4128251895477709,
     "inconsistent": 0.5871748104522291,
@@ -2625,7 +2625,7 @@
   },
   "453": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.05603201829616896,
+    "wet_weather_master": 0.10799319727891166,
     "strong_starter": 0.5944444444444444,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2633,7 +2633,7 @@
   },
   "454": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6944444444444442,
+    "wet_weather_master": 0.17307692307692302,
     "strong_starter": 0.4,
     "tire_management": 0.029337110856865967,
     "inconsistent": 0.970662889143134,
@@ -2641,7 +2641,7 @@
   },
   "455": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.47539847539847524,
+    "wet_weather_master": 0.3409090909090906,
     "strong_starter": 0.635,
     "tire_management": 0.1270318962590702,
     "inconsistent": 0.8729681037409298,
@@ -2649,7 +2649,7 @@
   },
   "456": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7353557775311381,
+    "wet_weather_master": 0.27028508771929827,
     "strong_starter": 0.49468085106382975,
     "tire_management": 0.09305772222863606,
     "inconsistent": 0.9069422777713639,
@@ -2657,7 +2657,7 @@
   },
   "459": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.29690346083788716,
+    "wet_weather_master": 0.059701492537313494,
     "strong_starter": 0.7625,
     "tire_management": 0.05973006415715132,
     "inconsistent": 0.9402699358428487,
@@ -2665,7 +2665,7 @@
   },
   "460": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5303030303030303,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5,
     "tire_management": 0.1694483132232273,
     "inconsistent": 0.8305516867767727,
@@ -2673,7 +2673,7 @@
   },
   "465": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2954545454545454,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6333333333333333,
     "tire_management": 0.5634346309715381,
     "inconsistent": 0.4365653690284619,
@@ -2681,7 +2681,7 @@
   },
   "475": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.016745159602302162,
     "strong_starter": 0.2798507462686567,
     "tire_management": 0.045479502846821784,
     "inconsistent": 0.9545204971531782,
@@ -2689,7 +2689,7 @@
   },
   "476": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5358617131062948,
     "strong_starter": 0.5111111111111111,
     "tire_management": 0.016381703378609114,
     "inconsistent": 0.9836182966213909,
@@ -2697,7 +2697,7 @@
   },
   "477": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4814814814814816,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.69375,
     "tire_management": 0.1394410598259347,
     "inconsistent": 0.8605589401740653,
@@ -2705,7 +2705,7 @@
   },
   "478": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4957627118644067,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5411764705882354,
     "tire_management": 0.03437225120977949,
     "inconsistent": 0.9656277487902205,
@@ -2713,7 +2713,7 @@
   },
   "479": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.6484730344379468,
     "strong_starter": 0.2881578947368421,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2721,7 +2721,7 @@
   },
   "481": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2729,7 +2729,7 @@
   },
   "482": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6874749899959983,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5035714285714286,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2737,7 +2737,7 @@
   },
   "483": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.30158730158730146,
+    "wet_weather_master": 0.0627705627705627,
     "strong_starter": 0.6125,
     "tire_management": 0.2124224575765562,
     "inconsistent": 0.7875775424234438,
@@ -2745,7 +2745,7 @@
   },
   "484": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1538461538461537,
+    "wet_weather_master": 0.7797619047619047,
     "strong_starter": 0.5357142857142857,
     "tire_management": 0.11257411327720679,
     "inconsistent": 0.8874258867227932,
@@ -2753,7 +2753,7 @@
   },
   "486": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.609986504723347,
+    "wet_weather_master": 0.42592592592592593,
     "strong_starter": 0.5961538461538461,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2761,7 +2761,7 @@
   },
   "496": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.4545454545454546,
     "tire_management": 0.1548675889158645,
     "inconsistent": 0.8451324110841355,
@@ -2769,7 +2769,7 @@
   },
   "498": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.009868421052631565,
     "strong_starter": 0.3423076923076923,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2777,7 +2777,7 @@
   },
   "501": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5099185873179684,
+    "wet_weather_master": 0.27107279693486586,
     "strong_starter": 0.44732142857142854,
     "tire_management": 0.20368395635353942,
     "inconsistent": 0.7963160436464606,
@@ -2785,7 +2785,7 @@
   },
   "502": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.3653846153846152,
     "strong_starter": 0.5285714285714286,
     "tire_management": 0.35341660587622237,
     "inconsistent": 0.6465833941237776,
@@ -2801,7 +2801,7 @@
   },
   "507": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.11653116531165297,
+    "wet_weather_master": 0.3647798742138364,
     "strong_starter": 0.6625,
     "tire_management": 0.2634829972279745,
     "inconsistent": 0.7365170027720255,
@@ -2809,7 +2809,7 @@
   },
   "509": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4770114942528736,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.825,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2817,7 +2817,7 @@
   },
   "512": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1869369369369369,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.525,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2825,7 +2825,7 @@
   },
   "513": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8833333333333334,
     "tire_management": 0.04518726454520294,
     "inconsistent": 0.9548127354547971,
@@ -2833,7 +2833,7 @@
   },
   "514": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.63,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2841,7 +2841,7 @@
   },
   "516": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5897435897435895,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.8800000000000001,
     "tire_management": 0.20201359143414788,
     "inconsistent": 0.7979864085658521,
@@ -2849,7 +2849,7 @@
   },
   "518": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.35144927536231885,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6375,
     "tire_management": 0.15507707989568165,
     "inconsistent": 0.8449229201043184,
@@ -2857,7 +2857,7 @@
   },
   "520": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.54375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2865,7 +2865,7 @@
   },
   "521": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3157894736842106,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.16,
     "tire_management": 0.09040771393580405,
     "inconsistent": 0.909592286064196,
@@ -2873,7 +2873,7 @@
   },
   "525": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3903133903133904,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5888888888888889,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2881,7 +2881,7 @@
   },
   "526": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.19375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2889,7 +2889,7 @@
   },
   "528": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6125,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2897,7 +2897,7 @@
   },
   "529": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0881542699724519,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.37727272727272726,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2905,7 +2905,7 @@
   },
   "533": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.22530864197530848,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.2833333333333333,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2913,7 +2913,7 @@
   },
   "537": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7387387387387386,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.0,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2921,7 +2921,7 @@
   },
   "538": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5904761904761902,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.75,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2929,7 +2929,7 @@
   },
   "541": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.19047619047619035,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5384615384615385,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2937,7 +2937,7 @@
   },
   "547": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4076682316118937,
+    "wet_weather_master": 0.5802469135802468,
     "strong_starter": 0.5933333333333334,
     "tire_management": 0.30300294004632367,
     "inconsistent": 0.6969970599536763,
@@ -2953,7 +2953,7 @@
   },
   "551": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.24999999999999986,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8666666666666666,
     "tire_management": 0.11653439986510905,
     "inconsistent": 0.883465600134891,
@@ -2961,7 +2961,7 @@
   },
   "554": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6823361823361825,
+    "wet_weather_master": 0.1091041212498702,
     "strong_starter": 0.33942307692307694,
     "tire_management": 0.11275299031332064,
     "inconsistent": 0.8872470096866794,
@@ -2969,7 +2969,7 @@
   },
   "555": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.030303030303030314,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.63125,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2977,7 +2977,7 @@
   },
   "556": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6666666666666665,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.4166666666666667,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2985,7 +2985,7 @@
   },
   "558": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2439024390243901,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -2993,7 +2993,7 @@
   },
   "559": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3908045977011495,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5333333333333333,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3001,7 +3001,7 @@
   },
   "566": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5326086956521741,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.525,
     "tire_management": 0.43508054462206835,
     "inconsistent": 0.5649194553779316,
@@ -3009,7 +3009,7 @@
   },
   "577": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6126126126126127,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.438,
     "tire_management": 0.18786354266493177,
     "inconsistent": 0.8121364573350682,
@@ -3017,7 +3017,7 @@
   },
   "578": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.44222222222222224,
     "tire_management": 0.20210401668304623,
     "inconsistent": 0.7978959833169538,
@@ -3025,7 +3025,7 @@
   },
   "579": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5620915032679737,
+    "wet_weather_master": 0.03774928774928762,
     "strong_starter": 0.36176470588235293,
     "tire_management": 0.3609139299248767,
     "inconsistent": 0.6390860700751233,
@@ -3033,7 +3033,7 @@
   },
   "580": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1924198250728861,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.8038461538461539,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3041,7 +3041,7 @@
   },
   "581": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.062150164060992094,
     "strong_starter": 0.3953125,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3049,7 +3049,7 @@
   },
   "583": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.029556650246305348,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.775,
     "tire_management": 0.33095577262932174,
     "inconsistent": 0.6690442273706783,
@@ -3057,7 +3057,7 @@
   },
   "586": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.25854700854700874,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.62,
     "tire_management": 0.03593708683068775,
     "inconsistent": 0.9640629131693123,
@@ -3065,7 +3065,7 @@
   },
   "589": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.38956170703575527,
+    "wet_weather_master": 0.1810897435897435,
     "strong_starter": 0.62,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3073,7 +3073,7 @@
   },
   "590": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.37606837606837584,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.33214285714285713,
     "tire_management": 0.21035609236043518,
     "inconsistent": 0.7896439076395648,
@@ -3081,7 +3081,7 @@
   },
   "592": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0952380952380951,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3089,7 +3089,7 @@
   },
   "593": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.3888888888888889,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3097,7 +3097,7 @@
   },
   "596": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.44444444444444436,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.05,
     "tire_management": 0.328348244002714,
     "inconsistent": 0.671651755997286,
@@ -3105,7 +3105,7 @@
   },
   "597": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5977011494252875,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.05999999999999996,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3113,7 +3113,7 @@
   },
   "606": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.666666666666667,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.45999999999999996,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3129,7 +3129,7 @@
   },
   "608": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.6392914653784221,
     "strong_starter": 0.23214285714285715,
     "tire_management": 0.20716944382810076,
     "inconsistent": 0.7928305561718992,
@@ -3137,7 +3137,7 @@
   },
   "609": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6419753086419755,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5181818181818182,
     "tire_management": 0.2780934904103217,
     "inconsistent": 0.7219065095896783,
@@ -3145,7 +3145,7 @@
   },
   "611": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.51875,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3153,7 +3153,7 @@
   },
   "612": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.37837837837837823,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.19285714285714284,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3161,7 +3161,7 @@
   },
   "615": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.24786324786324773,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.0,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3169,7 +3169,7 @@
   },
   "619": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3753501400560222,
+    "wet_weather_master": 0.2765151515151513,
     "strong_starter": 0.8428571428571429,
     "tire_management": 0.7394200370255628,
     "inconsistent": 0.26057996297443714,
@@ -3177,7 +3177,7 @@
   },
   "620": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.595,
     "tire_management": 0.0859718741521931,
     "inconsistent": 0.9140281258478069,
@@ -3185,7 +3185,7 @@
   },
   "622": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.44907407407407396,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7083333333333334,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3193,7 +3193,7 @@
   },
   "624": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.03571428571428559,
+    "wet_weather_master": 0.9206349206349204,
     "strong_starter": 0.7357142857142858,
     "tire_management": 0.07618354476452593,
     "inconsistent": 0.9238164552354741,
@@ -3201,7 +3201,7 @@
   },
   "625": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7809523809523811,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.38571428571428573,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3209,7 +3209,7 @@
   },
   "626": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.09898045879354278,
     "strong_starter": 0.3892857142857143,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3217,7 +3217,7 @@
   },
   "627": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.03349673202614386,
     "strong_starter": 0.6763157894736842,
     "tire_management": 0.17010033156913618,
     "inconsistent": 0.8298996684308638,
@@ -3225,7 +3225,7 @@
   },
   "628": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.77,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3233,7 +3233,7 @@
   },
   "632": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.225108225108225,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5136363636363637,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3241,7 +3241,7 @@
   },
   "633": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7775187775187775,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.3757575757575758,
     "tire_management": 0.011396754904238304,
     "inconsistent": 0.9886032450957617,
@@ -3249,7 +3249,7 @@
   },
   "640": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.33570919458303633,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5659090909090909,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3257,7 +3257,7 @@
   },
   "641": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.4470588235294118,
     "tire_management": 0.22559232580263078,
     "inconsistent": 0.7744076741973692,
@@ -3265,7 +3265,7 @@
   },
   "642": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.33119931711481,
     "strong_starter": 0.3602941176470588,
     "tire_management": 0.21818955390518158,
     "inconsistent": 0.7818104460948184,
@@ -3273,7 +3273,7 @@
   },
   "643": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.22638146167557938,
+    "wet_weather_master": 0.5155195681511471,
     "strong_starter": 0.6529411764705882,
     "tire_management": 0.1952617814718307,
     "inconsistent": 0.8047382185281693,
@@ -3281,7 +3281,7 @@
   },
   "644": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.6944444444444442,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.7428571428571429,
     "tire_management": 0.25189589999582707,
     "inconsistent": 0.7481041000041729,
@@ -3289,7 +3289,7 @@
   },
   "645": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.10526315789473661,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.44000000000000006,
     "tire_management": 0.15561660745979333,
     "inconsistent": 0.8443833925402067,
@@ -3297,7 +3297,7 @@
   },
   "647": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.8210227272727274,
     "strong_starter": 0.3078125,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3305,7 +3305,7 @@
   },
   "648": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.4313725490196078,
     "strong_starter": 0.39090909090909093,
     "tire_management": 0.28963079556907045,
     "inconsistent": 0.7103692044309295,
@@ -3313,7 +3313,7 @@
   },
   "650": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6900000000000001,
     "tire_management": 0.33834842401405485,
     "inconsistent": 0.6616515759859452,
@@ -3321,7 +3321,7 @@
   },
   "651": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5996955859969559,
+    "wet_weather_master": 0.47916666666666646,
     "strong_starter": 0.5384615384615385,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3329,7 +3329,7 @@
   },
   "653": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 1.0,
     "tire_management": 0.23422661795337563,
     "inconsistent": 0.7657733820466244,
@@ -3337,7 +3337,7 @@
   },
   "654": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.3636363636363634,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.35,
     "tire_management": 0.31356774052868497,
     "inconsistent": 0.686432259471315,
@@ -3345,7 +3345,7 @@
   },
   "657": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.3,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3353,7 +3353,7 @@
   },
   "658": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.14166666666666666,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3361,7 +3361,7 @@
   },
   "660": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0905349794238682,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.7804347826086957,
     "tire_management": 0.09225899178163866,
     "inconsistent": 0.9077410082183613,
@@ -3369,7 +3369,7 @@
   },
   "663": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.8137755102040816,
+    "wet_weather_master": 0.5018315018315019,
     "strong_starter": 0.5375,
     "tire_management": 0.10230283302218857,
     "inconsistent": 0.8976971669778114,
@@ -3377,7 +3377,7 @@
   },
   "664": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.45598845598845605,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.3071428571428571,
     "tire_management": 0.186708779654444,
     "inconsistent": 0.813291220345556,
@@ -3385,7 +3385,7 @@
   },
   "669": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2118758434547907,
+    "wet_weather_master": 0.7442922374429222,
     "strong_starter": 0.5526315789473684,
     "tire_management": 0.05074142329329412,
     "inconsistent": 0.9492585767067059,
@@ -3393,7 +3393,7 @@
   },
   "670": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.5679012345679013,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.3333333333333333,
     "tire_management": 0.1226037662304238,
     "inconsistent": 0.8773962337695762,
@@ -3401,7 +3401,7 @@
   },
   "680": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7074829931972789,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.75,
     "tire_management": 0.37651565303786405,
     "inconsistent": 0.623484346962136,
@@ -3409,7 +3409,7 @@
   },
   "686": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.8888888888888887,
     "strong_starter": 0.4714285714285714,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3417,7 +3417,7 @@
   },
   "687": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.40740740740740744,
+    "wet_weather_master": 0.42105263157894723,
     "strong_starter": 0.6136363636363636,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3425,7 +3425,7 @@
   },
   "688": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.63,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3433,7 +3433,7 @@
   },
   "689": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.17460317460317473,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5888888888888889,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3441,7 +3441,7 @@
   },
   "697": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.08862433862433869,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.49375,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3449,7 +3449,7 @@
   },
   "704": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.2365253793825221,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.5230769230769231,
     "tire_management": 0.3541050319235476,
     "inconsistent": 0.6458949680764524,
@@ -3457,7 +3457,7 @@
   },
   "708": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.691358024691358,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.37,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3465,7 +3465,7 @@
   },
   "721": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.714285714285714,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5700000000000001,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3473,7 +3473,7 @@
   },
   "723": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5571428571428572,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3481,7 +3481,7 @@
   },
   "741": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.4472934472934472,
+    "wet_weather_master": 0.2558139534883721,
     "strong_starter": 0.5375,
     "tire_management": 0.48332101513935977,
     "inconsistent": 0.5166789848606402,
@@ -3489,7 +3489,7 @@
   },
   "762": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.1874999999999999,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.44000000000000006,
     "tire_management": 0.4250468179571004,
     "inconsistent": 0.5749531820428996,
@@ -3497,7 +3497,7 @@
   },
   "763": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.21000000000000002,
     "tire_management": 0.0,
     "inconsistent": 1.0,
@@ -3505,7 +3505,7 @@
   },
   "773": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.14009661835748774,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.75,
     "tire_management": 0.6565831586160875,
     "inconsistent": 0.34341684138391243,
@@ -3513,7 +3513,7 @@
   },
   "786": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 1.0,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5285714285714286,
     "tire_management": 0.5294189471064816,
     "inconsistent": 0.4705810528935183,
@@ -3521,7 +3521,7 @@
   },
   "793": {
     "qualifying_specialist": 0.5,
-    "wet_weather_master": 0.7017543859649122,
+    "wet_weather_master": 1.0,
     "strong_starter": 0.43,
     "tire_management": 0.328348244002714,
     "inconsistent": 0.671651755997286,
@@ -3529,7 +3529,7 @@
   },
   "807": {
     "qualifying_specialist": 0.46304347826086956,
-    "wet_weather_master": 0.5376061969015493,
+    "wet_weather_master": 0.09693725840023779,
     "strong_starter": 0.43488372093023253,
     "tire_management": 0.5366665388646195,
     "inconsistent": 0.46333346113538054,
@@ -3537,7 +3537,7 @@
   },
   "808": {
     "qualifying_specialist": 0.5080459770114942,
-    "wet_weather_master": 0.5970522803114572,
+    "wet_weather_master": 0.3749249635537259,
     "strong_starter": 0.5120689655172413,
     "tire_management": 0.36419832799938945,
     "inconsistent": 0.6358016720006106,
@@ -3545,7 +3545,7 @@
   },
   "810": {
     "qualifying_specialist": 0.5929824561403509,
-    "wet_weather_master": 0.379059350503919,
+    "wet_weather_master": 0.2869198312236286,
     "strong_starter": 0.6368421052631579,
     "tire_management": 0.685372656080226,
     "inconsistent": 0.3146273439197739,
@@ -3553,7 +3553,7 @@
   },
   "811": {
     "qualifying_specialist": 0.5536231884057972,
-    "wet_weather_master": 0.1039974518235387,
+    "wet_weather_master": 0.6614684860298896,
     "strong_starter": 0.5608695652173913,
     "tire_management": 0.33084108587665995,
     "inconsistent": 0.66915891412334,
@@ -3561,7 +3561,7 @@
   },
   "812": {
     "qualifying_specialist": 0.6666666666666666,
-    "wet_weather_master": 0.44919786096256686,
+    "wet_weather_master": 0.5409652076318743,
     "strong_starter": 0.740909090909091,
     "tire_management": 0.6512478411892053,
     "inconsistent": 0.34875215881079463,
@@ -3569,7 +3569,7 @@
   },
   "813": {
     "qualifying_specialist": 0.46076388888888886,
-    "wet_weather_master": 0.6841957885304658,
+    "wet_weather_master": 0.13173747622067208,
     "strong_starter": 0.4578125,
     "tire_management": 0.39794524332420966,
     "inconsistent": 0.6020547566757903,
@@ -3577,7 +3577,7 @@
   },
   "814": {
     "qualifying_specialist": 0.5056497175141242,
-    "wet_weather_master": 0.5652976966536287,
+    "wet_weather_master": 0.1210272056953978,
     "strong_starter": 0.5135593220338983,
     "tire_management": 0.3491070098500796,
     "inconsistent": 0.6508929901499204,
@@ -3585,7 +3585,7 @@
   },
   "815": {
     "qualifying_specialist": 0.5463768115942028,
-    "wet_weather_master": 0.7047101449275361,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.5476744186046512,
     "tire_management": 0.17391245577553027,
     "inconsistent": 0.8260875442244697,
@@ -3593,7 +3593,7 @@
   },
   "816": {
     "qualifying_specialist": 0.615,
-    "wet_weather_master": 0.3848314606741573,
+    "wet_weather_master": 0.4987745098039217,
     "strong_starter": 0.6599999999999999,
     "tire_management": 0.7133649391822561,
     "inconsistent": 0.286635060817744,
@@ -3601,7 +3601,7 @@
   },
   "817": {
     "qualifying_specialist": 0.508,
-    "wet_weather_master": 0.284313725490196,
+    "wet_weather_master": 0.4256694367497693,
     "strong_starter": 0.504,
     "tire_management": 0.6736600180750321,
     "inconsistent": 0.326339981924968,
@@ -3609,7 +3609,7 @@
   },
   "818": {
     "qualifying_specialist": 0.49885057471264366,
-    "wet_weather_master": 0.05384510125889419,
+    "wet_weather_master": 0.5670409828198483,
     "strong_starter": 0.5043103448275862,
     "tire_management": 0.3612927936417135,
     "inconsistent": 0.6387072063582865,
@@ -3617,7 +3617,7 @@
   },
   "819": {
     "qualifying_specialist": 0.5948717948717949,
-    "wet_weather_master": 0.25236167341430493,
+    "wet_weather_master": 0.29931972789115635,
     "strong_starter": 0.6269230769230769,
     "tire_management": 0.7351173440930294,
     "inconsistent": 0.2648826559069706,
@@ -3625,7 +3625,7 @@
   },
   "820": {
     "qualifying_specialist": 0.5914285714285714,
-    "wet_weather_master": 0.28623757195185784,
+    "wet_weather_master": 0.5424442530385684,
     "strong_starter": 0.62,
     "tire_management": 0.7815441826033592,
     "inconsistent": 0.21845581739664074,
@@ -3633,7 +3633,7 @@
   },
   "821": {
     "qualifying_specialist": 0.49943502824858754,
-    "wet_weather_master": 0.2973805855161786,
+    "wet_weather_master": 0.33117824536656093,
     "strong_starter": 0.5101694915254237,
     "tire_management": 0.6122828773976505,
     "inconsistent": 0.38771712260234953,
@@ -3641,7 +3641,7 @@
   },
   "822": {
     "qualifying_specialist": 0.48768115942028983,
-    "wet_weather_master": 0.32608695652173914,
+    "wet_weather_master": 0.58987090367428,
     "strong_starter": 0.46022727272727276,
     "tire_management": 0.6485954885727114,
     "inconsistent": 0.3514045114272885,
@@ -3649,7 +3649,7 @@
   },
   "823": {
     "qualifying_specialist": 0.5578947368421052,
-    "wet_weather_master": 0.28428598377664593,
+    "wet_weather_master": 0.6419753086419755,
     "strong_starter": 0.5657894736842105,
     "tire_management": 0.752885233149107,
     "inconsistent": 0.24711476685089298,
@@ -3657,7 +3657,7 @@
   },
   "824": {
     "qualifying_specialist": 0.5686274509803921,
-    "wet_weather_master": 0.47232563911640585,
+    "wet_weather_master": 0.5415384615384615,
     "strong_starter": 0.5852941176470587,
     "tire_management": 0.7214059782940889,
     "inconsistent": 0.2785940217059111,
@@ -3665,7 +3665,7 @@
   },
   "825": {
     "qualifying_specialist": 0.5075757575757576,
-    "wet_weather_master": 0.21338383838383823,
+    "wet_weather_master": 0.09725756290641782,
     "strong_starter": 0.50875,
     "tire_management": 0.5733265434980037,
     "inconsistent": 0.42667345650199623,
@@ -3673,7 +3673,7 @@
   },
   "826": {
     "qualifying_specialist": 0.48988095238095236,
-    "wet_weather_master": 0.48559736394557834,
+    "wet_weather_master": 0.5340343735866123,
     "strong_starter": 0.49459459459459454,
     "tire_management": 0.40119893281640717,
     "inconsistent": 0.5988010671835928,
@@ -3681,7 +3681,7 @@
   },
   "828": {
     "qualifying_specialist": 0.5840277777777777,
-    "wet_weather_master": 0.3287514318442153,
+    "wet_weather_master": 0.28650652180063946,
     "strong_starter": 0.5958762886597938,
     "tire_management": 0.6040804974575273,
     "inconsistent": 0.3959195025424726,
@@ -3689,7 +3689,7 @@
   },
   "829": {
     "qualifying_specialist": 0.5814814814814814,
-    "wet_weather_master": 0.3777344596058049,
+    "wet_weather_master": 0.48745519713261654,
     "strong_starter": 0.5638888888888889,
     "tire_management": 0.8562978780856043,
     "inconsistent": 0.14370212191439566,
@@ -3697,7 +3697,7 @@
   },
   "830": {
     "qualifying_specialist": 0.5152173913043478,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.23725981620718467,
     "strong_starter": 0.5434782608695652,
     "tire_management": 0.6577947601086895,
     "inconsistent": 0.34220523989131046,
@@ -3705,7 +3705,7 @@
   },
   "831": {
     "qualifying_specialist": 0.59,
-    "wet_weather_master": 0.40073529411764713,
+    "wet_weather_master": 0.2656695156695157,
     "strong_starter": 0.6115384615384615,
     "tire_management": 0.4898739117937786,
     "inconsistent": 0.5101260882062214,
@@ -3713,7 +3713,7 @@
   },
   "832": {
     "qualifying_specialist": 0.46222222222222226,
-    "wet_weather_master": 0.03703703703703691,
+    "wet_weather_master": 0.0,
     "strong_starter": 0.45227272727272727,
     "tire_management": 0.33675787825559655,
     "inconsistent": 0.6632421217444034,
@@ -3721,7 +3721,7 @@
   },
   "833": {
     "qualifying_specialist": 0.6230769230769231,
-    "wet_weather_master": 0.38167297183690607,
+    "wet_weather_master": 0.5312899106002552,
     "strong_starter": 0.6269230769230769,
     "tire_management": 0.8306730091495375,
     "inconsistent": 0.16932699085046252,
@@ -3729,7 +3729,7 @@
   },
   "834": {
     "qualifying_specialist": 0.6133333333333333,
-    "wet_weather_master": 0.2708333333333333,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.62,
     "tire_management": 0.7320531729864901,
     "inconsistent": 0.2679468270135099,
@@ -3737,7 +3737,7 @@
   },
   "835": {
     "qualifying_specialist": 0.5304761904761904,
-    "wet_weather_master": 0.6549831081081078,
+    "wet_weather_master": 0.31884870572843654,
     "strong_starter": 0.5527027027027027,
     "tire_management": 0.48551766390444884,
     "inconsistent": 0.5144823360955512,
@@ -3745,7 +3745,7 @@
   },
   "836": {
     "qualifying_specialist": 0.5717948717948718,
-    "wet_weather_master": 0.3259470296507333,
+    "wet_weather_master": 0.06451612903225787,
     "strong_starter": 0.5628205128205128,
     "tire_management": 0.5954523461441412,
     "inconsistent": 0.40454765385585884,
@@ -3753,7 +3753,7 @@
   },
   "837": {
     "qualifying_specialist": 0.55,
-    "wet_weather_master": 0.5240464344941957,
+    "wet_weather_master": 0.3737373737373739,
     "strong_starter": 0.5583333333333333,
     "tire_management": 0.8089710866742268,
     "inconsistent": 0.1910289133257732,
@@ -3761,7 +3761,7 @@
   },
   "838": {
     "qualifying_specialist": 0.5626984126984127,
-    "wet_weather_master": 0.3577533577533576,
+    "wet_weather_master": 0.26767404209390167,
     "strong_starter": 0.6,
     "tire_management": 0.6228692998071157,
     "inconsistent": 0.37713070019288436,
@@ -3769,7 +3769,7 @@
   },
   "839": {
     "qualifying_specialist": 0.5007407407407407,
-    "wet_weather_master": 0.5057471264367815,
+    "wet_weather_master": 0.19328419328419316,
     "strong_starter": 0.4821428571428571,
     "tire_management": 0.4024082620083279,
     "inconsistent": 0.5975917379916721,
@@ -3777,7 +3777,7 @@
   },
   "840": {
     "qualifying_specialist": 0.5115942028985507,
-    "wet_weather_master": 0.0006587615283265569,
+    "wet_weather_master": 0.4099722991689751,
     "strong_starter": 0.5034883720930232,
     "tire_management": 0.38252260407586725,
     "inconsistent": 0.6174773959241328,
@@ -3785,7 +3785,7 @@
   },
   "841": {
     "qualifying_specialist": 0.5234972677595628,
-    "wet_weather_master": 0.4429280397022332,
+    "wet_weather_master": 0.09432624113475174,
     "strong_starter": 0.5368852459016393,
     "tire_management": 0.6718421092555829,
     "inconsistent": 0.3281578907444172,
@@ -3793,7 +3793,7 @@
   },
   "843": {
     "qualifying_specialist": 0.5146666666666666,
-    "wet_weather_master": 0.6249999999999997,
+    "wet_weather_master": 0.21428571428571427,
     "strong_starter": 0.5541666666666667,
     "tire_management": 0.5823817285680633,
     "inconsistent": 0.41761827143193675,
@@ -3801,7 +3801,7 @@
   },
   "844": {
     "qualifying_specialist": 0.45362318840579713,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.4807764091078759,
     "strong_starter": 0.4633333333333334,
     "tire_management": 0.1987431126391681,
     "inconsistent": 0.8012568873608319,
@@ -3809,7 +3809,7 @@
   },
   "845": {
     "qualifying_specialist": 0.5476190476190476,
-    "wet_weather_master": 0.3688387635756056,
+    "wet_weather_master": 0.47870182555780944,
     "strong_starter": 0.5380952380952382,
     "tire_management": 0.7237625899592817,
     "inconsistent": 0.27623741004071833,
@@ -3833,7 +3833,7 @@
   },
   "848": {
     "qualifying_specialist": 0.47246376811594204,
-    "wet_weather_master": 0.16908212560386476,
+    "wet_weather_master": 0.7140929246192403,
     "strong_starter": 0.44222222222222224,
     "tire_management": 0.497468574203365,
     "inconsistent": 0.502531425796635,
@@ -3841,7 +3841,7 @@
   },
   "849": {
     "qualifying_specialist": 0.5677595628415301,
-    "wet_weather_master": 0.16784649776453037,
+    "wet_weather_master": 0.48841231407817376,
     "strong_starter": 0.5720338983050848,
     "tire_management": 0.6993694086144491,
     "inconsistent": 0.3006305913855509,
@@ -3849,7 +3849,7 @@
   },
   "852": {
     "qualifying_specialist": 0.4688405797101449,
-    "wet_weather_master": 0.9071280686187518,
+    "wet_weather_master": 0.46358320042530565,
     "strong_starter": 0.4608695652173913,
     "tire_management": 0.49786974808538975,
     "inconsistent": 0.5021302519146102,
@@ -3857,7 +3857,7 @@
   },
   "853": {
     "qualifying_specialist": 0.5575757575757575,
-    "wet_weather_master": 0.32070707070707066,
+    "wet_weather_master": 0.5356125356125356,
     "strong_starter": 0.5318181818181819,
     "tire_management": 0.8743693686331226,
     "inconsistent": 0.12563063136687733,
@@ -3865,7 +3865,7 @@
   },
   "854": {
     "qualifying_specialist": 0.5224806201550387,
-    "wet_weather_master": 0.2776842499064721,
+    "wet_weather_master": 0.3879781420765027,
     "strong_starter": 0.5069767441860465,
     "tire_management": 0.6571408930526332,
     "inconsistent": 0.3428591069473667,
@@ -3873,7 +3873,7 @@
   },
   "855": {
     "qualifying_specialist": 0.5746376811594203,
-    "wet_weather_master": 0.15304697049065824,
+    "wet_weather_master": 0.16809465524275813,
     "strong_starter": 0.5829545454545455,
     "tire_management": 0.6841071773161707,
     "inconsistent": 0.31589282268382934,
@@ -3881,7 +3881,7 @@
   },
   "856": {
     "qualifying_specialist": 0.5366666666666667,
-    "wet_weather_master": 0.43333333333333335,
+    "wet_weather_master": 0.5344827586206895,
     "strong_starter": 0.5222222222222223,
     "tire_management": 0.7550303654923843,
     "inconsistent": 0.24496963450761564,
@@ -3889,7 +3889,7 @@
   },
   "857": {
     "qualifying_specialist": 0.48840579710144927,
-    "wet_weather_master": 0.0,
+    "wet_weather_master": 0.969298245614035,
     "strong_starter": 0.4771739130434782,
     "tire_management": 0.299410271248031,
     "inconsistent": 0.700589728751969,
@@ -3897,7 +3897,7 @@
   },
   "858": {
     "qualifying_specialist": 0.5351851851851852,
-    "wet_weather_master": 0.23116219667943805,
+    "wet_weather_master": 0.4485407066052227,
     "strong_starter": 0.5271428571428571,
     "tire_management": 0.6738612863620856,
     "inconsistent": 0.3261387136379144,
@@ -3905,7 +3905,7 @@
   },
   "859": {
     "qualifying_specialist": 0.5151515151515151,
-    "wet_weather_master": 0.06982872200263483,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.5272727272727272,
     "tire_management": 0.6217174057536006,
     "inconsistent": 0.37828259424639943,
@@ -3913,7 +3913,7 @@
   },
   "861": {
     "qualifying_specialist": 0.5740740740740741,
-    "wet_weather_master": 0.07870370370370361,
+    "wet_weather_master": 0.5,
     "strong_starter": 0.6,
     "tire_management": 0.5046458173437229,
     "inconsistent": 0.495354182656277,

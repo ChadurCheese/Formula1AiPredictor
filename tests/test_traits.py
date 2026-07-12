@@ -13,6 +13,7 @@ from src.traits import (
     trait_inconsistent,
     trait_tire_management,
     trait_strong_starter,
+    trait_wet_weather_master,
     calculate_driver_traits,
     save_traits,
     load_traits,
@@ -85,6 +86,51 @@ class TestStrongStarter:
         races = _race_rows(1, 2023, [10, 10, 10])
         races["grid"] = 3
         assert trait_strong_starter(races) < 0.5
+
+
+class TestWetWeatherMaster:
+    """
+    Regression tests for a real bug: the function checked for a column
+    called 'circuitName', but the actual column (from data_pipeline.py's
+    merge) is 'name_circuit'. That mismatch meant the check was always
+    False, silently falling into a random `.sample()` fallback with no
+    fixed seed - giving a different, meaningless score every time traits
+    were recalculated for the same driver.
+    """
+
+    def _races_with_circuits(self, positions_by_circuit):
+        rows = []
+        i = 0
+        for circuit_name, positions in positions_by_circuit.items():
+            for pos in positions:
+                rows.append({
+                    "raceId": 100 + i, "driverId": 1, "constructorId": 10,
+                    "year": 2023, "round": i + 1, "positionOrder": pos,
+                    "grid": pos, "circuitId": i, "name_circuit": circuit_name,
+                })
+                i += 1
+        return pd.DataFrame(rows)
+
+    def test_deterministic_across_repeated_calls(self):
+        races = self._races_with_circuits({
+            "Circuit de Monaco": [8, 9], "Silverstone Circuit": [7, 8],
+            "Bahrain International Circuit": [2, 3, 1, 2, 3],
+        })
+        scores = {trait_wet_weather_master(races) for _ in range(10)}
+        assert len(scores) == 1  # same result every time, not random
+
+    def test_better_in_wet_scores_above_neutral(self):
+        # Much better (lower) finishing positions at wet-heuristic circuits
+        races = self._races_with_circuits({
+            "Circuit de Monaco": [1, 2], "Hungaroring": [1, 2],
+            "Bahrain International Circuit": [10, 12, 11, 13, 10],
+        })
+        assert trait_wet_weather_master(races) > 0.5
+
+    def test_missing_circuit_column_is_neutral_not_random(self):
+        races = _race_rows(1, 2023, [1, 5, 3, 8, 2, 6])
+        assert "name_circuit" not in races.columns
+        assert trait_wet_weather_master(races) == 0.5
 
 
 class TestCalculateDriverTraitsRecency:

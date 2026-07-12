@@ -16,8 +16,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.traits import load_traits
 from src.data_pipeline import load_raw_data, prepare_data
-from config import TRAIT_NAMES, TRAIT_COLORS, get_accuracy_caption
-from components.trait_visualizer import render_trait_radar, render_trait_bars, render_multi_driver_radar
+from config import TRAIT_NAMES, get_accuracy_caption
+from components.trait_visualizer import (
+    render_trait_radar,
+    render_trait_bars,
+    render_multi_driver_radar,
+    render_status_legend,
+    compute_trait_baselines,
+)
 
 st.set_page_config(page_title="Driver Traits - F1 Race Predictor", page_icon="👤", layout="wide")
 
@@ -48,20 +54,27 @@ id_to_name = {
 show_all = st.sidebar.checkbox("Include retired / historical drivers")
 candidate_ids = set(traits.keys()) if show_all else active_ids
 
+# Baseline is always the current/active grid, regardless of the toggle above
+# - comparing a driver to 1950s-era drivers wouldn't be a meaningful "average".
+baselines = compute_trait_baselines({d: traits[d] for d in active_ids if d in traits})
+average_traits = {trait: b["mean"] for trait, b in baselines.items()}
+
 name_to_id = {id_to_name[d]: d for d in candidate_ids if d in id_to_name}
 selected_name = st.sidebar.selectbox("Driver", sorted(name_to_id.keys()))
 driver_id = name_to_id[selected_name]
 driver_traits = traits[driver_id]
 
+render_status_legend()
+
 col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader(selected_name)
-    render_trait_radar(selected_name, driver_traits, TRAIT_NAMES)
+    render_trait_radar(selected_name, driver_traits, TRAIT_NAMES, average_traits)
 
 with col2:
     st.subheader("Trait Breakdown")
-    render_trait_bars(driver_traits, TRAIT_NAMES, TRAIT_COLORS)
+    render_trait_bars(driver_traits, TRAIT_NAMES, baselines)
 
 st.markdown("---")
 st.subheader("Compare Drivers")
@@ -74,7 +87,7 @@ compare_names = st.multiselect(
 
 if compare_names:
     drivers_traits = {name: traits[name_to_id[name]] for name in compare_names}
-    render_multi_driver_radar(drivers_traits, TRAIT_NAMES)
+    render_multi_driver_radar(drivers_traits, TRAIT_NAMES, average_traits)
 
     rows = []
     for name in compare_names:
